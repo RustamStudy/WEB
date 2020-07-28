@@ -12,31 +12,168 @@
         }
     </style>
     <body>
+        <form action="order.php">
+            <div  style="margin:10px">
+                <label for="idInput" hidden>Укажите имя</label>
+                <input type="text" placeholder="Введите ваше имя" name="nameInput" id = "idInput" required value="">
+            </div>
+            <div  style="margin:10px">
+                <label for="namePasw" hidden>Введите пароль</label>
+                <input type="password" placeholder="Введите пароль" name="namePasw" id = "idInput" required value="">
+            </div>
+            <div  style="margin:10px">
+                <label for="nameMail" hidden>Укажите почту</label>
+                <input type="email" placeholder="Введите почту" name="namePasw" id = "idInput" required value="">
+            </div>
+            <div style="margin:10px">
+                <input type="checkbox" name="nameCheck" id="persAccess" required>
+                <label for="persAccess">Согласен на обработку персональных данных</label>
+            </div>
+            <div style="margin:10px">
+                <label for="idSelect">Выберите ряд</label>
+                <select name="nameSelect" id="idSelect">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5" selected>5</option>
+                    <option value="6">6</option>
+                    <option value="7" disabled>7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div style="margin:10px">
+                <label for="r1">Детский билет</label>
+                <input type="radio" name="place" id = "r1"> 
+            </div>
+            <div style="margin:10px">
+                <label for="r2">Студенческий билет</label>
+                <input type="radio" name="place" id = "r2">
+            </div>
+            <div style="margin:10px">
+                <label for="r3">Взрослый билет</label>
+                <input checked type="radio" name="place" id = "r3">
+            </div>
+            <div style="margin:10px">
+                <label for="idArea" hidden>Введите коментарий (при необходимости)</label>
+                <textarea name="nameArea" id = "idArea" placeholder="Укажите комментарий"></textarea>
+            </div>
+            <div style="margin:10px">
+                <label for="inpFile"  hidden>Загрузите файл (при необходимости)</label>
+                <input type="file" id = "inpFile" name="inpFile" >
+            </div>
+            <div style="margin:10px">
+                <input type="submit" value="Заказать">
+            </div>
+            <div style="margin:10px">
+                <button type="submit">Заказать</button>
+            </div>
+        </form>
+        <div style="margin:10px">
+            <input type="submit" value="Заказать (submit вне формы не работает)">
+        </div>
+        <div style="margin:10px">
+            <button type="submit">Заказать (submit вне формы не работает)</button>
+        </div>
+<br>
+<br>
+<br>
+<div style = "border:5px solid black">
+    <ol >
+        <li>Номер 1</li>
+        <li>Номер 2</li>
+        <li>Номер 3</li>
+        <li>Номер 4</li>
+        <li>Номер 5</li>
+    </ol>
+    <ol reversed type = "A">
+        <li>Номер 1</li>
+        <li>Номер 2</li>
+        <li>Номер 3</li>
+        <li>Номер 4</li>
+        <li>Номер 5</li>
+    </ol>
+    <ol start type = "a">
+        <li>Номер 1</li>
+        <li>Номер 2</li>
+        <li>Номер 3</li>
+        <li>Номер 4</li>
+        <li>Номер 5</li>
+    </ol>
+    <ol reversed type = "I">
+        <li>Номер 1</li>
+        <li>Номер 2</li>
+        <li>Номер 3</li>
+        <li>Номер 4</li>
+        <li>Номер 5</li>
+    </ol>
+    <ol start type = "i">
+        <li>Номер 1</li>
+        <li>Номер 2</li>
+        <li>Номер 3</li>
+        <li>Номер 4</li>
+        <li>Номер 5</li>
+    </ol>
+    <dl>
+        <dt>Определение 1</dt>
+        <dd>Описание определения 1</dd>
+    </dl>
+    <dl>
+        <dt>Определение 2</dt>
+        <dd>Описание определения 2</dd>
+    </dl>
+        <a href="#welcome">Добро пожаловать!</a>
+        <br>
+        <br>
+        <a href="#selectMove">Выберите фильмv</a>
+        <br>
+        <br>
+        <a href="#present">Подарок каждому</a>
+        <br>
+        <br>
+        <a href="#films">Фильмы</a>
+</div>
+<br>
+<br>
+
         <div>
-            <div>
-                <div style="float: left;margin-right: 20px;background-color: black;">
+            <header>
+                <div style="margin-right: 20px;background-color: black;">
                     <a target = "_blank" href="http://university.innopolis.ru">
                         <img src="/img/logo.png" alt="logo"/>
                     </a>
                 </div>
-                <section>
-                    <a href="#">event details</a> 
-                    <a href="#">speakers</a> 
-                    <a href="#">sponsors</a> 
-                    <a href="#">past events</a> 
-                    <a href="#">contact</a> 
-                </section>                 
+                <ul>
+                    <li>
+                        <a href="#">event details</a> 
+                    </li>
+                    <li>
+                        <a href="#">speakers</a> 
+                    </li>
+                    <li>
+                        <a href="#">sponsors</a> 
+                    </li>
+                    <li>
+                        <a href="#">past events</a> 
+                    </li>
+                    <li>
+                        <a href="#">contact</a> 
+                    </li>
+                </ul>                 
                 <div>
                     Ваш город: <strong>Москва</strong>
                 </div>
-            </div>
+            </header>
             <div>
                 <h1>Закажите билет в кино</h1>
-                <p>Всем покупателям подарок!</p>
+                <h2>Всем покупателям подарок!</h2>
             </div>
         </div>
         <div>
             <div>
+                <a name = "welcome"></a>
                 <h3>Добро пожаловать!</h3>
                 <p>Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.</p>
                 <p>
@@ -49,17 +186,17 @@
                 <h3>Почему мы?</h3>
             </div>       
             <section>
-                <div>
+                <article>
                     <img src="/img/b2_icon_1.jpg" alt="b2_icon_1"/>
                     <h4>Большие экраны</h4>
                     <p>Meet the Community you’ve always talked with, in real life! This meetup will be all about authors engaging each other with interesting coversation and topics. We will have loads of fun.<p>
-                </div>
-                <div>
+                </article>
+                <article>
                     <img src="/img/b2_icon_2.jpg" alt="b2_icon_2"/>
                     <h4>Объемный звук</h4>
                     <p>In this meetup you will get to know the marketplaces better, because that’s why were all here for right? Learn a few tips and tricks from experienced authors from all over the country.</p>
-                </div>
-                <div>
+                </article>
+                <article>
                     <img src="/img/b2_icon_3.jpg" alt="b2_icon_3"/>
                     <h4>Удобные кресла</h4>
                     <p>
@@ -67,67 +204,61 @@
                         <br/>
                         Hear the stories of success from your favorite authors and learn how they we able to tackle their problems and become successful.
                     </p>
-                </div>
+                </article>
             </section>
         </div>
         <div>
             <div>
+                <a name = "selectMove"></a>
                 <h3>Выберите фильм</h3>
             </div>
-            <section>            
-                <div>
-                    <div>
-                        <p>Time</p>
-                    </div>
-                    <div>
-                        <p>Stuff that will happen</p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <p>10am-12pm</p>
-                    </div>
-                    <div>
-                        <a target = "_blank" href="https://www.kinopoisk.ru/film/706655/?from_block=main_recommend">How to Train Your Dragon: The Hidden World</a>
-                    </div>
-                    <div style="background-color: black;">
-                        <img src="/img/plus.png" alt="plus"/>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <p>12pm - 02pm</p>
-                    </div>
-                    <div>
-                        <a target = "_blank" href="https://www.kinopoisk.ru/film/1122114/?from_block=main_recommend">A Dog's Journey</a>
-                    </div>
-                    <div style="background-color: black;">
-                        <img src="/img/plus.png" alt="plus"/>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <p>02pm - 03pm</p>
-                    </div>
-                    <div>
-                        <a target = "_blank" href="https://www.kinopoisk.ru/film/535341/?from_block=main_recommend">Intouchables</a>
-                    </div>
-                    <div style="background-color: black;">
-                        <img src="/img/plus.png" alt="plus"/>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <p>03pm - 05pm</p>
-                    </div>
-                    <div>
-                        <a target = "_blank" href="https://www.kinopoisk.ru/film/1048334/?from_block=main_recommend">Joker</a>
-                    </div>
-                    <div style="background-color: black;">
-                        <img src="/img/plus.png" alt="plus"/>
-                    </div>
-                </div>            
-            </section>
+            <table border = 1 cellpadding = "3px" cellspaсing = "4px">             
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th colspan = 2>Stuff that will happen</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10am-12pm</td>
+                        <td>
+                            <a target = "_blank" href="https://www.kinopoisk.ru/film/706655/?from_block=main_recommend">How to Train Your Dragon: The Hidden World</a>
+                        </td>
+                        <td style="background-color: black;">
+                            <img src="/img/plus.png" alt="plus"/>
+                        </td>                
+                    </tr>
+                    <tr>
+                        <td>12pm - 02pm</td>
+                        <td>
+                            <a target = "_blank" href="https://www.kinopoisk.ru/film/1122114/?from_block=main_recommend">A Dog's Journey</a>
+                        </td>
+                        <td style="background-color: black;">
+                            <img src="/img/plus.png" alt="plus"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>02pm - 03pm</td>
+                        <td>
+                            <a target = "_blank" href="https://www.kinopoisk.ru/film/535341/?from_block=main_recommend">Intouchables</a>
+                        </td>
+                        <td style="background-color: black;">
+                            <img src="/img/plus.png" alt="plus"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>03pm - 05pm</td>
+                        <td>
+                            <a target = "_blank" href="https://www.kinopoisk.ru/film/1048334/?from_block=main_recommend">Joker</a>
+                        </td>
+                        <td style="background-color: black;">
+                            <img src="/img/plus.png" alt="plus"/>
+                        </td>
+                    </tr>
+                </tbody>            
+            </table>
             <p>Please keep in mind that the timings may differ according to the flow of the event. The even is actually day long and we do plan to finish it within our set time but it doesn’t have to be, if we all agree to hangour for some time more, what harm could it do? :)</p>
         </div>
         <div>
@@ -135,6 +266,7 @@
                 <img src="/img/present.png" alt="present"/>
             </div>
             <section>
+                <a name = "present"></a>
                 <h3>Подарок каждому</h3>
                 <p>
                     Are you an Elite author in the Envato Marketplaces? If so we are proud of you! We want to give our thanks in achieving great success in the marketplace and we want to make known to the people of our country that you are amazing! Our Elite gifting program includes giving you special merchandize from our community and also promote your works in our community.
@@ -156,6 +288,7 @@
         </div>
         <div>
             <div>
+                <a name = "films"></a>
                 <h3>Фильмы</h3>
                 <p>
                     <u>                 <!-- Удалить в дальнейшем подчеркивание -->
@@ -166,47 +299,47 @@
             <section>   
                 <div>
                     <a target = "_blank" href="https://www.kinopoisk.ru/series/464963/">
-                        <img src="/cinimaImg/11.webp" alt="img11"/>
+                        <img title="Игра пристолов" src="/cinimaImg/11.webp" alt="img11"/>
                     </a>
                 </div>
                 <div>
                     <a target = "_blank" href="https://www.kinopoisk.ru/film/1048334/?from_block=main_recommend">
-                        <img src="/cinimaImg/12.webp" alt="img12"/>
+                        <img title="Джокер" src="/cinimaImg/12.webp" alt="img12"/>
                     </a>
                 </div>
                 <div>
                     <a target = "_blank" href="https://www.kinopoisk.ru/film/535341/?from_block=main_recommend">
-                        <img src="/cinimaImg/13.webp" alt="img13"/>
+                        <img title="1+1" src="/cinimaImg/13.webp" alt="img13"/>
                     </a>
                 </div>
                 <div>
                     <a target = "_blank" href="https://www.kinopoisk.ru/film/775276/?from_block=main_recommend">
-                        <img src="/cinimaImg/21.webp" alt="img21"/>
+                        <img title="Зверополис" src="/cinimaImg/21.webp" alt="img21"/>
                     </a>
                 </div>
                 <div>
                     <a target = "_blank" href="https://www.kinopoisk.ru/film/706655/?from_block=main_recommend">
-                        <img src="/cinimaImg/22.webp" alt="img22"/>
+                        <img title="Как приручить дракона 3" src="/cinimaImg/22.webp" alt="img22"/>
                     </a>
                 </div>
                 <div>
                     <a target = "_blank" href="https://www.kinopoisk.ru/film/1122114/?from_block=main_recommend">
-                        <img src="/cinimaImg/23.webp" alt="img23"/>
+                        <img title="Собачья жизнь 2" src="/cinimaImg/23.webp" alt="img23"/>
                     </a>
                 </div>
                 <div>
                     <a target = "_blank" href="https://www.kinopoisk.ru/film/1005878/?from_block=main_recommend">
-                        <img src="/cinimaImg/31.webp" alt="img31"/>
+                        <img title="Король лев" src="/cinimaImg/31.webp" alt="img31"/>
                     </a>
                 </div>
                 <div>
                     <a target = "_blank" href="https://www.kinopoisk.ru/film/1080513/?from_block=main_recommend">
-                        <img src="/cinimaImg/32.webp" alt="img32"/>
+                        <img title="Вперед" src="/cinimaImg/32.webp" alt="img32"/>
                     </a>
                 </div>
                 <div>
                     <a target = "_blank" href="https://www.kinopoisk.ru/film/1379016/?from_block=main_recommend">
-                        <img src="/cinimaImg/33.webp" alt="img33"/>
+                        <img title="Смешарики" src="/cinimaImg/33.webp" alt="img33"/>
                     </a>
                 </div>
             </section>
