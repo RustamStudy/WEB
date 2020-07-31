@@ -1,0 +1,117 @@
+*{
+    font-family:"Roboto Condensed";
+}
+.container{
+    max-width: 1030px;
+    margin: 0 auto;
+}
+.movie{
+    margin-top: 125px;
+}
+.movieListHeader{
+    font-size: 50px;
+    text-align: center;
+    font-weight: 700;
+    color: rgb(37,37,37);
+}
+.movieListTable{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 87px;
+    
+}
+
+.movieListTable th{
+    background-color: rgb(163,204,64);
+    color: rgb(255,255,255);
+    font-size: 30px;
+    height: 75px;
+}
+.movieListTable th:last-child{
+    text-align: left;
+}
+.movieListTable tbody tr{
+    background-color: rgb(55,55,55);
+    font-size: 22px;
+    height: 75px;
+    color: rgb(255,255,255);
+}
+.movieListTable tbody td a{
+    color: rgb(255,255,255);
+    text-decoration: none; 
+}
+.movieListTable tbody tr:nth-child(even){
+	background-color: rgb(75, 77, 79);
+}
+.movieListTable tbody tr td:nth-child(1){
+    width: calc(230px - 45px);
+    padding-left: 45px;
+}
+.movieListTable tr td:nth-child(2),
+.movieListTable tr th:nth-child(2){
+    padding-left: 65px;
+}
+.movieListTable tbody tr td:nth-child(3){
+    width: calc(100px - 15px);
+    padding-left: 15px;
+}
+.movieListAboutArray{
+    width: 100%;
+    text-align: center;
+}
+.movieListAbout{
+    margin-top: 37px;
+    display: inline-block;
+    width: 830px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    color: rgb(36,36,36);
+}
+
+
+.present{
+    margin-top: 85px;
+}
+.presentImg{
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    background-size: cover;
+    background: url(../img/present.png) no-repeat center center;
+    box-shadow: 10.5px 18.187px 12px 0px rgba(35, 31, 32, 0.55);
+}
+
+
+
+
+.orderedHeader{
+    margin-top: 82px;
+}
+.orderedHeaderTitle{
+    font-size: 50px;
+}
+.orderedSection{
+    margin-top: 130px;
+    text-align: center;
+}
+
+.orderedSectionImg{
+    width: 200px;
+    height: 210px;
+}
+.orderedSectionHeader{
+    margin-top: 40px;
+    font-size: 35px;
+    display: block;
+    text-align: center;
+}
+.orderedSectionHeaderAbout{
+    margin-top: 28px;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    font-weight: 300;
+}

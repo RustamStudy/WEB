@@ -5,12 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="fonts/Roboto/stylesheet.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/main.css">
+        
     </head>
-    <style>
-        * {
-            font-family:"Roboto Condensed";
-        }
-    </style>
+    
     <body>
         <form action="order.php">
             <div  style="margin:10px">
@@ -67,76 +66,8 @@
             <div style="margin:10px">
                 <input type="submit" value="Заказать">
             </div>
-            <div style="margin:10px">
-                <button type="submit">Заказать</button>
-            </div>
         </form>
-        <div style="margin:10px">
-            <input type="submit" value="Заказать (submit вне формы не работает)">
-        </div>
-        <div style="margin:10px">
-            <button type="submit">Заказать (submit вне формы не работает)</button>
-        </div>
-<br>
-<br>
-<br>
-<div style = "border:5px solid black">
-    <ol >
-        <li>Номер 1</li>
-        <li>Номер 2</li>
-        <li>Номер 3</li>
-        <li>Номер 4</li>
-        <li>Номер 5</li>
-    </ol>
-    <ol reversed type = "A">
-        <li>Номер 1</li>
-        <li>Номер 2</li>
-        <li>Номер 3</li>
-        <li>Номер 4</li>
-        <li>Номер 5</li>
-    </ol>
-    <ol start type = "a">
-        <li>Номер 1</li>
-        <li>Номер 2</li>
-        <li>Номер 3</li>
-        <li>Номер 4</li>
-        <li>Номер 5</li>
-    </ol>
-    <ol reversed type = "I">
-        <li>Номер 1</li>
-        <li>Номер 2</li>
-        <li>Номер 3</li>
-        <li>Номер 4</li>
-        <li>Номер 5</li>
-    </ol>
-    <ol start type = "i">
-        <li>Номер 1</li>
-        <li>Номер 2</li>
-        <li>Номер 3</li>
-        <li>Номер 4</li>
-        <li>Номер 5</li>
-    </ol>
-    <dl>
-        <dt>Определение 1</dt>
-        <dd>Описание определения 1</dd>
-    </dl>
-    <dl>
-        <dt>Определение 2</dt>
-        <dd>Описание определения 2</dd>
-    </dl>
-        <a href="#welcome">Добро пожаловать!</a>
-        <br>
-        <br>
-        <a href="#selectMove">Выберите фильмv</a>
-        <br>
-        <br>
-        <a href="#present">Подарок каждому</a>
-        <br>
-        <br>
-        <a href="#films">Фильмы</a>
-</div>
-<br>
-<br>
+
 
         <div>
             <header>
@@ -177,29 +108,27 @@
                 <h3>Добро пожаловать!</h3>
                 <p>Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.</p>
                 <p>
-                    <strike>                     <!-- Удалить в дальнейшем перечеркивание -->
-                        Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.
-                    </strike>
+                    Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.
                 </p>
             </div>
-            <div>
-                <h3>Почему мы?</h3>
+            <div class="orderedHeader">
+                <h3 class = "orderedHeaderTitle">Почему мы?</h3>
             </div>       
-            <section>
+            <section class="orderedSection">
                 <article>
-                    <img src="/img/b2_icon_1.jpg" alt="b2_icon_1"/>
-                    <h4>Большие экраны</h4>
-                    <p>Meet the Community you’ve always talked with, in real life! This meetup will be all about authors engaging each other with interesting coversation and topics. We will have loads of fun.<p>
+                    <img class = "orderedSectionImg" src="/img/b2_icon_1.jpg" alt="b2_icon_1"/>
+                    <h4 class = "orderedSectionHeader">Большие экраны</h4>
+                    <p class = "orderedSectionHeaderAbout">Meet the Community you’ve always talked with, in real life! This meetup will be all about authors engaging each other with interesting coversation and topics. We will have loads of fun.<p>
                 </article>
                 <article>
-                    <img src="/img/b2_icon_2.jpg" alt="b2_icon_2"/>
-                    <h4>Объемный звук</h4>
-                    <p>In this meetup you will get to know the marketplaces better, because that’s why were all here for right? Learn a few tips and tricks from experienced authors from all over the country.</p>
+                    <img class = "orderedSectionImg" src="/img/b2_icon_2.jpg" alt="b2_icon_2"/>
+                    <h4 class = "orderedSectionHeader">Объемный звук</h4>
+                    <p class = "orderedSectionHeaderAbout">In this meetup you will get to know the marketplaces better, because that’s why were all here for right? Learn a few tips and tricks from experienced authors from all over the country.</p>
                 </article>
                 <article>
-                    <img src="/img/b2_icon_3.jpg" alt="b2_icon_3"/>
-                    <h4>Удобные кресла</h4>
-                    <p>
+                    <img class = "orderedSectionImg" src="/img/b2_icon_3.jpg" alt="b2_icon_3"/>
+                    <h4 class = "orderedSectionHeader">Удобные кресла</h4>
+                    <p class = "orderedSectionHeaderAbout">
                         Gather round fellow authors!
                         <br/>
                         Hear the stories of success from your favorite authors and learn how they we able to tackle their problems and become successful.
@@ -207,63 +136,66 @@
                 </article>
             </section>
         </div>
-        <div>
-            <div>
-                <a name = "selectMove"></a>
-                <h3>Выберите фильм</h3>
+        <div class = "movie">
+            <div class = "container">
+                <div>
+                    <h3 class="movieListHeader">Выберите фильм</h3>
+                </div>
+                <table class="movieListTable">             
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th colspan = 2>Stuff that will happen</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10am-12pm</td>
+                            <td>
+                                <a target = "_blank" href="https://www.kinopoisk.ru/film/706655/?from_block=main_recommend">How to Train Your Dragon: The Hidden World</a>
+                            </td>
+                            <td>
+                                <img src="/img/plus.png" alt="plus"/>
+                            </td>                
+                        </tr>
+                        <tr>
+                            <td>12pm - 02pm</td>
+                            <td>
+                                <a target = "_blank" href="https://www.kinopoisk.ru/film/1122114/?from_block=main_recommend">A Dog's Journey</a>
+                            </td>
+                            <td>
+                                <img src="/img/plus.png" alt="plus"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02pm - 03pm</td>
+                            <td>
+                                <a target = "_blank" href="https://www.kinopoisk.ru/film/535341/?from_block=main_recommend">Intouchables</a>
+                            </td>
+                            <td>
+                                <img src="/img/plus.png" alt="plus"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03pm - 05pm</td>
+                            <td>
+                                <a target = "_blank" href="https://www.kinopoisk.ru/film/1048334/?from_block=main_recommend">Joker</a>
+                            </td>
+                            <td>
+                                <img src="/img/plus.png" alt="plus"/>
+                            </td>
+                        </tr>
+                    </tbody>            
+                </table>
             </div>
-            <table border = 1 cellpadding = "3px" cellspaсing = "4px">             
-                <thead>
-                    <tr>
-                        <th>Time</th>
-                        <th colspan = 2>Stuff that will happen</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>10am-12pm</td>
-                        <td>
-                            <a target = "_blank" href="https://www.kinopoisk.ru/film/706655/?from_block=main_recommend">How to Train Your Dragon: The Hidden World</a>
-                        </td>
-                        <td style="background-color: black;">
-                            <img src="/img/plus.png" alt="plus"/>
-                        </td>                
-                    </tr>
-                    <tr>
-                        <td>12pm - 02pm</td>
-                        <td>
-                            <a target = "_blank" href="https://www.kinopoisk.ru/film/1122114/?from_block=main_recommend">A Dog's Journey</a>
-                        </td>
-                        <td style="background-color: black;">
-                            <img src="/img/plus.png" alt="plus"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>02pm - 03pm</td>
-                        <td>
-                            <a target = "_blank" href="https://www.kinopoisk.ru/film/535341/?from_block=main_recommend">Intouchables</a>
-                        </td>
-                        <td style="background-color: black;">
-                            <img src="/img/plus.png" alt="plus"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>03pm - 05pm</td>
-                        <td>
-                            <a target = "_blank" href="https://www.kinopoisk.ru/film/1048334/?from_block=main_recommend">Joker</a>
-                        </td>
-                        <td style="background-color: black;">
-                            <img src="/img/plus.png" alt="plus"/>
-                        </td>
-                    </tr>
-                </tbody>            
-            </table>
-            <p>Please keep in mind that the timings may differ according to the flow of the event. The even is actually day long and we do plan to finish it within our set time but it doesn’t have to be, if we all agree to hangour for some time more, what harm could it do? :)</p>
+            <div class = "movieListAboutArray">
+                <p class = "movieListAbout">Please keep in mind that the timings may differ according to the flow of the event. The even is actually day long and we do plan to finish it within our set time but it doesn’t have to be, if we all agree to hangour for some time more, what harm could it do? :)</p>
+            </div>
         </div>
-        <div>
-            <div>
-                <img src="/img/present.png" alt="present"/>
+        <div class = "present">
+            <div class = "presentImg">
+                
             </div>
             <section>
                 <a name = "present"></a>
@@ -272,14 +204,10 @@
                     Are you an Elite author in the Envato Marketplaces? If so we are proud of you! We want to give our thanks in achieving great success in the marketplace and we want to make known to the people of our country that you are amazing! Our Elite gifting program includes giving you special merchandize from our community and also promote your works in our community.
                 </p>
                 <p>
-                    <strong>                 <!-- Удалить в дальнейшем полужирный -->
-                        All you have to do is contact us by clicking the button here and then its just going to the event, saying something motivational and taking that swag while looking amazing infront of thousands of other community members.
-                    </strong>
+                    All you have to do is contact us by clicking the button here and then its just going to the event, saying something motivational and taking that swag while looking amazing infront of thousands of other community members.
                 </p>
                 <p>
-                    <em>                 <!-- Удалить в дальнейшем курсив -->
-                        *Be advised, we will only give you Elite thank you swag for each level of elite you cross.That means if you do not cross to the next elite level before the next event, you cannot claim your prizes.
-                    </em>
+                    *Be advised, we will only give you Elite thank you swag for each level of elite you cross.That means if you do not cross to the next elite level before the next event, you cannot claim your prizes.
                 </p>
             </section>
             <div style = "width: 220px;height: 55px;background-color:rgb(144, 210, 61); color: rgb(255,255,255);">
@@ -291,9 +219,7 @@
                 <a name = "films"></a>
                 <h3>Фильмы</h3>
                 <p>
-                    <u>                 <!-- Удалить в дальнейшем подчеркивание -->
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius ipsum, laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae, suscipit!
-                    </u>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius ipsum, laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae, suscipit!
                 </p>
             </div>
             <section>   
@@ -356,11 +282,9 @@
                 <img src="/img/tumblr.png" alt="tumblr"/>
             </section>
             <p>
-                <q>                 <!-- Удалить в дальнейшем параграф -->
-                    Hope we see you at the event!
-                    <br/>
-                    All Rights Reserved. Envato Bangladesh © 2015
-                </q>
+                Hope we see you at the event!
+                <br/>
+                All Rights Reserved. Envato Bangladesh © 2015
             </p>
         </footer>
     </body>
