@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="781" y="4818" width="48" height="48" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dy="1" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="1"/>
+      <feFlood result="flood" flood-opacity="0.25"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="tumblr" class="cls-1" d="M802.588,4829.96h3.4v6.02H811v4.01h-5.008s0,4.68,0,6.27c0,3.05,2.129,3.66,6.006,1.88v3.99a16.083,16.083,0,0,1-6.875.77c-1.711-.25-4.119-1.27-4.119-3.91v-9.02h-2.989s0-2.84,0-3.97C801.468,4834.31,802.4,4832.74,802.588,4829.96ZM804.5,4818a22.5,22.5,0,1,1-22.5,22.5A22.5,22.5,0,0,1,804.5,4818Z" transform="translate(-781 -4818)"/>
+</svg>

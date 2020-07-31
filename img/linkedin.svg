@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49" height="48.94" viewBox="0 0 49 48.94">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="661" y="4818.06" width="49" height="48.94" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dy="1" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="1"/>
+      <feFlood result="flood" flood-opacity="0.25"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="linkedin" class="cls-1" d="M674.873,4829.72a2.625,2.625,0,1,1-2.623,2.63A2.628,2.628,0,0,1,674.873,4829.72Zm-2.311,6.9h5.091v15.37h-5.091v-15.37Zm8.464-.09v15.4h5.153v-8.19s-0.369-3.15,2.779-3.15c2.649,0,2.343,3.25,2.343,2.87,0.025-1.45,0,8.5,0,8.5l5.059,0.01s0.063-8.02.063-8.05c0-1.46.026-7.67-5.689-7.67a4.812,4.812,0,0,0-4.552,2.56v-2.28h-5.156Zm3.509-18.46a22.5,22.5,0,1,1-22.5,22.5A22.5,22.5,0,0,1,684.535,4818.07Z" transform="translate(-661 -4818.06)"/>
+</svg>
