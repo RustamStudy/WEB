@@ -11,64 +11,6 @@
     </head>
     
     <body>
-        <form action="order.php">
-            <div  style="margin:10px">
-                <label for="idInput" hidden>Укажите имя</label>
-                <input type="text" placeholder="Введите ваше имя" name="nameInput" id = "idInput" required value="">
-            </div>
-            <div  style="margin:10px">
-                <label for="namePasw" hidden>Введите пароль</label>
-                <input type="password" placeholder="Введите пароль" name="namePasw" id = "idInput" required value="">
-            </div>
-            <div  style="margin:10px">
-                <label for="nameMail" hidden>Укажите почту</label>
-                <input type="email" placeholder="Введите почту" name="namePasw" id = "idInput" required value="">
-            </div>
-            <div style="margin:10px">
-                <input type="checkbox" name="nameCheck" id="persAccess" required>
-                <label for="persAccess">Согласен на обработку персональных данных</label>
-            </div>
-            <div style="margin:10px">
-                <label for="idSelect">Выберите ряд</label>
-                <select name="nameSelect" id="idSelect">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5" selected>5</option>
-                    <option value="6">6</option>
-                    <option value="7" disabled>7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
-            </div>
-            <div style="margin:10px">
-                <label for="r1">Детский билет</label>
-                <input type="radio" name="place" id = "r1"> 
-            </div>
-            <div style="margin:10px">
-                <label for="r2">Студенческий билет</label>
-                <input type="radio" name="place" id = "r2">
-            </div>
-            <div style="margin:10px">
-                <label for="r3">Взрослый билет</label>
-                <input checked type="radio" name="place" id = "r3">
-            </div>
-            <div style="margin:10px">
-                <label for="idArea" hidden>Введите коментарий (при необходимости)</label>
-                <textarea name="nameArea" id = "idArea" placeholder="Укажите комментарий"></textarea>
-            </div>
-            <div style="margin:10px">
-                <label for="inpFile"  hidden>Загрузите файл (при необходимости)</label>
-                <input type="file" id = "inpFile" name="inpFile" >
-            </div>
-            <div style="margin:10px">
-                <input type="submit" value="Заказать">
-            </div>
-        </form>
-
-
         <div>
             <header>
                 <div style="margin-right: 20px;background-color: black;">
@@ -144,8 +86,14 @@
                 <table class="movieListTable">             
                     <thead>
                         <tr>
-                            <th>Time</th>
-                            <th colspan = 2>Stuff that will happen</th>
+                            <th> 
+                                <span>Time</span>
+                                <img src="img/triangle.svg" alt="">
+                            </th>
+                            <th colspan = 2>
+                                <span>Stuff that will happen</span>
+                                <img src="img/triangle.svg" alt="">
+                            </th>
                             
                         </tr>
                     </thead>
@@ -223,47 +171,47 @@
                 </p>
             </div>
             <section>   
-                <div>
+                <div class="moviePosterDiv moviePosterDiv11">
                     <a target = "_blank" href="https://www.kinopoisk.ru/series/464963/">
-                        <img title="Игра пристолов" src="cinimaImg/11.webp" alt="img11"/>
+                       <!--  <img title="Игра пристолов" src="cinimaImg/11.webp" alt="img11"/>  -->
                     </a>
                 </div>
-                <div>
+                <div class="moviePosterDiv moviePosterDiv12">
                     <a target = "_blank" href="https://www.kinopoisk.ru/film/1048334/?from_block=main_recommend">
                         <img title="Джокер" src="cinimaImg/12.webp" alt="img12"/>
                     </a>
                 </div>
-                <div>
+                <div class="moviePosterDiv moviePosterDiv13">
                     <a target = "_blank" href="https://www.kinopoisk.ru/film/535341/?from_block=main_recommend">
                         <img title="1+1" src="cinimaImg/13.webp" alt="img13"/>
                     </a>
                 </div>
-                <div>
+                <div class="moviePosterDiv moviePosterDiv21">
                     <a target = "_blank" href="https://www.kinopoisk.ru/film/775276/?from_block=main_recommend">
                         <img title="Зверополис" src="cinimaImg/21.webp" alt="img21"/>
                     </a>
                 </div>
-                <div>
+                <div class="moviePosterDiv moviePosterDiv22">
                     <a target = "_blank" href="https://www.kinopoisk.ru/film/706655/?from_block=main_recommend">
                         <img title="Как приручить дракона 3" src="cinimaImg/22.webp" alt="img22"/>
                     </a>
                 </div>
-                <div>
+                <div class="moviePosterDiv moviePosterDiv23">
                     <a target = "_blank" href="https://www.kinopoisk.ru/film/1122114/?from_block=main_recommend">
                         <img title="Собачья жизнь 2" src="cinimaImg/23.webp" alt="img23"/>
                     </a>
                 </div>
-                <div>
+                <div class="moviePosterDiv moviePosterDiv31">
                     <a target = "_blank" href="https://www.kinopoisk.ru/film/1005878/?from_block=main_recommend">
                         <img title="Король лев" src="cinimaImg/31.webp" alt="img31"/>
                     </a>
                 </div>
-                <div>
+                <div class="moviePosterDiv moviePosterDiv32">
                     <a target = "_blank" href="https://www.kinopoisk.ru/film/1080513/?from_block=main_recommend">
                         <img title="Вперед" src="cinimaImg/32.webp" alt="img32"/>
                     </a>
                 </div>
-                <div>
+                <div class="moviePosterDiv moviePosterDiv33">
                     <a target = "_blank" href="https://www.kinopoisk.ru/film/1379016/?from_block=main_recommend">
                         <img title="Смешарики" src="cinimaImg/33.webp" alt="img33"/>
                     </a>
@@ -287,5 +235,61 @@
                 All Rights Reserved. Envato Bangladesh © 2015
             </p>
         </footer>
+        <form action="order.php">
+            <div  style="margin:10px">
+                <label for="idInput" hidden>Укажите имя</label>
+                <input type="text" placeholder="Введите ваше имя" name="nameInput" id = "idInput" required value="">
+            </div>
+            <div  style="margin:10px">
+                <label for="namePasw" hidden>Введите пароль</label>
+                <input type="password" placeholder="Введите пароль" name="namePasw" id = "idInput" required value="">
+            </div>
+            <div  style="margin:10px">
+                <label for="nameMail" hidden>Укажите почту</label>
+                <input type="email" placeholder="Введите почту" name="namePasw" id = "idInput" required value="">
+            </div>
+            <div style="margin:10px">
+                <input type="checkbox" name="nameCheck" id="persAccess" required>
+                <label for="persAccess">Согласен на обработку персональных данных</label>
+            </div>
+            <div style="margin:10px">
+                <label for="idSelect">Выберите ряд</label>
+                <select name="nameSelect" id="idSelect">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div style="margin:10px">
+                <label for="r1">Детский билет</label>
+                <input type="radio" name="place" id = "r1"> 
+            </div>
+            <div style="margin:10px">
+                <label for="r2">Студенческий билет</label>
+                <input type="radio" name="place" id = "r2">
+            </div>
+            <div style="margin:10px">
+                <label for="r3">Взрослый билет</label>
+                <input checked type="radio" name="place" id = "r3">
+            </div>
+            <div style="margin:10px">
+                <label for="idArea" hidden>Введите коментарий (при необходимости)</label>
+                <textarea name="nameArea" id = "idArea" placeholder="Укажите комментарий"></textarea>
+            </div>
+            <div style="margin:10px">
+                <label for="inpFile"  hidden>Загрузите файл (при необходимости)</label>
+                <input type="file" id = "inpFile" name="inpFile" >
+            </div>
+            <div style="margin:10px">
+                <input type="submit" value="Заказать">
+            </div>
+        </form>
     </body>
 </html>

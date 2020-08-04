@@ -115,3 +115,29 @@
     text-align: center;
     font-weight: 300;
 }
+.moviePosterDiv{
+    width: 296px;
+    height: 296px;    
+}
+.moviePosterDiv a{
+    display: block;
+    width: 296px;
+    min-height: 296px;   
+    background-size: 100%;
+}
+.moviePosterDiv img{
+    display: block;
+    width: 296px;
+    min-height: 296px;   
+    background-size: 100% ; 
+}
+.moviePosterDiv11 a{
+   background: url(../cinimaImg/11.webp) no-repeat center center;  
+   
+}
+
+.movieListTable thead img{
+    color:rgb(255,255,255);
+    width: 20px;
+    margin-left: 10px;
+}
