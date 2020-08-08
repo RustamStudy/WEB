@@ -12,7 +12,7 @@ body{
     margin-right: auto;
     -webkit-text-size-adjust: 100%;
     overflow-x: hidden;
-}
+} 
 .container{
     max-width: 1030px;
     margin: 0 auto;
@@ -126,7 +126,7 @@ body{
     line-height: 55px;
     display: inline-block;
 }
-.present section{
+.present-block{
     padding-top: 147px;
     /*adding-left: 535px;
     padding-right: 166px;*/
@@ -136,13 +136,13 @@ body{
     position: absolute;
     right: 15px;
 }
-.present p{
+.present-block__text{
     margin-top: 17px;
     font-size: 14px;
     font-weight: 300;
 }
 
-.present h3{
+.present-block__header{
     font-size: 50px;
     margin-bottom: 70px;
 }
@@ -164,7 +164,7 @@ body{
    
     
 }
-.ordered-section article{
+.ordered-section-article{
     width: 33.33%;
     display: block;
     float: left;
