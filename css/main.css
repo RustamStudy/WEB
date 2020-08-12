@@ -1,41 +1,45 @@
 *{
-    font-family:"Roboto Condensed";
+    font-family:"Roboto";
     box-sizing: border-box;
     padding: 0;
     margin: 0;   
+}
+html{
+    font-size: 0.732vw;
+    /* font-size: 10px; */
 }
 a{
     text-decoration: none;
 }
 body{
-    min-width: 320px;
-    max-width: 1920px;
+    min-width: 32rem;
+    max-width: 192rem;
     margin-left: auto;
     margin-right: auto;
     -webkit-text-size-adjust: 100%;
     overflow-x: hidden;
 } 
 .container{
-    max-width: 1030px;
+    max-width: 106rem;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 1.5rem;
     position: relative;
 }
 .title__main_header{
-    font-size: 80px;
-    font-weight: 300;
-    margin-top: 178px;
+    font-size: 8rem;
+    font-weight: 100;
+    
 }
 .title__main_text{
-    font-size: 50px;
+    font-size: 5rem;
     font-weight: normal;
-    margin-top: 33px;
+    margin-top: 0rem;
 }
 .movie{
-    margin-top: 125px;
+    margin-top: 12.5rem;
 }
 .movie-list__header{
-    font-size: 50px;
+    font-size: 5rem;
     text-align: center;
     font-weight: 700;
     color: rgb(37,37,37);
@@ -43,23 +47,24 @@ body{
 .movie-list__table{
     width: 100%;
     border-collapse: collapse;
-    border-radius: 15px;
+    border-radius: 1.5rem;
     overflow: hidden;
-    margin-top: 87px;
+    margin-top: 7.7rem;
 }
 .movie-list__table th{
     background-color: rgb(163,204,64);
     color: rgb(255,255,255);
-    font-size: 30px;
-    height: 75px;
+    font-size: 3rem;
+    height: 7.5rem;
+    padding-left: 7rem;
 }
 .movie-list__table th:last-child{
     text-align: left;
 }
 .movie-list__table tbody tr{
     background-color: rgb(55,55,55);
-    font-size: 22px;
-    height: 75px;
+    font-size: 2.2rem;
+    height: 7.5rem;
     color: rgb(255,255,255);
 }
 .movie-list__table tbody td a{
@@ -70,36 +75,36 @@ body{
 	background-color: rgb(75, 77, 79);
 }
 .movie-list__table tbody tr td:nth-child(1){
-    width: calc(230px - 45px);
-    padding-left: 45px;
+    width: calc(23rem - 3.5rem);
+    padding-left: 4.5rem;
 }
 .movie-list__table tr td:nth-child(2),
 .movie-list__table tr th:nth-child(2){
-    padding-left: 65px;
+    padding-left: 10.5rem;
 }
 .movie-list__table tbody tr td:nth-child(3){
-    width: calc(100px - 15px);
-    padding-left: 15px;
+    width: calc(10rem - 1.5rem);
+    padding-left: 0rem;
 }
 .movie-list-about{
     width: 100%;
     text-align: center;
 }
 .movie-list-about__text{
-    margin-top: 37px;
+    margin-top: 3.7rem;
     display: inline-block;
-    width: 830px;
+    width: 83rem;
     text-align: center;
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 300;
     color: rgb(36,36,36);
 }
 .present{
     position: relative;
-    margin-top: 150px;
-    height: 700px;
+    margin-top: 14.5rem;
+    height: 70rem;
     width:100%;
-    background: url(../img/presentFon.jpg) no-repeat center center;
+    background: url(../img/presentFon.jpg) no-repeat center center / cover;
     background-size: cover;
     text-align: right;
     
@@ -107,46 +112,49 @@ body{
 }
 .present__img{
     position: absolute;
-    top: -65px;
-    width: 330px;
-    height: 330px;
+    top: -6rem;
+    width: 33rem;
+    height: 33rem;
     border-radius: 50%;
-    background-size: cover;
-    background: url(../img/present.png) no-repeat center center;
-    box-shadow: 10.5px 18.187px 12px 0px rgba(35, 31, 32, 0.55);
+    background: url(../img/present.png) no-repeat center center / cover;
+    box-shadow: 1.05rem 1.8187rem 1.2rem 0rem rgba(35, 31, 32, 0.55);
 }
 .present__button{
-    width: 220px;
-    height: 55px;
+    width: 22rem;
+    height: 5.5rem;
     background-color:rgb(144, 210, 61); 
     color: rgb(255,255,255);
     /*position: absolute;*/
     right: 0;
-    margin-top: 35px;
-    border-radius: 15px;
-    text-align: center;
-    line-height: 55px;
-    display: inline-block;
+    margin-top: 3.5rem;
+    border-radius: 1.5rem;
+    font-size: 1.8rem;
+    border: 2px solid rgb(144, 210, 61); 
+    transition: 0.2s;
+}
+.present__button:hover{
+    background-color:transparent;
+    color: rgb(144, 210, 61); 
 }
 .present-block{
-    padding-top: 147px;
-    /*adding-left: 535px;
-    padding-right: 166px;*/
+    padding-top: 14rem;
+    /*adding-left: 53.5rem;
+    padding-right: 160.6rem;*/
     color: rgb(255,255,255);   
     position: relative;
-    width: 666px;
+    width: 66.6rem;
     position: absolute;
-    right: 15px;
+    right: 1.5rem;
 }
 .present-block__text{
-    margin-top: 17px;
-    font-size: 14px;
+    margin-top: 1.7rem;
+    font-size: 1.4rem;
     font-weight: 300;
 }
 
 .present-block__header{
-    font-size: 50px;
-    margin-bottom: 70px;
+    font-size: 5rem;
+    margin-bottom: 5.1rem;
 }
 
 .ordered{
@@ -154,13 +162,13 @@ body{
 }
 
 .ordered-header{
-    padding-top: 82px;
+    padding-top: 7.2rem;
 }
 .ordered-header__title{
-    font-size: 50px;
+    font-size: 5rem;
 }
 .ordered-section{
-    margin: 130px -15px 0 -15px;
+    margin: 12rem -1.5rem 0 -1.5rem;
     text-align: center;
     overflow: hidden;
    
@@ -171,70 +179,69 @@ body{
     display: block;
     float: left;
     overflow: hidden;
-    padding: 0 15px;
+    padding: 0 1.5rem;
     box-sizing: border-box;
 }
 .ordered-section__img{
-    width: 200px;
-    height: 210px;
-    line-height: 210px;
+    width: 20rem;
+    height: 21rem;
+    line-height: 21rem;
 
 }
 
 .ordered-section__header{
-    margin-top: 40px;
-    font-size: 35px;
+    margin-top: 4rem;
+    font-size: 3.5rem;
     display: block;
     text-align: center;
 }
 .ordered-section__header-about{
-    margin-top: 28px;
-    font-size: 14px;
+    margin-top: 2.8rem;
+    font-size: 1.4rem;
     display: block;
     text-align: center;
     font-weight: 300;
 }
 .ordered-welcome{
     position: absolute;
-    right: 15px;
-    top:-133px;
-    width: 517px;
-    height: 266px;
+    right: 1.5rem;
+    top:-13rem;
+    width: 51.7rem;
+    height: 26.6rem;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 1px 2px 0px rgba(35, 31, 32, 0.65);
-    padding: 40px 30px;
+    box-shadow: 0 1px 2px 0 rgba(35, 31, 32, 0.65);
+    padding: 3rem 3rem;
     z-index: 2;
 }
 .ordered-welcome__header{
-    font-size: 40px;
+    font-size: 4rem;
     font-weight: 800;
-    padding-bottom: 25px;
+    padding-bottom: 2.5rem;
 }
 .ordered-welcome__text{
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 300;
-    padding-bottom: 22px;
+    padding-bottom: 2.2rem;
+    padding-right: 3rem;
 }
-
-
-
-
 .movie-poster__div{
-    width: 296px;
-    height: 296px;  
+    width: 29.6rem;
+    height: 29.6rem;  
     position: relative;  
+    overflow: hidden;
+    border-radius: 1.5rem;
 }
 .movie-poster__div-link{
     display: block;
-    width: 296px;
-    min-height: 296px;   
+    width: 29.6rem;
+    min-height: 29.6rem;   
     background-size: 100%;
 }
 .movie-poster__div-link-img{
     display: block;
-    width: 296px;
-    height: 296px;
-    min-height: 296px;
+    width: 29.6rem;
+    height: 29.6rem;
+    min-height: 29.6rem;
     background-size: auto auto;
 }
 /*
@@ -243,77 +250,80 @@ body{
 }*/
 .movie-list__table thead img{
     color:rgb(255,255,255);
-    width: 20px;
-    margin-left: 10px;
+    width: 2rem;
+    margin-left: 1rem;
 }
 footer{
-    height: 220px; 
+    height: 22rem; 
     background-color: rgb(144, 210, 61);
 }
 footer section{
     text-align: center;
 }
 footer section img{
-    margin-top: 58px;
-    margin-left: 13px;
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
-    width: 45px;
-    height: 45px;
+    margin-top: 5.8rem;
+    margin-left: 1.3rem;
+    box-shadow: rem 1px 1px rem rgba(0, 0, 0, 0.25);
+    width: 4.5rem;
+    height: 4.5rem;
     border-radius: 50%;
 }
 footer section img:first-child{
     margin-left: 0;
 }
 footer p{
-    font-size: 18px;
+    font-size: 1.8rem;
     text-align: center;
     font-weight: 300;
-    margin-top: 37px;
+    margin-top: 2.7rem;
     color:rgb(255,255,255);
 }
 .title{
-    background: url(../img/top_bg.jpg) no-repeat top center / cover;
-    min-height: 100vh;
+    background: url(../img/top_bg.jpg) no-repeat top center;
+    height: 100vh;
     position: relative;
+    background-size: cover;
 }
 .title header{
     display: inline-block;
     width: 100%;
-    margin-top: 45px;
+    margin-top: 2.5rem;
 }
 .title-logo{
-    width: 185px;
-    height: 105px;
+    width: 18.5rem;
+    height: 10.5rem;
     
     float: left;
     
 }
 .title-logo__img{
     background: url(../img/logo.png) no-repeat center center;
-    width: 185px;
-    height: 105px;
+    width: 18.8rem;
+    height: 10.5rem;
     display: block;
-    
+    background-size: contain;
 }
 .title__city{
     float: right;
-    line-height: 105px;
+    line-height: 10.5rem;
     color: rgb(255,255,255);
+    font-size: 1.5rem;
 }
 .title__nav{
     float: left;
-    line-height: 105px;
-    margin-left: 70px;
+    line-height: 10.5rem;
+    margin-left: 7rem;
+    font-size: 1.5rem;
 }
 
 .title__nav li{
     display: inline-block;
 }
 .title__nav li+li{
-    margin-left: 44px;
+    margin-left: 3.4rem;
 }
 .title__nav a{
-    font-size: 15px;
+    font-size: 1.5rem;
     color: rgb(255,255,255);
     text-transform: uppercase;
     font-weight: 300;
@@ -325,6 +335,7 @@ footer p{
 .title__main{
     color: rgb(255,255,255);
     text-align: center;
+    padding: 12.2rem 0 25rem;
 }
 .title:after{
     content: "";
@@ -332,7 +343,7 @@ footer p{
     bottom: 0;
     left: 0;
     border-left: 100vw transparent solid;
-    border-bottom: 120px rgb(255,255,255) solid;
+    border-bottom: 12rem rgb(255,255,255) solid;
 }
 .present:before{
     content: "";
@@ -340,7 +351,7 @@ footer p{
     top: 0;
     right: 0;
     border-right: 100vw transparent solid;
-    border-top: 120px rgb(255,255,255) solid;
+    border-top: 12rem rgb(255,255,255) solid;
 }
 .present:after{
     content: "";
@@ -348,22 +359,21 @@ footer p{
     bottom: 0;
     left: 0;
     border-left: 100vw transparent solid;
-    border-bottom: 120px rgb(255,255,255) solid;
+    border-bottom: 12rem rgb(255,255,255) solid;
 }
 
 .movie-poster__header{
-    font-size: 50px;
+    font-size: 5rem;
     font-weight: 700;
-    margin-top: 97px;
+    margin-top: 8.7rem;
 }
 .movie-poster__text{
-    margin-top: 52px;
-    font-size: 14px;
+    margin-top: 3.2rem;
+    font-size: 1.4rem;
     font-weight: 300;
 }
 .movie-poster__table{
-    margin-top: 80px;
-    width: 100%;
+    margin-top: 8rem;
     /*border-collapse: collapse;*/
 }
 .movie-poster__table td{
@@ -376,7 +386,7 @@ footer p{
     display: inline-block;
 }
 .movie-poster__div img{
-    border-radius: 15px;
+    border-radius: 1.5rem;
 }
 
 
@@ -388,53 +398,64 @@ footer p{
     height: 100%;
     color: rgb(255,255,255);
     top:0;
-    border-radius: 15px;
-    padding-left: 22px;
+    border-radius: 1.5rem;
+    padding-left: 2.2rem;
+    transform: translateY(100%);
+    transition: 0.5s;
+    text-align: left;
+   
 }
+.movie-poster__div:hover .movie-poster-div-obout{
+    transform: translateY(0);
+   
+}
+
+
 .movie-poster-div-obout__header{
-    font-size: 35px;
+    font-size: 3.5rem;
     font-weight: 800;
-    padding-top: 34px;
+    padding-top: 3.4rem;
     color: rgb(255,255,255);
     display: block;
+    
 
 }
 .movie-poster-div-obout__line{
     background-color: RGB(255,255,255);
-    height: 5px;
-    width: 83px;
-    margin-top: 15px;
+    height: .5rem;
+    width: 8.3rem;
+    margin-top: 1.5rem;
 }
 
 .movie-poster-div-obout__text{
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: normal;
-    padding-top: 17px;
+    padding-top: 1.7rem;
 }
 .movie-poster-div-obout-array{
-    bottom: 21px;
+    bottom: 2.1rem;
     position: absolute;
-    left: 32px;
+    left: 3.2rem;
     padding: 0;
 }
 .movie-poster-div-obout-array__link{
     display: block;
     float: left;
-    margin-right: 9px;
-    width: 30px;
-    height: 30px;
+    margin-right: 0.9rem;
+    width: 3rem;
+    height: 3rem;
 
 }
 .movie-poster-div-obout-array__link-img{
-    width: 30px;
-    height: 30px;    
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+    width: 3rem;
+    height: 3rem;    
+    box-shadow: rem 1px 1px rem rgba(0, 0, 0, 0.25);
 }
 
 
 .movie-poster__table td{
     text-align: center;
-    padding-top: 37px;
+    padding-top: 3.7rem;
 }
 .movie-poster__table tr:first-child td{    
     padding: 0;
@@ -447,7 +468,7 @@ footer p{
 }
 .map{
     background: url(../img/map.png) no-repeat center center / cover;
-    min-height: 450px;
+    min-height: 45rem;
     width: 100%;
-    margin-top: 98px;
+    margin-top: 9.8rem;
 }
