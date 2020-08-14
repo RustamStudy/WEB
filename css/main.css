@@ -6,8 +6,8 @@
 }
 html{
     font-size: 0.732vw;
-    /* font-size: 10px; */
-}
+    /* font-size: 10px;*/
+} 
 a{
     text-decoration: none;
 }
@@ -171,32 +171,44 @@ body{
     margin: 12rem -1.5rem 0 -1.5rem;
     text-align: center;
     overflow: hidden;
-   
+    display: flex;
+    justify-content: space-between;
     
 }
 .ordered-section-article{
-    width: 33.33%;
+    width: 33rem;
     display: block;
-    float: left;
+    /* float: left; */
     overflow: hidden;
     padding: 0 1.5rem;
     box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 .ordered-section__img{
     width: 20rem;
-    height: 21rem;
-    line-height: 21rem;
+    /* height: 21rem;
+    height: 21rem; */
 
 }
-
+.ordered-secttion-img {
+    display: flex;
+    align-items: flex-end;
+    height: 21rem;
+    /* flex-flow: column; */
+    /* justify-content: end; */
+}
 .ordered-section__header{
     margin-top: 4rem;
     font-size: 3.5rem;
     display: block;
     text-align: center;
+    flex: 1 0;
 }
 .ordered-section__header-about{
-    margin-top: 2.8rem;
+    margin-top: 1rem;
     font-size: 1.4rem;
     display: block;
     text-align: center;
@@ -230,6 +242,7 @@ body{
     position: relative;  
     overflow: hidden;
     border-radius: 1.5rem;
+    margin-top: 4rem;
 }
 .movie-poster__div-link{
     display: block;
@@ -287,13 +300,13 @@ footer p{
 .title header{
     display: inline-block;
     width: 100%;
-    margin-top: 2.5rem;
+    padding-top: 2.5rem;
 }
 .title-logo{
     width: 18.5rem;
     height: 10.5rem;
     
-    float: left;
+    /* float: left; */
     
 }
 .title-logo__img{
@@ -304,13 +317,13 @@ footer p{
     background-size: contain;
 }
 .title__city{
-    float: right;
+    /* float: right; */
     line-height: 10.5rem;
     color: rgb(255,255,255);
     font-size: 1.5rem;
 }
 .title__nav{
-    float: left;
+    /* float: left; */
     line-height: 10.5rem;
     margin-left: 7rem;
     font-size: 1.5rem;
@@ -382,9 +395,9 @@ footer p{
     
     
 }
-.movie-poster__div{
+/* .movie-poster__div{
     display: inline-block;
-}
+} */
 .movie-poster__div img{
     border-radius: 1.5rem;
 }
@@ -471,4 +484,14 @@ footer p{
     min-height: 45rem;
     width: 100%;
     margin-top: 9.8rem;
+}
+.title header{
+    display: flex;
+    justify-content: space-between;
+}
+.movie-poster-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 3.5rem;
 }
