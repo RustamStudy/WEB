@@ -498,7 +498,7 @@ footer p{
     justify-content: space-between; */
 
     display: grid;
-    grid-template-columns: 29.6rem  29.6rem  29.6rem ;
+    grid-template-columns: 29.6rem 29.6rem 29.6rem ;
     grid-row-gap: 4.1rem;
     grid-column-gap: 4.1rem;
     margin-top: 8.5rem;
@@ -584,4 +584,11 @@ footer p{
 }
 .tz-greed-greed *{
     font-size: 40px;
+}
+
+.movie-poster__div:last-child{
+    display: none;
+}
+.movie-poster-section{   
+    grid-template-columns: 29.6rem 29.6rem;
 }
