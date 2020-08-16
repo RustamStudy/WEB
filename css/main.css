@@ -242,7 +242,7 @@ body{
     position: relative;  
     overflow: hidden;
     border-radius: 1.5rem;
-    margin-top: 4rem;
+    /* margin-top: 4rem; */
 }
 .movie-poster__div-link{
     display: block;
@@ -492,17 +492,17 @@ footer p{
     justify-content: space-between;
 }
 .movie-poster-section{
-    display: flex; 
+    /* display: flex; 
     margin-top: 4.5rem;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; */
 
-    /* display: grid;
-    grid-template-columns: 0fr 0fr 0fr;
+    display: grid;
+    grid-template-columns: 29.6rem  29.6rem  29.6rem ;
     grid-row-gap: 4.1rem;
     grid-column-gap: 4.1rem;
     margin-top: 8.5rem;
-    justify-content: space-between; */
+    justify-content: space-between;
 }
 
 .movie-list__table tbody tr, 
@@ -540,7 +540,6 @@ footer p{
 }
 .tz-flex__name{
     display: block;
-    height: 30px;
     background-color: violet;
 }
 .tz-flex__footer{
@@ -548,4 +547,41 @@ footer p{
     height: 30px;
     background-color: grey;
     color: white;
+}
+.tz-greed-greed{
+    border: 1px solid red;
+    display: grid;
+    grid-template-areas:    'ar1 ar1 ar1 ar1'
+                            'ar0 ar2 ar3 ar5'
+                            'ar4 ar4 ar4 ar4';
+    height: 100vh;
+     grid-template-rows: 60px 1fr 50px;
+     grid-template-columns: 0 1fr 1fr 0;
+     grid-column-gap: 10%;
+}
+
+.tz-flex-greed__column-h{
+    grid-area: ar1;
+    background-color: violet;
+}
+.tz-flex-greed__column-f{
+    grid-area: ar4;
+    background-color: grey;
+}
+.tz-flex-greed__column-c1{
+    grid-area: ar2;
+    background-color: yellow;
+
+}
+.tz-flex-greed__column-c2{
+    grid-area: ar3;
+    background-color: orange;
+}
+.tz-greed__name,
+.tz-flex__name{
+    font-size: 50px;
+    font-weight: 800;
+}
+.tz-greed-greed *{
+    font-size: 40px;
 }
