@@ -6,7 +6,7 @@
 }
 html{
     font-size: 0.732vw;
-    /* font-size: 10px;*/
+    /* font-size: 10px; */
 } 
 a{
     text-decoration: none;
@@ -293,7 +293,9 @@ footer p{
 }
 .title{
     background: url(../img/top_bg.jpg) no-repeat top center;
-    height: 100vh;
+    /* height: 100vh; */
+    height: 115vh;
+
     position: relative;
     background-size: cover;
 }
@@ -490,8 +492,60 @@ footer p{
     justify-content: space-between;
 }
 .movie-poster-section{
-    display: flex;
+    display: flex; 
+    margin-top: 4.5rem;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 3.5rem;
+
+    /* display: grid;
+    grid-template-columns: 0fr 0fr 0fr;
+    grid-row-gap: 4.1rem;
+    grid-column-gap: 4.1rem;
+    margin-top: 8.5rem;
+    justify-content: space-between; */
+}
+
+.movie-list__table tbody tr, 
+.movie-list__table thead tr{
+    height: 13rem;
+}
+.tz-flex{
+    height: 100vh;
+    border: 1px solid red;
+    display: flex;
+    flex-flow: column;
+}
+
+.tz-flex-body{
+    flex: 1;
+    display: flex;
+    border: 1px solid green;
+    align-items: flex-end;
+    background-color: green;
+}
+.tz-flex-body__column{
+    border: 1px solid blue;
+    flex: 0 1 250px;
+    height: 300px;
+}
+.tz-flex-body__column:first-child{
+    background-color: yellow;
+}
+.tz-flex-body__column:nth-child(2){
+    flex: 1 ;
+    background-color: red;
+}
+.tz-flex-body__column:last-child{
+    background-color: orange;
+}
+.tz-flex__name{
+    display: block;
+    height: 30px;
+    background-color: violet;
+}
+.tz-flex__footer{
+    width: 100%;
+    height: 30px;
+    background-color: grey;
+    color: white;
 }
