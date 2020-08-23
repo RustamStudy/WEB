@@ -93,7 +93,7 @@ body{
 .movie-list-about__text{
     margin-top: 3.7rem;
     display: inline-block;
-    width: 83rem;
+    /* width: 83rem; */
     text-align: center;
     font-size: 1.4rem;
     font-weight: 300;
@@ -293,8 +293,8 @@ footer p{
 }
 .title{
     background: url(../img/top_bg.jpg) no-repeat top center;
-    /* height: 100vh; */
-    height: 115vh;
+    height: 100vh;
+    /* height: 115vh; */
 
     position: relative;
     background-size: cover;
@@ -329,10 +329,11 @@ footer p{
     line-height: 10.5rem;
     margin-left: 7rem;
     font-size: 1.5rem;
+    display: flex;
 }
 
 .title__nav li{
-    display: inline-block;
+    /* display: inline-block; */
 }
 .title__nav li+li{
     margin-left: 3.4rem;
@@ -505,10 +506,10 @@ footer p{
     justify-content: space-between;
 }
 
-.movie-list__table tbody tr, 
+/* .movie-list__table tbody tr, 
 .movie-list__table thead tr{
     height: 13rem;
-}
+} */
 .tz-flex{
     height: 100vh;
     border: 1px solid red;
@@ -586,9 +587,11 @@ footer p{
     font-size: 40px;
 }
 
-.movie-poster__div:last-child{
+/* .movie-poster__div:last-child{
     display: none;
 }
 .movie-poster-section{   
     grid-template-columns: 29.6rem 29.6rem;
-}
+} */
+
+
