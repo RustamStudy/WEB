@@ -41,6 +41,7 @@ const films = [
   }
 ]
 
+/*
 const idFilmsStart1 = document.getElementById('idFilmsStart1');
 idFilmsStart1.innerHTML = films[0].start;
 const idFilmsName1 = document.getElementById('idFilmsName1');
@@ -67,4 +68,10 @@ idFilmsStart4.innerHTML = films[3].start;
 const idFilmsName4 = document.getElementById('idFilmsName4');
 idFilmsName4.innerHTML = films[3].name;
 const idjenre4 = document.getElementById('idjenre4');
-idjenre4.innerHTML = films[3].genre;
+idjenre4.innerHTML = films[3].genre;*/
+for (var i = 0; i<4; i++)
+{
+  document.getElementById('idFilmsStart'+(i+1)).innerHTML = films[i].start;
+  document.getElementById('idFilmsName'+(i+1)).innerHTML = films[i].name;
+  document.getElementById('idjenre'+(i+1)).innerHTML = films[i].genre;
+}
