@@ -1,0 +1,27 @@
+
+.owl-nav button {
+    position: absolute;
+    bottom: 5px;
+    margin-top: -15px;
+    height: 100%;
+    outline: none;
+    width: 30px;
+    border-radius: 15px;
+}
+.owl-nav button:hover{
+    background-color: rgb(230,230,230,0.5) !important;
+}
+.owl-nav button.owl-prev {
+    left: -30px;
+}
+.owl-nav button.owl-next {
+    right: 15px;
+}
+.owl-nav button span {
+    font-size: 30px;
+    color: gray;
+}
+.owl-nav button span:hover {
+    font-size: 40px;
+    color: black;
+}

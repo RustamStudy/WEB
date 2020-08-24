@@ -8,7 +8,9 @@
         <link rel="stylesheet" href="css/reset.css?v=08.08.2020">
         <link rel="stylesheet" href="css/main.css?v=08.08.2020">
         <link rel="stylesheet" href="css/media.css?v=08.08.2020">
-        
+        <link rel="stylesheet" href="js/plagins/owlcarusel/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="js/plagins/owlcarusel/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="js/plagins/owlcarusel/css/style.css">
     </head>
     
     <body>
@@ -107,46 +109,62 @@
                                     <span>Time</span>
                                     <img src="img/triangle.svg" alt="">
                                 </th>
-                                <th colspan = 2>
+                                <th>
                                     <span>Stuff that will happen</span>
                                     <img src="img/triangle.svg" alt="">
+                                </th>
+                                <th colspan = 2>
+                                    <span>jenre</span>
                                 </th>
                                 
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>10am - 12pm</td>
+                                <td id = 'idFilmsStart1'></td>
                                 <td>
-                                    <a target = "_blank" href="https://www.kinopoisk.ru/film/706655/?from_block=main_recommend">How to Train Your Dragon: The Hidden World</a>
+                                    <a id = 'idFilmsName1' target = "_blank" href="https://www.kinopoisk.ru/film/706655/?from_block=main_recommend">
+                                        
+                                    </a>
                                 </td>
+                                <td id = 'idjenre1'></td>
                                 <td>
                                     <img src="img/plus.png" alt="plus"/>
-                                </td>                
+                                </td>  
+                                
                             </tr>
                             <tr>
-                                <td>12pm - 02pm</td>
+                                <td id = 'idFilmsStart2'></td>
                                 <td>
-                                    <a target = "_blank" href="https://www.kinopoisk.ru/film/1122114/?from_block=main_recommend">A Dog's Journey</a>
+                                    <a id = 'idFilmsName2' target = "_blank" href="https://www.kinopoisk.ru/film/1122114/?from_block=main_recommend">
+                                       
+                                    </a>
                                 </td>
-                                <td>
-                                    <img src="img/plus.png" alt="plus"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>02pm - 03pm</td>
-                                <td>
-                                    <a target = "_blank" href="https://www.kinopoisk.ru/film/535341/?from_block=main_recommend">Intouchables</a>
-                                </td>
+                                <td id = 'idjenre2'></td>
                                 <td>
                                     <img src="img/plus.png" alt="plus"/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>03pm - 05pm</td>
+                                <td id = 'idFilmsStart3'></td>
                                 <td>
-                                    <a target = "_blank" href="https://www.kinopoisk.ru/film/1048334/?from_block=main_recommend">Joker</a>
+                                    <a id = 'idFilmsName3' target = "_blank" href="https://www.kinopoisk.ru/film/535341/?from_block=main_recommend">
+                                        
+                                    </a>
                                 </td>
+                                <td id = 'idjenre3'></td>
+                                <td>
+                                    <img src="img/plus.png" alt="plus"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id = 'idFilmsStart4'></td>
+                                <td>
+                                    <a id = 'idFilmsName4' target = "_blank" href="https://www.kinopoisk.ru/film/1048334/?from_block=main_recommend">
+                                        
+                                    </a>
+                                </td>
+                                <td id = 'idjenre4'></td>
                                 <td>
                                     <img src="img/plus.png" alt="plus"/>
                                 </td>
@@ -187,7 +205,7 @@
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius ipsum, laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae, suscipit!
                     </p>
                 </div>
-                <section class="movie-poster-section">   
+                <section class="movie-poster-section owl-carousel">   
                     <!-- <table  class = "movie-poster__table">
                         <tr>
                             <td> -->
@@ -540,4 +558,7 @@
         </div>
         
     </body>
+    <script src="JS/jq.js"></script>
+    <script src="JS/plagins/owlcarusel/js/owl.carousel.min.js"></script>
+    <script src="JS/custom.js"></script>
 </html>
