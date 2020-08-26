@@ -75,3 +75,28 @@ for (var i = 0; i<4; i++)
   document.getElementById('idFilmsName'+(i+1)).innerHTML = films[i].name;
   document.getElementById('idjenre'+(i+1)).innerHTML = films[i].genre;
 }
+
+
+const form = document.getElementById('form')
+//1var
+// form.onsubmit = function(event){
+//     event.preventDefault()
+//     const name = document.getElementById('nameInput');
+//     const pasw = document.getElementById('namePasw');
+//     const mail = document.getElementById('nameMail');
+//     const check = document.getElementById('nameCheck');
+//     const select = document.getElementById('nameSelect');
+//     const radio = document.getElementById('r1');
+//     const area = document.getElementById('nameArea');
+    
+// }
+
+//2var
+// function formSubmit(){
+//   console.log('dfasf')
+// }
+const form = $('#form');
+form.on('onsubmit',function(event){
+  event.preventDefault();
+  console.log('work')
+})
