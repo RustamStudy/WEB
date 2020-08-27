@@ -95,8 +95,9 @@ const form = document.getElementById('form')
 // function formSubmit(){
 //   console.log('dfasf')
 // }
-const form = $('#form');
-form.on('onsubmit',function(event){
-  event.preventDefault();
-  console.log('work')
-})
+//3var
+// const form = $('#form');
+// form.on('onsubmit',function(event){
+//   event.preventDefault();
+//   console.log('work')
+// })
