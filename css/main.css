@@ -3,6 +3,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;   
+    list-style-type: none;
 }
 html{
     font-size: 0.732vw;
@@ -56,7 +57,7 @@ body{
     color: rgb(255,255,255);
     font-size: 3rem;
     height: 7.5rem;
-    padding-left: 7rem;
+    /* padding-left: 7rem; */
     position: relative;
 }
 .movie-list__table th:nth-child(2){
@@ -136,6 +137,7 @@ body{
     font-size: 1.8rem;
     border: 2px solid rgb(144, 210, 61); 
     transition: 0.2s;
+    cursor: pointer;
 }
 .present__button:hover{
     background-color:transparent;
@@ -277,16 +279,18 @@ footer{
 }
 footer section{
     text-align: center;
+    padding-top: 5.8rem;
 }
-footer section img{
-    margin-top: 5.8rem;
+footer section a{
+    
     margin-left: 1.3rem;
     box-shadow: rem 1px 1px rem rgba(0, 0, 0, 0.25);
     width: 4.5rem;
     height: 4.5rem;
     border-radius: 50%;
+    cursor: pointer;
 }
-footer section img:first-child{
+footer section a:first-child{
     margin-left: 0;
 }
 footer p{
@@ -337,9 +341,6 @@ footer p{
     display: flex;
 }
 
-.title__nav li{
-    /* display: inline-block; */
-}
 .title__nav li+li{
     margin-left: 3.4rem;
 }
@@ -361,15 +362,15 @@ footer p{
 .title:after{
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     border-left: 100vw transparent solid;
-    border-bottom: 12rem rgb(255,255,255) solid;
+    border-bottom: 12.1rem rgb(255,255,255) solid;
 }
 .present:before{
     content: "";
     position: absolute;
-    top: 0;
+    top: -1px;
     right: 0;
     border-right: 100vw transparent solid;
     border-top: 12rem rgb(255,255,255) solid;
@@ -377,7 +378,7 @@ footer p{
 .present:after{
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     border-left: 100vw transparent solid;
     border-bottom: 12rem rgb(255,255,255) solid;

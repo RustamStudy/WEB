@@ -1,6 +1,10 @@
 var keys = document.querySelectorAll('#calculator span');
+
 var operators = ['+', '-', 'x', '÷'];
 var decimalAdded = false;
+var ind1 = true;
+var ind2 = 0;
+var ind3 = false;
 
 for (var i = 0; i < keys.length; i++) {
     keys[i].onclick = function (e) {
@@ -20,9 +24,11 @@ for (var i = 0; i < keys.length; i++) {
                 total = total.toFixed(2);
                 input.innerHTML = total;
             }
+            ind3 = true;
             decimalAdded = false;
         }
         else if (operators.indexOf(btnVal) > -1) {
+            ind3 = false;
             var lastChar = inputVal[inputVal.length - 1];
             if (inputVal != '' && operators.indexOf(lastChar) == -1)
                 input.innerHTML += btnVal;
@@ -31,21 +37,47 @@ for (var i = 0; i < keys.length; i++) {
             if (operators.indexOf(lastChar) > -1 && inputVal.length > 1) {
                 input.innerHTML = inputVal.replace(/.$/, btnVal);
             }
+            ind2 = inputVal.length+1;
+            ind1 = false;
             decimalAdded = false;
-        }
+
+        }      
         else if (btnVal == '.') {
             if (!decimalAdded) {
+                if(!ind1)
+                {
+                    input.innerHTML +=0;     
+                    ind1 = true               
+                }
                 input.innerHTML += btnVal;
                 decimalAdded = true;
             }
+            ind1 = true;
         }
         else if (btnVal == 'C') {
-            if (!decimalAdded) {
-                input.innerHTML = 0;
-            }
+                input.innerHTML = '0';
+                ind2=0;
+                decimalAdded = false;
         }
         else {
-            input.innerHTML += btnVal;
+                ind1 = true
+                if(inputVal.length == ind2+1 && inputVal[ind2] == '0' && inputVal[ind2+1] != '.')
+                {
+                    
+                    input.innerHTML = input.innerText.slice(0,-1);
+                }
+                if(ind3)
+                {
+                    input.innerHTML = btnVal;
+                    ind2=0;
+                    ind3=false
+                    inputVal = '';
+                }
+                else
+                    input.innerHTML += btnVal;
+                console.log(inputVal.length)
+                console.log(ind2+1)
+                
         }
         e.preventDefault();
     }

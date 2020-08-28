@@ -69,6 +69,7 @@ const idFilmsName4 = document.getElementById('idFilmsName4');
 idFilmsName4.innerHTML = films[3].name;
 const idjenre4 = document.getElementById('idjenre4');
 idjenre4.innerHTML = films[3].genre;*/
+if(document.getElementsByClassName('movie-list__table')[0])
 for (var i = 0; i<4; i++)
 {
   document.getElementById('idFilmsStart'+(i+1)).innerHTML = films[i].start;
