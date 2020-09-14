@@ -46,6 +46,7 @@
         flex-flow: column;
         line-height: 4rem;
         z-index: 3;
+        display: none;
     }
     .title__nav li,
     .title__nav li+li{
@@ -70,7 +71,7 @@
         grid-template-columns: 40vw 40vw;
     } 
     .movie-poster__div {
-        width: 40vw;
+        /* width: 40vw; */
         height: 40vw;
     }
     .movie-poster__div-link-img {
@@ -83,7 +84,9 @@
     .movie-list__table{
         width: 768px;
     }
-    
+    .movie-poster__div {
+        width: calc(100% - 40px);
+    }
 }
 @media screen and (max-width: 692px){
     .title__main_header{
@@ -137,7 +140,7 @@
         grid-template-columns: 80vw;
     } 
     .movie-poster__div {
-        width: 80vw;
+        /* width: 80vw; */
         height: 80vw;
     }
     .movie-poster__div-link-img {
@@ -171,6 +174,10 @@
     .ordered-section {
         margin: 2rem -1.5rem 0 -1.5rem;
     }
+
+
+
+
 }
 
 @media screen and (max-width: 425px){

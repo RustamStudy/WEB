@@ -82,3 +82,30 @@ for (var i = 0; i < keys.length; i++) {
         e.preventDefault();
     }
 }
+
+
+
+
+
+// let result = 1;
+// const ts_3 = document.getElementById('ts_3')
+// const ts_3_array = [2,3,4,5];
+// for (let i = 0;i<ts_3_array.length;i++){
+//     result *= ts_3_array[i] ;
+// }
+// ts_3.innerHTML = result;
+
+// /////////////////////////////////////////////
+// const locations = {
+//     "Россия":"Москва",
+//     "США":"Вашингтон",
+//     "Казахстан":"НурСултан",
+//     "Чехия":"Прага"
+// }
+// const ts_4 = document.getElementById('ts_4')
+//  for(let key in locations){
+//    console.log(key);
+//    console.log(locations[key]);
+//  }
+//  ///////////////////////////////////////////
+ 
