@@ -629,7 +629,7 @@ footer p{
     box-shadow: 1px 0px 5px rgb(125,125,125);
     box-sizing: border-box;
     height: 360px;
-    width: 320px;
+    width: 400px;
     padding: 20px;
     margin: 150px auto;
     position: relative;
@@ -656,7 +656,8 @@ footer p{
 .error{
     position: relative;
 }
-.error input{
+.error input,
+.error select{
     background-color: #fce4e4;
     border: 1px solid #cc0033;
     outline: none;
