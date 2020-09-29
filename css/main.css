@@ -253,7 +253,7 @@ body{
 }
 .movie-poster__div-link{
     display: block;
-    width: 29.6rem;
+    /* width: 29.6rem; */
     min-height: 29.6rem;   
     background-size: 100%;
 }
@@ -610,4 +610,64 @@ footer p{
     right: 4px;
     top: 50%;
     margin-top: -10px;
+}
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+.hidden{
+    display: none;
+}
+.order-form{
+    background: rgb(255,255,255);
+    border-radius: 14px;
+    box-shadow: 1px 0px 5px rgb(125,125,125);
+    box-sizing: border-box;
+    height: 360px;
+    width: 400px;
+    padding: 20px;
+    margin: 150px auto;
+    position: relative;
+}
+.close{
+    color: red;
+    display: block;
+    position: absolute;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: url(../img/close.svg) no-repeat center center / cover;
+}
+.popup-eror-message{
+    color: #cc0033;
+    font-style: 0.9vh;
+    /* line-height: 28px; */
+    
+}
+.popup-eror-message{
+    display: none;
+}
+.error{
+    position: relative;
+}
+.error input,
+.error select{
+    background-color: #fce4e4;
+    border: 1px solid #cc0033;
+    outline: none;
+}
+
+.error .popup-eror-message{
+    display: block;
+    position: absolute;
+    top: 18px;
+}
+form div{
+    padding-top: 10px;
 }
