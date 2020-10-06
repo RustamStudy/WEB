@@ -162,7 +162,7 @@ const filmsArr = [
     464963,
     1048334,
     535341,
-     775276,
+    775276,
     706655,
     1122114,
     1005878,
@@ -191,7 +191,7 @@ const parseFilm = function (data) {
     data = data.data;
     let countries = '';
     let genres = '';
-    console.log(data)
+    //console.log(data)
     data.genres.forEach(function(item){
         genres += `${item.genre} `
     })
@@ -216,7 +216,7 @@ const generateFilmItem = function (name, country,genre, year, description, img, 
     return `
             <div class="movie-poster__div movie-poster__div11">
                 <a class="movie-poster__div-link" target = "_blank" href="${link}">
-                    <img class="movie-poster__div-link-img" title="Игра пристолов" src="${img}" alt="img11"/>  
+                    <img class="movie-poster__div-link-img" title="${name}" src="${img}" alt="img11"/>  
                 </a>
                 <div class = "movie-poster-div-obout">
                     <a target = "_blank" href="${link}" class = "movie-poster-div-obout__header">${name}</a>
@@ -247,11 +247,11 @@ function getRandomNumber(min,max) {
   max = Math.floor(max);
     return Math.floor(Math.random()*(max - min + 1)) + min;
 }
-
+let idTr = 0;
 const generateFilmTable = function (name, country,genre, year, description, img, link){
   //const time = getRandomNumber(0, 2) + '' 
 
-  let time1, time2, time3, time4
+  let time1, time2, time3, time4, price
   time1 = getRandomNumber (0,2)
   time3 = getRandomNumber (0,5)
   time4 = getRandomNumber (0,9)
@@ -262,21 +262,24 @@ const generateFilmTable = function (name, country,genre, year, description, img,
     default:
       time2 = getRandomNumber (0,3)
     }
+  price = getRandomNumber (1,5)*100
+  room = getRandomNumber (0,2)
 
   const hours = `${time1}${time2}:${time3}${time4}`;
 
   return `
-          <tr>
-            <td>${hours}</td>
-            <td>
+          <tr id = ${room}>
+            <td id = 'orderFilmStart_${idTr}'>${hours}</td>
+            <td id = 'orderFilmName_${idTr}'>
                 <a target = "_blank" href="${link}">${name}</a>
             </td>
-            <td>${genre}</td>
-            <td>
-                <img src="img/plus.png" alt="plus"/>
-            </td>  
+            <td id = 'orderFilmGanar_${idTr}'>${genre}</td>
+            <td id = 'orderFilmPrice_${idTr}'>${price}</td>
+            <td id = 'orderFilmRoom_${idTr}'>${room}</td>
+           
           </tr>
         `
+    
 }
 let element, table, prepareFilm;
 let filmsGenerate = new  Promise (function(resolve,reject){filmsArr.forEach(function(item){
@@ -297,7 +300,8 @@ let filmsGenerate = new  Promise (function(resolve,reject){filmsArr.forEach(func
           prepareFilm.year,
           prepareFilm.description,
           prepareFilm.link,
-          prepareFilm.img
+          prepareFilm.img,
+          idTr++
             )
              document.querySelector('#filmsSection').insertAdjacentHTML('beforeEnd', element);
              document.querySelector('.movie-list__table tbody').insertAdjacentHTML('beforeEnd', table);
@@ -318,9 +322,9 @@ let checkerFilm = setTimeout(function tick(){
     $(".owl-carousel").owlCarousel({
       nav:true,
       loop:true,
-      // autoplay:true, 
-        // smartSpeed:1000, 
-        // autoplayTimeout:5000, 
+      autoplay:true, 
+        smartSpeed:1000, 
+        autoplayTimeout:5000, 
         responsive:{ 
             0:{
                 items:1
@@ -333,10 +337,78 @@ let checkerFilm = setTimeout(function tick(){
             }
         }
     }),
-    console.log(123)
+    filmClick()
   }
   else
   {
     checkerFilm = setTimeout(tick,500);
   }
 }, 500)
+
+function filmClick(){
+  for(i=0;i<document.querySelectorAll("#filmsHire tbody tr").length;i++) {
+    document.querySelectorAll("#filmsHire tbody tr")[i].onclick = function(){
+      orderForm.style.display = 'block';
+      let orderFilmName = document.getElementById('orderFilmName'),
+          orderFilmStart = document.getElementById('orderFilmStart'),
+          orderFilmGanar = document.getElementById('orderFilmGanar'),
+          orderFilmPrice = document.getElementById('orderFilmPrice'),
+          orderFilmRoom = document.getElementById('ordeZal'),
+          orderFilmGetRoom= getRoom(this.getAttribute('id')),
+          orderFilmCountTicket = document.getElementById('orderFilmCountTicket'),
+          orderFilmTotalPrice = document.getElementById('orderFilmTotalPrice');
+ 
+      orderFilmName.innerHTML = document.getElementById('orderFilmName_'+i).innerText;
+      orderFilmStart.innerHTML = document.getElementById('orderFilmStart_'+i).innerText;
+      orderFilmGanar.innerHTML = document.getElementById('orderFilmGanar_'+i).innerText;
+      orderFilmPrice.innerHTML = document.getElementById('orderFilmPrice_'+i).innerText;
+      orderFilmRoom.innerHTML = orderFilmGetRoom.name;
+  
+      orderFilmTotalPrice.innerHTML = document.getElementById('orderFilmPrice_'+i).innerText * orderFilmCountTicket.innerText;
+  
+      orderFilmCountTicket.onchange = function () {
+        orderFilmTotalPrice.innerHTML = orderFilmPrice.innerText * orderFilmCountTicket.innerText;
+      }
+
+      function changeCount() {
+        orderFilmTotalPrice.innerHTML = orderFilmPrice.innerText * orderFilmCountTicket.innerText;
+      }
+
+      document.getElementsByClassName('cinema-tickets')[0].innerHTML = '';
+      for (let i = 0; i < orderFilmGetRoom.count; ++ i) 
+      {
+        boughtPlace = '';
+        if(getRandomNumber(0,1) == 1)
+        {
+          boughtPlace = 'bought';
+        }
+        document.getElementsByClassName('cinema-tickets')[0].innerHTML += `<div class="squaere ${boughtPlace}">${i+1}</div>`
+        
+      }
+      console.log(document.getElementsByClassName('squaere').length)
+      orderFilmCountTicket.innerHTML = 0;
+
+      for(i = 0; i < document.getElementsByClassName('squaere').length; i++)
+      {
+        if(!document.getElementsByClassName('squaere')[i].classList.contains('bought'))
+          document.getElementsByClassName('squaere')[i].onclick = function()
+          { 
+            this.classList.toggle('placeActive');
+            if(this.classList.contains('placeActive'))
+              orderFilmCountTicket.innerHTML = +document.getElementById('orderFilmCountTicket').innerText + 1;
+            else
+              orderFilmCountTicket.innerHTML = +document.getElementById('orderFilmCountTicket').innerText - 1;
+              changeCount()
+          }
+        else
+        document.getElementsByClassName('squaere')[i].onclick = function(){alert('Место забронировано')}
+      }
+    }
+  }
+
+}
+
+
+function getRoom(num){
+  return rooms.filter(room=>room.id == num)[0]
+}

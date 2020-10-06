@@ -628,10 +628,10 @@ footer p{
     border-radius: 14px;
     box-shadow: 1px 0px 5px rgb(125,125,125);
     box-sizing: border-box;
-    height: 360px;
-    width: 400px;
+    height: 550px;
+    width: 440px;
     padding: 20px;
-    margin: 150px auto;
+    margin: 100px auto;
     position: relative;
 }
 .close{
@@ -670,4 +670,27 @@ footer p{
 }
 form div{
     padding-top: 10px;
+}
+.squaere {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin: 5px;
+    background-color: #a3cc40;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 9px;
+}
+.cinema-tickets{
+    text-align: center;
+}
+.bought{
+    background-color: #ffa500;
+}
+.placeActive{
+    background-color: #4b4d4f;
+}
+.filmTicetInfo p{
+    font-size: 10px;
+    padding: 5px;
 }
