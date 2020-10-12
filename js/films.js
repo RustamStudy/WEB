@@ -263,19 +263,23 @@ let closeOrderForm = document.getElementById('closeOrderFrom');
 closeOrderForm.onclick = function () {
   orderForm.style.display = 'none';
 }
+let closeOrderFromSuccess = document.getElementById('closeOrderFromSuccess');
 
-// Валидация ввода имени
-/** РАЗОБРАТЬ Event Handler */
-let sendOrder = document.getElementById('sendOrder');
-sendOrder.onclick = function () {
-  let orderClinetName = document.getElementById('orderClinetName');
-
-  if (orderClinetName.value) {
-    orderClinetName.style.border = '1px solid #bebebe';
-  } else {
-    orderClinetName.style.border = '2px solid red';
-  }
+closeOrderFromSuccess.onclick = function () {
+    document.getElementById('popup-success').style.display = 'none';
 }
+// // Валидация ввода имени
+// /** РАЗОБРАТЬ Event Handler */
+// let sendOrder = document.getElementById('sendOrder');
+// sendOrder.onclick = function () {
+//   let orderClinetName = document.getElementById('orderClinetName');
+
+//   if (orderClinetName.value) {
+//     orderClinetName.style.border = '1px solid #bebebe';
+//   } else {
+//     orderClinetName.style.border = '2px solid red';
+//   }
+// }
 let ticket = [];
 
 const rooms = [
@@ -296,3 +300,88 @@ const rooms = [
     }
 ];
 
+/*
+sendOrder.onclick = function(){
+
+}
+*/
+function checkCorrectPhoneNumber (number) {
+    //  const reg = new RegExp('^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$');
+    //  return reg.test(number)
+    return true;
+}
+orderForm.addEventListener('submit', event => {
+    const setError = ($el, error)=> {
+        $el.parentNode.classList.add('error');
+        $el.parentNode.getElementsByClassName('popup-eror-message')[0].innerHTML = error
+    }
+
+    event.preventDefault();
+    
+    const  fields = orderForm.getElementsByTagName('input');
+
+    let error = false;
+
+    const data ={
+        name: '',
+        phone: '',
+        places: []
+    }
+    for (i=0; i<fields.length-1; i++){
+        switch(fields[i].getAttribute('name')){
+            case 'nameOrder':
+                if(!checkInput(fields[i].value)){    
+                    setError(fields[i], 'Заполните поле Имя');
+                    error = true;
+                    break;
+                }
+                data.name = fields[i].value;
+                break;
+            case 'telOrder':
+                if(!checkInput(fields[i].value)){    
+                    setError(fields[i], 'Заполните поле телефон');
+                    error = true;
+                    break
+                } else {
+                    if(!checkCorrectPhoneNumber(fields[i].value)){    
+                        setError(fields[i], 'Введите коррекный номер телефона');
+                        error = true;
+                        break
+                    }
+                    data.phone = fields[i].value;
+                    break;
+                }
+                break;    
+                break;
+            dafault:
+                console.log('Поле не опознано')
+        }
+
+    }
+    if(orderForm.getElementsByClassName('placeActive').length < 1){
+        orderForm.getElementsByClassName('tickets-error')[0].getElementsByTagName('p')[0].innerHTML = 'Выберите место'
+    }else{
+        let places = [];
+        for (let i = 0; i< orderForm.getElementsByClassName('placeActive').length; i++)
+        {
+            places.push(orderForm.getElementsByClassName('placeActive')[i].getAttribute('data-place'))
+        }
+        data.places = places;
+    }
+
+    if(error){
+        return;
+    }
+    console.log(data)
+    sendOrder.setAttribute('disabled','true')
+    document.getElementById('fountainG').style.display = 'block';
+    setTimeout(()=>{
+
+        sendOrder.removeAttribute('disabled')
+        document.getElementById('fountainG').style.display = 'none';
+        orderForm.style.display = 'none';
+        document.getElementById('popup-success').classList.remove('hidden');
+    }, 3000);
+    
+
+})

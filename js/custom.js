@@ -122,14 +122,22 @@ sendForm.onclick = function(event){
   let name = document.getElementById('nameInput');
   let select = document.getElementById('nameSelect');
   let agree = document.getElementById('persAccess');
+  let telOrder = document.getElementById('telOrder');
+
+
   let nameParent = name.parentNode;
   let selectParent = select.parentNode;
   let agreeParent = agree.parentNode;
 
   nameParent.classList.remove('error');
+  telOrder.classList.remove('error');
+
+
   selectParent.classList.remove('error');
   agreeParent.classList.remove('error');
   nameParent.getElementsByClassName('popup-eror-message')[0].innerHTML = '';
+  telOrder.getElementsByClassName('popup-eror-message')[0].innerHTML = '';
+
   selectParent.getElementsByClassName('popup-eror-message')[0].innerHTML  = '';
   agreeParent.getElementsByClassName('popup-eror-message')[0].innerHTML  = '';
 
@@ -138,6 +146,12 @@ sendForm.onclick = function(event){
     nameParent.classList.add('error');
     nameParent.getElementsByClassName('popup-eror-message')[0].innerHTML = "заполните поле 'Имя'"
   }
+
+  if(!checkInput(telOrder.value)){    
+    nameParent.classList.add('error');
+    nameParent.getElementsByClassName('popup-eror-message')[0].innerHTML = "заполните поле 'Телефон'"
+  }
+
   if(select.value == 0){    
     selectParent.classList.add('error');
     selectParent.getElementsByClassName('popup-eror-message')[0].innerHTML = "заполните поле выберите ряд"
@@ -382,7 +396,7 @@ function filmClick(){
         {
           boughtPlace = 'bought';
         }
-        document.getElementsByClassName('cinema-tickets')[0].innerHTML += `<div class="squaere ${boughtPlace}">${i+1}</div>`
+        document.getElementsByClassName('cinema-tickets')[0].innerHTML += `<div data-place = '${i+1}' class="squaere ${boughtPlace}">${i+1}</div>`
         
       }
       console.log(document.getElementsByClassName('squaere').length)
@@ -391,24 +405,37 @@ function filmClick(){
       for(i = 0; i < document.getElementsByClassName('squaere').length; i++)
       {
         if(!document.getElementsByClassName('squaere')[i].classList.contains('bought'))
+        {
           document.getElementsByClassName('squaere')[i].onclick = function()
           { 
+            orderForm.getElementsByClassName('tickets-error')[0].getElementsByTagName('p')[0].innerHTML = '';
             this.classList.toggle('placeActive');
             if(this.classList.contains('placeActive'))
               orderFilmCountTicket.innerHTML = +document.getElementById('orderFilmCountTicket').innerText + 1;
             else
               orderFilmCountTicket.innerHTML = +document.getElementById('orderFilmCountTicket').innerText - 1;
-              changeCount()
+              changeCount();
           }
+          document.getElementsByClassName('squaere')[i].oncontextmenu = function(){
+            alert(`Стоимость билета составляет ${document.getElementById('orderFilmPrice').innerText} рублей`);
+          }
+        }
         else
         document.getElementsByClassName('squaere')[i].onclick = function(){alert('Место забронировано')}
       }
     }
   }
-
 }
+
 
 
 function getRoom(num){
   return rooms.filter(room=>room.id == num)[0]
+}
+
+document.getElementsByClassName('menu__burger')[0].onclick = function(){
+  if(document.getElementsByClassName('title__nav')[0].style.display == 'block')
+    document.getElementsByClassName('title__nav')[0].style.display = 'none';
+  else
+    document.getElementsByClassName('title__nav')[0].style.display = 'block';
 }

@@ -628,7 +628,7 @@ footer p{
     border-radius: 14px;
     box-shadow: 1px 0px 5px rgb(125,125,125);
     box-sizing: border-box;
-    height: 550px;
+    /* height: 700px; */
     width: 440px;
     padding: 20px;
     margin: 100px auto;
@@ -685,12 +685,21 @@ form div{
     text-align: center;
 }
 .bought{
-    background-color: #ffa500;
+    background-color: #4b4d4f;
 }
 .placeActive{
-    background-color: #4b4d4f;
+    background-color: #ffa500;
 }
 .filmTicetInfo p{
     font-size: 10px;
     padding: 5px;
+}
+.tickets-error {
+    text-align: center;
+    padding: 0;
+}
+.tickets-error p.popup-eror-message {
+    position: relative;
+    padding: 20px;
+    margin: 0;
 }
