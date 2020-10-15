@@ -17,8 +17,9 @@
         <!-- <link rel="stylesheet" href="js/plagins/jquery.fancybox-1.3.4/style.css">
         <link rel="stylesheet" href="js/plagins/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css"> -->
     </head>
-    
+
     <body>
+      
         <div class="title">
             <div class="container">
                 <header>
@@ -586,6 +587,11 @@
             </form>
         </div>
     </div>
+
+
+    <?php
+        include __DIR__ . '/php/tz25.php';
+    ?>
 
     </body>
     
