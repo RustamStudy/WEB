@@ -531,7 +531,7 @@
     <div id = "orderForm" class="popup hidden">
         <div class="order-form">
             <div id = "closeOrderFrom" class="close"></div>
-            <form  >
+            <form  action = "php/server.php">
                
                 <div class = 'filmTicetInfo'>
                     <p>Название фильма: <span id="orderFilmName"></span></p>
@@ -587,6 +587,36 @@
             </form>
         </div>
     </div>
+
+<!--  -->
+    <form action="php/server.php">
+        <h1>Метод GET</h1>
+        <div>
+            <input type="text" name = nameOrder value = "<?php echo $_GET['nameOrder'] ?? '';?>">
+        </div>
+        <div>
+            <input type="text" name = nameOrder value = "<?php echo $_GET['telOrder'] ?? '';?>">
+        </div>
+        <div>
+            <button type="submit">Отправить</button>
+        </div>
+    </form>
+
+    <form action="php/serverPost.php" method = "POST">
+        <h1>Метод POST</h1>
+        <div>
+            <input type="text" name = nameOrder value = "<?php echo $_POST['nameOrder'] ?? '';?>">
+        </div>
+        <div>
+            <input type="text" name = nameOrder value = "<?php echo $_POST['telOrder'] ?? '';?>">
+        </div>
+        <div>
+            <button type="submit">Отправить</button>
+        </div>
+    </form>
+
+<!--  -->
+
 
 
     <?php
