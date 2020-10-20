@@ -375,13 +375,26 @@ orderForm.addEventListener('submit', event => {
     console.log(data)
     sendOrder.setAttribute('disabled','true')
     document.getElementById('fountainG').style.display = 'block';
-    setTimeout(()=>{
-
-        sendOrder.removeAttribute('disabled')
-        document.getElementById('fountainG').style.display = 'none';
-        orderForm.style.display = 'none';
-        document.getElementById('popup-success').classList.remove('hidden');
-    }, 3000);
     
+    let xhr = new XMLHttpRequest();
+    let body = 'nameOrder=' + nameOrder.value +
+                '&telOrder=' + telOrder.value;
+    xhr.open("POST", '/php/serverPost.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    console.log(xhr);
+    
+    xhr.onreadystatechange = function() {
+        
+        if(xhr.readyState == 4) {
+            console.log(xhr);
+            let user = JSON.parse(xhr.response);
+            nameBuyerOrder.innerHTML = `Поздравляем, ${user['name']}!!!`
+            sendOrder.removeAttribute('disabled')
+            document.getElementById('fountainG').style.display = 'none';
+            orderForm.style.display = 'none';
+            document.getElementById('popup-success').classList.remove('hidden');
+        }
+    };
 
+    xhr.send(body);
 })

@@ -581,8 +581,8 @@
             <div id = "closeOrderFromSuccess" class="close"></div>
             <form>
                <div>
-                   <h3>Поздравляем!!!</h3>
-                   <p>Поздравляем с покупкой билета (билетов) в кино</p>
+                   <h3 id = 'nameBuyerOrder'>Поздравляем!!!</h3>
+                   <p>Вы успешно приобрели билет (билеты) в кино</p>
                </div>
             </form>
         </div>

@@ -5,7 +5,7 @@
         public static function checkData($arr) {
             $_SESSION['user'] = NULL;
             if (isset($arr['nameOrder']) && isset($arr['telOrder'])) {
-                return self::saveData($arr['nameOrder'], $arr['telOrder']));
+                return self::saveData($arr['nameOrder'], $arr['telOrder']);
             }
             else {
                 return self::returnError();
@@ -13,9 +13,10 @@
         }
         public static function saveData($name, $telOrder) {
             $user = new userData();
-            $user->$name = $name;
-            $user->$telOrder = $telOrder;
+            $user->name = $name;
+            $user->telOrder = $telOrder;
             $_SESSION['user'] = $user;
+            echo json_encode($user);
             return $user;
         }
         
