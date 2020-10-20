@@ -608,7 +608,7 @@
             <input type="text" name = nameOrder value = "<?php echo $_POST['nameOrder'] ?? '';?>">
         </div>
         <div>
-            <input type="text" name = nameOrder value = "<?php echo $_POST['telOrder'] ?? '';?>">
+            <input type="number" name = nameOrder value = "<?php echo $_POST['telOrder'] ?? '';?>">
         </div>
         <div>
             <button type="submit">Отправить</button>

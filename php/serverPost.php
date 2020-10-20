@@ -1,5 +1,4 @@
 <?php
-    $name = $_POST['nameOrder'] ?? '';
-    $phone = $_POST['telOrder'] ?? '';
-
-    header('location: /php/thanks.php?name='.$name);
+    include_once "userData.php";
+    \userData::checkData($_POST);
+?>
