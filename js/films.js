@@ -379,20 +379,35 @@ orderForm.addEventListener('submit', event => {
     let xhr = new XMLHttpRequest();
     let body = 'nameOrder=' + nameOrder.value +
                 '&telOrder=' + telOrder.value;
+
     xhr.open("POST", '/php/serverPost.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     console.log(xhr);
     
     xhr.onreadystatechange = function() {
-        
-        if(xhr.readyState == 4) {
-            console.log(xhr);
-            let user = JSON.parse(xhr.response);
-            nameBuyerOrder.innerHTML = `Поздравляем, ${user['name']}!!!`
-            sendOrder.removeAttribute('disabled')
-            document.getElementById('fountainG').style.display = 'none';
-            orderForm.style.display = 'none';
-            document.getElementById('popup-success').classList.remove('hidden');
+        if(xhr.readyState == 4)
+        switch(xhr.status)
+        {
+            case ('200'): case(200):
+                {
+                    console.log(xhr);
+                    let user = JSON.parse(xhr.response);
+                    if(user.status != 'OK'){
+                        alert('Указаны не все поля');
+                    }
+                    else
+                    {
+                        nameBuyerOrder.innerHTML = `Поздравляем, ${user.user['name']}!!!`;
+                        sendOrder.removeAttribute('disabled')
+                        document.getElementById('fountainG').style.display = 'none';
+                        orderForm.style.display = 'none';
+                        document.getElementById('popup-success').classList.remove('hidden');
+                    }
+                }
+                break;
+            case ('500'): case(500):
+                alert('Произошла ошибка при обработке данных')
+                break;
         }
     };
 
