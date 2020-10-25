@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;   
     list-style-type: none;
+    outline: none
 }
 html{
     font-size: 0.732vw;
@@ -332,6 +333,7 @@ footer p{
     line-height: 10.5rem;
     color: rgb(255,255,255);
     font-size: 1.5rem;
+    position: relative;
 }
 .title__nav{
     /* float: left; */
@@ -650,7 +652,8 @@ footer p{
     /* line-height: 28px; */
     
 }
-.popup-eror-message{
+.popup-eror-message,
+.city_name-hidden{
     display: none;
 }
 .error{
@@ -702,4 +705,71 @@ form div{
     position: relative;
     padding: 20px;
     margin: 0;
+}
+.title__city-change {
+    position: absolute;
+    background: rgb(255,255,255);
+    border-radius: 14px;
+    left: 0;
+    font-size: 1.4rem;
+    width: 25rem;
+    
+}
+.title__city-change_button{
+    display: flex;
+    justify-content: space-around;
+}
+.title__city-change .present__button{
+    padding: 0;
+    margin: 0;
+    height: 3rem;
+    width: 40%;
+    margin: 1rem;
+    font-size: 1.5rem;
+}
+#cityView,
+#cityViewNew {
+    color: black;
+    padding:1rem;
+    margin: 0;
+    line-height: 2rem;
+    font-size: 1.5rem;
+}
+#cityView span{
+    font-weight: 400;
+}
+#city_name{
+    cursor: pointer;
+}
+#cityNew {
+    line-height: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+#cityNew input{
+    padding: .5rem;
+    margin: 0 1rem;
+    border-radius: .5rem;
+    width: 23rem;
+}
+
+.cityListViewFind {
+    max-height: 20rem;
+    /* height: 3rem; */
+    width: 23rem;
+    background: rgba(255,255,255,0.7);
+    position: absolute;
+    margin: 0.2rem 1rem;
+    border: 1px black solid;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+.cityListViewFind p{
+    color: rgb(0,0,0);
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    cursor: pointer;
+}
+.cityListViewFind p[cityName]:hover{
+    background-color: rgba(35, 35, 35, 0.45);
 }

@@ -410,6 +410,23 @@ orderForm.addEventListener('submit', event => {
                 break;
         }
     };
-
+    
     xhr.send(body);
+
+    
+})
+jQuery(function ($){
+    $('#orderForm form').on('submit', function(e){
+        e.preventDefault();
+        let formData = $(this).serialize();
+        console.log(formData);
+        $.ajax({
+            url:'/php/serverFile.php',
+            method:'Post',
+            data:formData,
+            success:function(){
+                alert('Успешно');
+            }
+        })
+    })
 })

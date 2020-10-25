@@ -439,3 +439,31 @@ document.getElementsByClassName('menu__burger')[0].onclick = function(){
   else
     document.getElementsByClassName('title__nav')[0].style.display = 'block';
 }
+
+document.getElementById('city_name').onclick = cityChangeVis;
+document.getElementById('cityChangeAccess').onclick = function(){
+  cityChangeVis();
+  city_name.innerHTML = document.querySelector('#cityView span').innerText;
+}
+document.getElementById('cityChangeNew').onclick = cityChangeNew;
+
+
+function cityChangeVis(){
+  document.getElementsByClassName('title__city-change')[0].classList.toggle('city_name-hidden');
+  if(!document.getElementById('cityNew').classList.contains('city_name-hidden')){
+    document.getElementById('cityNew').classList.add('city_name-hidden');
+  }
+  if(document.getElementById('cityView').classList.contains('city_name-hidden')){
+    document.getElementById('cityView').classList.remove('city_name-hidden');
+  }
+  if(document.getElementById('cityChangeAccess').classList.contains('city_name-hidden')){
+    document.getElementById('cityChangeAccess').classList.remove('city_name-hidden');
+    document.getElementById('cityChangeAccept').classList.add('city_name-hidden');
+  }
+}
+function cityChangeNew(){
+  document.getElementById('cityView').classList.toggle('city_name-hidden');
+  document.getElementById('cityNew').classList.toggle('city_name-hidden');
+  document.getElementById('cityChangeAccept').classList.toggle('city_name-hidden');
+  document.getElementById('cityChangeAccess').classList.toggle('city_name-hidden');
+}

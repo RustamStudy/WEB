@@ -51,10 +51,24 @@
                         </li>
                     </ul>                 
                     <div class="title__city">
-                        <p>Ваш город: <a id="city_name" href="#data">-не определено-</a></p> 
-                        <!-- <div style="display:none"><div id="data">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div></div> -->
+                        <p>Ваш город: <span id="city_name">-не определено-</span></p> 
+                        <div class="title__city-change city_name-hidden">
+                            <h3 id = 'cityView'>Ваш город: <span>-не определено-</span></h3>
+                            <div id = "cityNew" class="city_name-hidden">
+                                <h3 id = 'cityViewNew'>Введите Ваш город:</h3>
+                                <input id = 'cityListView' type="text" placeholder="Начните вводить название Вашего города"/>
+                                <div class = "cityListViewFind"></div>
+                            </div>
+                            <div class="title__city-change_button">
+                                <button class="present__button" id="cityChangeAccess">Верно</button>
+                                <button class="present__button city_name-hidden" id="cityChangeAccept">Выбрать</button>
+                                <button class="present__button" id="cityChangeNew">Не верно</button>
+
+                            </div>
+                        </div>
                     </div>
                 </header>
+
                 <div  class="title__main">
                     <h1 class="title__main_header">Закажите билет в кино</h1>
                     <h2 class="title__main_text">Всем покупателям подарок!</h2>
@@ -531,7 +545,7 @@
     <div id = "orderForm" class="popup hidden">
         <div class="order-form">
             <div id = "closeOrderFrom" class="close"></div>
-            <form  action = "php/server.php">
+            <form>
                
                 <div class = 'filmTicetInfo'>
                     <p>Название фильма: <span id="orderFilmName"></span></p>
