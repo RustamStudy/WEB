@@ -418,7 +418,8 @@ orderForm.addEventListener('submit', event => {
 jQuery(function ($){
     $('#orderForm form').on('submit', function(e){
         e.preventDefault();
-        let formData = $(this).serialize();
+        let form = document.forms.orderTicket;
+        let formData = new FormData(form);
         console.log(formData);
         $.ajax({
             url:'/php/serverFile.php',
@@ -426,7 +427,9 @@ jQuery(function ($){
             data:formData,
             success:function(){
                 alert('Успешно');
-            }
+            },
+            processData: false,
+            contentType: false,
         })
     })
 })

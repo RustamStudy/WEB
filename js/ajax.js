@@ -42,7 +42,7 @@ jQuery(document).ready(($) => {
     getXmlReguest(GEO_API, function(){
         let response = $.parseJSON(this);
         city = response.city.name_ru;
-        console.log(city)
+        // console.log(city)
         $('#city_name').html(city);
         $('#cityView span').html(city);
     })
@@ -53,7 +53,7 @@ $("#cityListView").on('click', function(){
     if(sityList.length==0){
         getXmlReguest(CITIES_API, function(){
             sityList = $.parseJSON(this);
-            console.log(sityList);
+            // console.log(sityList);
         })
     }
 })

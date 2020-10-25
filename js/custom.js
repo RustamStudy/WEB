@@ -441,7 +441,22 @@ document.getElementsByClassName('menu__burger')[0].onclick = function(){
 }
 
 document.getElementById('city_name').onclick = cityChangeVis;
-document.getElementById('cityChangeAccess').onclick = function(){
+document.onclick = function(){
+  // console.log(33)
+  if ( event.target.className == 'title__main' || 
+        event.target.className == 'title__main_header' || 
+        event.target.className == 'title__main_text') {
+      if(!document.getElementsByClassName('title__city-change')[0].classList.contains('city_name-hidden')){
+        document.getElementsByClassName('title__city-change')[0].classList.add('city_name-hidden');
+      }
+  }
+ }
+ 
+
+
+
+
+  document.getElementById('cityChangeAccess').onclick = function(){
   cityChangeVis();
   city_name.innerHTML = document.querySelector('#cityView span').innerText;
 }

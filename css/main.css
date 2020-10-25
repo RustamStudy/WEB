@@ -773,3 +773,43 @@ form div{
 .cityListViewFind p[cityName]:hover{
     background-color: rgba(35, 35, 35, 0.45);
 }
+#filePromo{
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;    
+    position: absolute;
+}
+.btn_file_opload{
+    background-color: rgb(144, 210, 61);
+    width: 22rem;
+    height: 5.5rem;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    text-align: center;
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 1.5rem;
+    font-size: 1.8rem;
+    border: 2px solid rgb(144, 210, 61);
+    color: rgb(255,255,255);
+    right: 0;
+    margin: 10px;
+    margin-top: 3.5rem;
+    display: block;
+    line-height: 5.5rem;
+}
+.btn_file_opload:hover{
+    background-color: transparent;
+    color: rgb(144, 210, 61);
+}
+#fileList {
+    padding: 0;
+}
+#fileList p {
+    font-size: 1.3rem;
+    padding: 2px;
+    margin-left: 10px;
+    margin-top: 0;
+}

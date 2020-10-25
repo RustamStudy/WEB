@@ -535,6 +535,7 @@
                     <label for="inpFile"  hidden>Загрузите файл (при необходимости)</label>
                     <input type="file" id = "inpFile" name="inpFile" >
                 </div> -->
+                
                 <div style="margin:10px">
                     <input id = 'submit' type="submit" value="Заказать" id = 'bs'>
                 </div>
@@ -545,7 +546,7 @@
     <div id = "orderForm" class="popup hidden">
         <div class="order-form">
             <div id = "closeOrderFrom" class="close"></div>
-            <form>
+            <form id = 'orderTicket' enctype = "multipart/form-data">
                
                 <div class = 'filmTicetInfo'>
                     <p>Название фильма: <span id="orderFilmName"></span></p>
@@ -572,6 +573,10 @@
                     <input type="text" placeholder="Введите ваш телефон *" name="telOrder" id="telOrder">
                     <div class="popup-eror-message"></div>
                 </div>
+                
+                <label for="filePromo" class = "btn_file_opload" id = "fileField">Прикрепить файл</label>
+                <input type = "file" name = "filePromo" id = "filePromo">
+                <div id = 'fileList'></div>
                 <div style="margin:10px; position: relative;">
                     <input  type="submit" value="Заказать" id = 'sendOrder' class="present__button">
                     <div id="fountainG" style="display: none;">
@@ -647,6 +652,7 @@
     <script src="js/custom.js"></script>
     <script src="js/films.js"></script>
     <script src="js/ajax.js"></script>
+    <script src="js/fileUpload.js"></script>
     
 
 </html>
