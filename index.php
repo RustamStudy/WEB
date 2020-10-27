@@ -565,12 +565,17 @@
                 </div>
                 <div class = "" style="margin:10px">
                     <label for="nameInput" hidden>Укажите имя</label>
-                    <input type="text" placeholder="Введите ваше имя *" name="nameOrder" id="nameOrder">
+                    <input type="text" placeholder="Введите ваше имя *" name="name" id="nameOrder" required>
                     <div class="popup-eror-message"></div>
                 </div>
                 <div class = "" style="margin:10px">
                     <label for="telInput" hidden>Укажите номер телефона</label>
-                    <input type="text" placeholder="Введите ваш телефон *" name="telOrder" id="telOrder">
+                    <input type="tel" placeholder="Введите ваш телефон *" name="phone" id="telOrder" required>
+                    <div class="popup-eror-message"></div>
+                </div>
+                <div class = "" style="margin:10px">
+                    <label for="telInput" hidden>Укажите адрес электронной почты</label>
+                    <input type="email" placeholder="Введите адрес электронной почты *" name="mail" id="mailOrder" required>
                     <div class="popup-eror-message"></div>
                 </div>
                 

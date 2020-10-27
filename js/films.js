@@ -358,10 +358,11 @@ orderForm.addEventListener('submit', event => {
         }
 
     }
+    let places = [];
     if(orderForm.getElementsByClassName('placeActive').length < 1){
         orderForm.getElementsByClassName('tickets-error')[0].getElementsByTagName('p')[0].innerHTML = 'Выберите место'
     }else{
-        let places = [];
+        
         for (let i = 0; i< orderForm.getElementsByClassName('placeActive').length; i++)
         {
             places.push(orderForm.getElementsByClassName('placeActive')[i].getAttribute('data-place'))
@@ -375,13 +376,31 @@ orderForm.addEventListener('submit', event => {
     console.log(data)
     sendOrder.setAttribute('disabled','true')
     document.getElementById('fountainG').style.display = 'block';
-    
+    let formData = new FormData(orderTicket);
+        formData.append('places', places);
+        formData.append('fname', orderFilmName.innerText);
+        formData.append('ftime', orderFilmStart.innerText);
+        formData.append('fzal', ordeZal.innerText);
+        formData.append('method', 'post');
     let xhr = new XMLHttpRequest();
-    let body = 'nameOrder=' + nameOrder.value +
-                '&telOrder=' + telOrder.value;
+    /*let body = 'name=' + nameOrder.value +
+                '&phone=' + telOrder.value + 
+                '&places=' + places+
+                '&file=' + FileList+
+                '&file3=' + formData;*/
+    //
+    //
+    //
+    //let file = document.getElementById
+    //
+    //
+    //
+    xhr.open("POST", '/php2/index.php', true);
+    
 
-    xhr.open("POST", '/php/serverPost.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    //xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+
+    
     console.log(xhr);
     
     xhr.onreadystatechange = function() {
@@ -392,12 +411,12 @@ orderForm.addEventListener('submit', event => {
                 {
                     console.log(xhr);
                     let user = JSON.parse(xhr.response);
-                    if(user.status != 'OK'){
+                    if(xhr.statusText != 'OK'){
                         alert('Указаны не все поля');
                     }
                     else
                     {
-                        nameBuyerOrder.innerHTML = `Поздравляем, ${user.user['name']}!!!`;
+                        nameBuyerOrder.innerHTML = `Поздравляем, ${user['name']}!!!`;
                         sendOrder.removeAttribute('disabled')
                         document.getElementById('fountainG').style.display = 'none';
                         orderForm.style.display = 'none';
@@ -410,26 +429,26 @@ orderForm.addEventListener('submit', event => {
                 break;
         }
     };
-    
-    xhr.send(body);
+    xhr.send(formData);
+    //xhr.send(body);
 
     
 })
-jQuery(function ($){
-    $('#orderForm form').on('submit', function(e){
-        e.preventDefault();
-        let form = document.forms.orderTicket;
-        let formData = new FormData(form);
-        console.log(formData);
-        $.ajax({
-            url:'/php/serverFile.php',
-            method:'Post',
-            data:formData,
-            success:function(){
-                alert('Успешно');
-            },
-            processData: false,
-            contentType: false,
-        })
-    })
-})
+// jQuery(function ($){
+//     $('#orderForm form').on('submit', function(e){
+//         e.preventDefault();
+//         let form = document.forms.orderTicket;
+//         let formData = new FormData(form);
+//         console.log(formData);
+//         $.ajax({
+//             url:'/php/serverFile.php',
+//             method:'Post',
+//             data:formData,
+//             success:function(){
+//               //  alert('Успешно');
+//             },
+//             processData: false,
+//             contentType: false,
+//         })
+//     })
+// })
