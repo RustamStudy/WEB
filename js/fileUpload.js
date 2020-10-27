@@ -3,11 +3,11 @@ let lbl = document.getElementById('fileField');
 let bfo = document.getElementsByClassName('btn_file_opload')[0];
 bfo.onclick = function(){
     //inp.dispatchEvent(new Event('click'));
-    console.log(123);
+    //console.log(123);
 }
 
 inp.onchange = function(){
-    console.log(this.files)
+    //console.log(this.files)
     if(this.files.length > 0)
     {
         let file_name = this.files[0].name;

@@ -581,7 +581,7 @@
                 
                 <label for="filePromo" class = "btn_file_opload" id = "fileField">Прикрепить файл</label>
                 <input type = "file" name = "filePromo" id = "filePromo">
-                <div id = 'fileList'></div>
+                <div id = 'fileList'><p>Файл не выбран</p></div>
                 <div style="margin:10px; position: relative;">
                     <input  type="submit" value="Заказать" id = 'sendOrder' class="present__button">
                     <div id="fountainG" style="display: none;">
