@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Киношка</title>
         <link rel="stylesheet" href="fonts/Roboto/stylesheet.css">
         <link rel="stylesheet" href="css/reset.css?v=08.08.2020">
         <link rel="stylesheet" href="css/main.css?v=08.08.2020">
@@ -606,7 +606,7 @@
             <form>
                <div>
                    <h3 id = 'nameBuyerOrder'>Поздравляем!!!</h3>
-                   <p>Вы успешно приобрели билет (билеты) в кино</p>
+                   <p id = 'nameBuyerOrderBody'>Вы успешно приобрели билет (билеты) в кино</p>
                </div>
             </form>
         </div>

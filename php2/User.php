@@ -5,7 +5,6 @@ class User
 {
     public $name;
     public $phone;
-    const MAILTO = 'safiullin_85@mail.ru';
 
     /**
      * Save user to cookie and session
@@ -22,7 +21,7 @@ class User
 
         
         $this->files = [];
-        if($_FILES){
+        if($_FILES['filePromo']['error'] != 4){
             print_r($_FILES);
             foreach($_FILES as $single_file) {
                 if (is_array($single_file['name']))
@@ -107,18 +106,25 @@ class User
             $mail->addAddress($this->mail);
 
             // Attachments
-            foreach ($this->files as $file)
-                $mail->addAttachment($file->filePath);         // Add attachments
-
+            if($_FILES['filePromo']['error'] != 4)
+            {
+                foreach ($this->files as $file)
+                    $mail->addAttachment($file->filePath);         // Add attachments
+            }
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'Новая заявка';
             $mail->Body    = $message;
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
             $mail->send();
-            echo 'Message has been sent';
+            return $this->statusEmail = [
+                'statusMail'=>'OK'
+            ];
         } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            return $this->statusEmail = [
+                'statusMail'=>'ERROR',
+                'Error' => $mail->ErrorInfo
+            ];
         }
     }
 }

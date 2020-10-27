@@ -15,9 +15,9 @@ switch ($_POST['method']){
         break;
 }
 
-//rint_r($response);
-echo $request;
-
+//print_r($response);
+//echo $request;
+echo json_encode($response);
 
 sleep(2);  
 return 0;

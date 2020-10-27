@@ -411,12 +411,17 @@ orderForm.addEventListener('submit', event => {
                 {
                     console.log(xhr);
                     let user = JSON.parse(xhr.response);
+                    console.log(user.user.statusEmail);
                     if(xhr.statusText != 'OK'){
                         alert('Указаны не все поля');
                     }
                     else
                     {
-                        nameBuyerOrder.innerHTML = `Поздравляем, ${user['name']}!!!`;
+                        nameBuyerOrder.innerHTML = `Поздравляем, ${user.user['name']}!!!`;
+                        nameBuyerOrderBody.innerHTML = `Вы успешно приобрели билет (билеты) в кино</br>Ваш номер заявки: ${user.user['id']}</br>
+                        ${user.user.statusEmail['statusMail'] == 'OK' ? 'Письмо об успешной заявке отправлено на почту' : 'Нам не удалось отправить письмо на почту, рекомендуем связаться с менеджером'}
+                        `
+                                               
                         sendOrder.removeAttribute('disabled')
                         document.getElementById('fountainG').style.display = 'none';
                         orderForm.style.display = 'none';
