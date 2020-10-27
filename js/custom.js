@@ -172,6 +172,11 @@ function checkInput(value){
 
 const url = 'https://kinopoiskapiunofficial.tech/api/v2.1/';
 
+let xhr = new XMLHttpRequest();
+    body = "name:getFilmList";
+    xhr.open("POST", '/php2/index.php', true);
+    xhr.send(body);
+
 const filmsArr = [
     464963,
     1048334,

@@ -5,6 +5,7 @@ require_once 'User.php';
 // require_once 'serverFile.php';
 require_once 'Database.php';
 require_once 'File.php';
+require_once 'Mail.php';
 
 ///Роутинг
 // Попадаем в нужный окнтроллер
@@ -15,8 +16,6 @@ require_once 'File.php';
 
 
 class Controller {
-
-    public $id;
 
     public function __construct()
     {
@@ -53,7 +52,6 @@ class Controller {
             $user->fzal = $post['fzal'];
             $user->places = $post['places'];
             $user->save();
-            $user->sendMail();
 
             // $id = $database->createRecord($user);
             
@@ -78,11 +76,7 @@ class Controller {
     {
         return json_decode('');
     }
-    public function saveToDatabase(Database $pdo){
-        $user['name'] = $this->name;
-        $user['phone'] = $this->phone;
-        return $pdo->createRecord($user);
-    }
+   
 }
 
 ?>

@@ -9,6 +9,29 @@
         public $filePath = 0;
         public $fileName = 0;
         
+        public static function checkFile(&$file){
+            //print_r($file);
+            $file->files = [];
+            if($_FILES['filePromo']['error'] != 4){
+            //print_r($_FILES);
+                foreach($_FILES as $single_file) {
+                    if (is_array($single_file['name']))
+                        for ($i = 0; $i < count($single_file['name']); ++$i) {
+                            $tmpfile = [
+                                'name'=>$single_file['name'][$i],
+                                'type'=>$single_file['type'][$i],
+                                'tmp_name'=>$single_file['tmp_name'][$i],
+                                'error'=>$single_file['error'][$i],
+                                'size'=>$single_file['size'][$i]
+                            ];
+                            array_push($file->files, File::saveFile($file, $tmpfile));
+                        }
+                    else 
+                        array_push($file->files, File::saveFile($file, $single_file));
+                }
+            }
+        }
+
         public static function saveFile(&$user, $file_req){
             $newFile = new File();
             $newFile->fileName = $file_req['name'];
@@ -37,6 +60,7 @@
             file_put_contents(__DIR__.'/users.csv', $data);
 
             Database::createLinkFile($user, $newFile);
-            return $newFile;
+            print_r($newFile);
+            //return $newFile;
         }
     }
