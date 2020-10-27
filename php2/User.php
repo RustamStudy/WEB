@@ -23,8 +23,21 @@ class User
         
         $this->files = [];
         if($_FILES){
+            print_r($_FILES);
             foreach($_FILES as $single_file) {
-                array_push($this->files, File::saveFile($this, $single_file));
+                if (is_array($single_file['name']))
+                    for ($i = 0; $i < count($single_file['name']); ++$i) {
+                        $tmpfile = [
+                            'name'=>$single_file['name'][$i],
+                            'type'=>$single_file['type'][$i],
+                            'tmp_name'=>$single_file['tmp_name'][$i],
+                            'error'=>$single_file['error'][$i],
+                            'size'=>$single_file['size'][$i]
+                        ];
+                        array_push($this->files, File::saveFile($this, $tmpfile));
+                    }
+                else 
+                    array_push($this->files, File::saveFile($this, $single_file));
             }
         }
     }
@@ -69,17 +82,43 @@ class User
         return false;
     }
     public function sendMail(){
-        $headers = "MIME-Version:1/0\r\n".
-        "Content-type:text/html; charset=utf-8\r\n".
-        "From: КИНОШКА <imfo@{$_SERVER['SERVER_NAME']}>";
-        $message =  "<body>".
-                    "<p>Поздравляем <b>".$this->name."</b> с успешным приобритением билетов в кинотеатр</p>".
-                    "<p>Фильм: <b>".$this->fname."</b></p>".
-                    "<p>Время: <b>".$this->ftime."</b></p>".
-                    "<p>Зал: <b>".$this->fzal."</b></p>".
-                    "<p>Места: <b>".$this->places."</b></p>".$this->id.
-                    "</body>";
-        mail($this->mail,'Новая заявка',$message, $headers);
+        /*
+            $headers = "MIME-Version:1/0\r\n".
+            "Content-type:text/html; charset=utf-8\r\n".
+            "From: КИНОШКА <info@{$_SERVER['SERVER_NAME']}>";
+            
+            mail($this->mail,'Новая заявка',$message, $headers);
+        */
+        $message =  
+            "<body>".
+                "<p>Поздравляем <b>".$this->name."</b> с успешным приобритением билетов в кинотеатр</p>".
+                "<p>Фильм: <b>".$this->fname."</b></p>".
+                "<p>Время: <b>".$this->ftime."</b></p>".
+                "<p>Зал: <b>".$this->fzal."</b></p>".
+                "<p>Места: <b>".$this->places."</b></p>".              
+                "<a href='http://rustamcinema.ru/php2/user_info.php?iduser=".$this->id."'>Ссылка на заявку</a>".
+            "</body>";
+        include __DIR__ . '/../PHPMailer/autoload,php';
+        $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
+        try {
+            $mail->CharSet = 'utf-8';
+            //Recipients
+            $mail->setFrom("info@{$_SERVER['SERVER_NAME']}", 'КИНОШКА');
+            $mail->addAddress($this->mail);
 
+            // Attachments
+            foreach ($this->files as $file)
+                $mail->addAttachment($file->filePath);         // Add attachments
+
+            // Content
+            $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->Subject = 'Новая заявка';
+            $mail->Body    = $message;
+            $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+            $mail->send();
+            echo 'Message has been sent';
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
     }
 }

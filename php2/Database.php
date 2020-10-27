@@ -118,4 +118,17 @@
             $request->execute();
             return $request;
         }
+        
+        public static function userInfo($idUser){
+            self::connect();
+            $sql = "SELECT  orders.id, name, phone, mail, filmName, filmZal, filmTime, place_num, orders.date
+                FROM orders
+                    LEFT JOIN 	form_data on orders.id = form_data.user_id
+                    left JOIN	placesHead on orders.id = placesHead.user_id
+                    inner join placesBody on placesHead.id = placesBody.id_PH
+                WHERE orders.id = ".$idUser;
+            $request = self::$pdo->prepare($sql);
+            $request->execute();
+            return $request;
+        }
     };
