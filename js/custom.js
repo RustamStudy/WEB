@@ -183,6 +183,7 @@ const filmsArr = [
     1080513,
     1379016
 ]
+
 const getAllFilm = function(){
   return new Promise(function(resolve, reject){
       filmsGenerate();

@@ -813,3 +813,6 @@ form div{
     margin-left: 10px;
     margin-top: 0;
 }
+.ordered-secttion-img:hover {
+    transform: scale(1.1);
+}
