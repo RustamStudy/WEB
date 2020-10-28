@@ -1,32 +1,18 @@
 <?php
 
-require_once 'Validate.php';
-require_once 'User.php';
-// require_once 'serverFile.php';
-require_once 'Database.php';
-require_once 'File.php';
-require_once 'Mail.php';
 
-///Роутинг
-// Попадаем в нужный окнтроллер
-// В уконтролере раскидываем логику по сервисам и моделям
-// Отдаем ответ
+namespace App\Controller;
 
+use App\Helpers\Validate;
+use App\Model\User;
 
-
-
-class Controller {
-
-    public function __construct()
-    {
-
-    }
-
+class Controller
+{
     /**
      * 1 - валидация входящих параметров
      * 2 = сохранение пользователя если нет
      * @param $post
-     * @return string
+     * @return array
      */
     public function post($post)
     {
@@ -54,7 +40,7 @@ class Controller {
             $user->save();
 
             // $id = $database->createRecord($user);
-            
+
         }
         else
             $user = User::load();
@@ -64,19 +50,16 @@ class Controller {
             'data' => $post,
             'user' => $user
         ];
-        
+
     }
-    
+
 
     /**
      * @param $post
-     * @return mixed
+     * @return array
      */
     public function film ($post)
     {
-        return json_decode('');
+        return [];
     }
-   
 }
-
-?>

@@ -1,15 +1,17 @@
 <?php
 
-const ErrorMax = 'Максимальное кол-в 20 символа';
-const ErrorMin = 'Минимальное кол-в 3 символа';
-const ErrorPhone = 'Не валидный номер телефона';
-const ErrorExist = 'Поле обязательно для сохранения';
+namespace App\Helpers;
 
 /**
  * Class Validate
  */
 class Validate
 {
+    const ErrorMax = 'Максимальное кол-в 20 символа';
+    const ErrorMin = 'Минимальное кол-в 3 символа';
+    const ErrorPhone = 'Не валидный номер телефона';
+    const ErrorExist = 'Поле обязательно для сохранения';
+
 
     private $args;
     private $post;
@@ -39,7 +41,7 @@ class Validate
                         if ($this->checkMaxValue($this->post[$key])){
                             array_push($errors, [
                                 'type' => 'max',
-                                'error' => ErrorMax
+                                'error' => Validate::ErrorMax
                             ]);
                         }
                         break;
@@ -47,7 +49,7 @@ class Validate
                         if ($this->checkMinValue($this->post[$key])){
                             array_push($errors, [
                                 'type' => 'min',
-                                'error' => ErrorMin
+                                'error' => Validate::ErrorMin
                             ]);
                         }
                         break;
@@ -55,7 +57,7 @@ class Validate
                         if ($this->checkPhone($this->post[$key])){
                             array_push($errors, [
                                 'type' => 'phone',
-                                'error' => ErrorPhone
+                                'error' => Validate::ErrorPhone
                             ]);
                         }
                         break;
