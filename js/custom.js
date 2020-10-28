@@ -488,3 +488,10 @@ function cityChangeNew(){
   document.getElementById('cityChangeAccept').classList.toggle('city_name-hidden');
   document.getElementById('cityChangeAccess').classList.toggle('city_name-hidden');
 }
+
+document.getElementById('closeOrderFromSuccessRoom').onclick = function(){
+  document.getElementById('popup-success-room').classList.add('hidden');
+}
+document.getElementById('intererView').onclick = function(){
+  document.getElementById('popup-success-room').classList.remove('hidden');
+}

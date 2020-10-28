@@ -104,7 +104,7 @@
                         <p class = "ordered-section__header-about">In this meetup you will get to know the marketplaces better, because that’s why were all here for right? Learn a few tips and tricks from experienced authors from all over the country.</p>
                     </article>
                     <article class="ordered-section-article">
-                        <div class="ordered-secttion-img">
+                        <div class="ordered-secttion-img" title = "Нажмите, чтобы увидеть интерьер" id = "intererView">
                             <img class = "ordered-section__img" src="img/b2_icon_3.jpg" alt="b2_icon_3"/>
                         </div>
                         <h4 class = "ordered-section__header">Удобные кресла</h4>
@@ -612,46 +612,21 @@
         </div>
     </div>
 
-<!--  -->
-    <form action="php/server.php">
-        <h1>Метод GET</h1>
-        <div>
-            <input type="text" name = nameOrder value = "<?php echo $_GET['nameOrder'] ?? '';?>">
+    <div id = "popup-success-room" class="popup hidden">
+        <div class="order-form-room">
+            <div id = "closeOrderFromSuccessRoom" class="close"></div>
+            <div class="order-form-room__images"> 
+                <img src="img/rooms/1.jpg" alt="">
+                <img src="img/rooms/2.jpg" alt="">
+                <img src="img/rooms/3.jpg" alt="">
+                <img src="img/rooms/4.jpg" alt="">
+            </div>
         </div>
-        <div>
-            <input type="text" name = nameOrder value = "<?php echo $_GET['telOrder'] ?? '';?>">
-        </div>
-        <div>
-            <button type="submit">Отправить</button>
-        </div>
-    </form>
-
-    <form action="php/serverPost.php" method = "POST">
-        <h1>Метод POST</h1>
-        <div>
-            <input type="text" name = nameOrder value = "<?php echo $_POST['nameOrder'] ?? '';?>">
-        </div>
-        <div>
-            <input type="number" name = nameOrder value = "<?php echo $_POST['telOrder'] ?? '';?>">
-        </div>
-        <div>
-            <button type="submit">Отправить</button>
-        </div>
-    </form>
-
-<!--  -->
+    </div>
 
 
-
-    <?php
-        include __DIR__ . '/php/tz25.php';
-    ?>
-
-    </body>
     
-    <script src = "js/plagins/jquery.fancybox-1.3.4/jquery-1.4.3.min.js"></script>
-    <script src = "js/plagins/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.js"></script>
-    
+     
     <script src="js/jq.js"></script>
     <script src="js/plagins/owlcarusel/js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
@@ -659,5 +634,6 @@
     <script src="js/ajax.js"></script>
     <script src="js/fileUpload.js"></script>
     
+    </body>
 
 </html>

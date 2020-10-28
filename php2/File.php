@@ -60,7 +60,7 @@
             file_put_contents(__DIR__.'/users.csv', $data);
 
             Database::createLinkFile($user, $newFile);
-            print_r($newFile);
-            //return $newFile;
+            //print_r($newFile);
+            return $newFile;
         }
     }
