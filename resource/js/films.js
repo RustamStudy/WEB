@@ -9,7 +9,7 @@ const mock = [
         filmNew: true,
         description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius",
-        image: "img/mov1.jpg", //для д.з. CA
+        image: "/assets/img/mov1.jpg", //для д.з. CA
         fb: "https://fb.com",
         twitter: "https://twitter.com",
         behance: "https://www.behance.net",
@@ -23,7 +23,7 @@ const mock = [
         filmNew: true,
         description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius",
-        image: "img/mov2.jpg", //для д.з. CA
+        image: "/assets/img/mov2.jpg", //для д.з. CA
         fb: "https://fb.com",
         twitter: "https://twitter.com",
         behance: "https://www.behance.net",
@@ -51,7 +51,7 @@ const mock = [
         filmNew: true,
         description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius",
-        image: "img/mov3.jpg", //для д.з. CA
+        image: "/assets/img/mov3.jpg", //для д.з. CA
         fb: "https://fb.com",
         twitter: "https://twitter.com",
         behance: "https://www.behance.net",

@@ -244,16 +244,16 @@ const generateFilmItem = function (name, country,genre, year, description, img, 
                     <p class = "movie-poster-div-obout__text">${description.substr(0, 100)}...</p>
                     <div class = "movie-poster-div-obout-array">
                         <a  class = "movie-poster-div-obout-array__link" href="">
-                            <img class = "movie-poster-div-obout-array__link-img" src="img/facebookIco.png" alt="">
+                            <img class = "movie-poster-div-obout-array__link-img" src="/assets/img/facebookIco.png" alt="">
                         </a>
                         <a  class = "movie-poster-div-obout-array__link" href="">
-                            <img class = "movie-poster-div-obout-array__link-img" src="img/twitterIco.png" alt="">
+                            <img class = "movie-poster-div-obout-array__link-img" src="/assets/img/twitterIco.png" alt="">
                         </a>
                         <a  class = "movie-poster-div-obout-array__link" href="">
-                            <img class = "movie-poster-div-obout-array__link-img" src="img/behanceIco.png" alt="">
+                            <img class = "movie-poster-div-obout-array__link-img" src="/assets/img/behanceIco.png" alt="">
                         </a>
                         <a  class = "movie-poster-div-obout-array__link" href="">
-                            <img class = "movie-poster-div-obout-array__link-img" src="img/dribbbleIco.png" alt="">
+                            <img class = "movie-poster-div-obout-array__link-img" src="/assets/img/dribbbleIco.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -342,10 +342,10 @@ let checkerFilm = setTimeout(function tick(){
     $(".owl-carousel").owlCarousel({
       nav:true,
       loop:true,
-      autoplay:true, 
-        smartSpeed:1000, 
-        autoplayTimeout:5000, 
-        responsive:{ 
+      autoplay:true,
+        smartSpeed:1000,
+        autoplayTimeout:5000,
+        responsive:{
             0:{
                 items:1
             },
@@ -356,7 +356,7 @@ let checkerFilm = setTimeout(function tick(){
                 items:3
             }
         }
-    }),
+    })
     filmClick()
   }
   else

@@ -1,4 +1,8 @@
+@import "../fonts/Roboto/stylesheet.css";
 @import "reset.css";
 @import "loader.css";
 @import "main.css";
 @import "media.css";
+@import "./../js/plagins/owlcarusel/assets/owl.carousel.min.css";
+@import "./../js/plagins/owlcarusel/assets/owl.theme.default.min.css";
+@import "./../js/plagins/owlcarusel/assets/style.css";

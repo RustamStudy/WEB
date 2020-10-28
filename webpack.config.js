@@ -8,6 +8,7 @@ const ASSET_PATH = '/assets/';
 module.exports = {
     entry: {
         main : [
+            "./resource/js/bootstrap.js",
             "./resource/js/jq.js",
             "./resource/js/films.js",
             "./resource/js/fileUpload.js",
