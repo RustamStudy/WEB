@@ -16,6 +16,7 @@
         height: 3rem;
         width: 3rem;
         box-sizing: border-box;
+        cursor: pointer;
     }
     .menu__burger::after,
     .menu__burger::before,
@@ -39,8 +40,8 @@
     }
     .title__nav{
         position: fixed;
-        top: 0;
-        left: 0;
+        top: 60px;
+        right: 5px;
         padding: 2rem;
         background-color: rgb(0,0,0,0.9);
         flex-flow: column;

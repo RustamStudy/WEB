@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Киношка</title>
         <link rel="stylesheet" href="fonts/Roboto/stylesheet.css">
         <link rel="stylesheet" href="css/reset.css?v=08.08.2020">
         <link rel="stylesheet" href="css/main.css?v=08.08.2020">
@@ -12,9 +12,14 @@
         <link rel="stylesheet" href="js/plagins/owlcarusel/css/style.css">
         <link rel="stylesheet" href="calculator/style.css">
         <link rel="stylesheet" href="css/media.css?v=08.08.2020">
+        <link rel="stylesheet" href="css/loader.css">
+
+        <!-- <link rel="stylesheet" href="js/plagins/jquery.fancybox-1.3.4/style.css">
+        <link rel="stylesheet" href="js/plagins/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css"> -->
     </head>
-    
+
     <body>
+      
         <div class="title">
             <div class="container">
                 <header>
@@ -46,9 +51,24 @@
                         </li>
                     </ul>                 
                     <div class="title__city">
-                        <p>Ваш город: <strong>Иннополис</strong></p> 
+                        <p>Ваш город: <span id="city_name">-не определено-</span></p> 
+                        <div class="title__city-change city_name-hidden">
+                            <h3 id = 'cityView'>Ваш город: <span>-не определено-</span></h3>
+                            <div id = "cityNew" class="city_name-hidden">
+                                <h3 id = 'cityViewNew'>Введите Ваш город:</h3>
+                                <input id = 'cityListView' type="text" placeholder="Начните вводить название Вашего города"/>
+                                <div class = "cityListViewFind"></div>
+                            </div>
+                            <div class="title__city-change_button">
+                                <button class="present__button" id="cityChangeAccess">Верно</button>
+                                <button class="present__button city_name-hidden" id="cityChangeAccept">Выбрать</button>
+                                <button class="present__button" id="cityChangeNew">Не верно</button>
+
+                            </div>
+                        </div>
                     </div>
                 </header>
+
                 <div  class="title__main">
                     <h1 class="title__main_header">Закажите билет в кино</h1>
                     <h2 class="title__main_text">Всем покупателям подарок!</h2>
@@ -103,7 +123,7 @@
                     <h3 class="movie-list__header">Выберите фильм</h3>
                 </div>
                 <div class="movie-list-table">
-                    <table class="movie-list__table">             
+                    <table class="movie-list__table" id = 'filmsHire'>             
                         <thead>
                             <tr>
                                 <th> 
@@ -116,11 +136,18 @@
                                     <!-- <img src="img/triangle.svg" alt=""> -->
                                     <div class="poiner"></div>
                                 </th>
-                                <th colspan = 2>
+                                <th>
                                     <span>Genre</span>
                                     <!-- <div class="poiner"></div> -->
                                 </th>
-                                
+                                <th>
+                                    <span>Price</span>
+                                    <!-- <div class="poiner"></div> -->
+                                </th>
+                                <th>
+                                    <span>Room</span>
+                                    <!-- <div class="poiner"></div> -->
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -508,17 +535,129 @@
                     <label for="inpFile"  hidden>Загрузите файл (при необходимости)</label>
                     <input type="file" id = "inpFile" name="inpFile" >
                 </div> -->
+                
                 <div style="margin:10px">
                     <input id = 'submit' type="submit" value="Заказать" id = 'bs'>
                 </div>
             </form>
         </div>
     </div>
+    
+    <div id = "orderForm" class="popup hidden">
+        <div class="order-form">
+            <div id = "closeOrderFrom" class="close"></div>
+            <form id = 'orderTicket' enctype = "multipart/form-data">
+               
+                <div class = 'filmTicetInfo'>
+                    <p>Название фильма: <span id="orderFilmName"></span></p>
+                    <p>Жанр: <span id="orderFilmGanar"></span></p>
+                    <p>Время начала: <span id="orderFilmStart"></span></p>
+                    <p>Зал: <span id="ordeZal"></span></p>
+                    <p>Стоимость одного билета: <span id="orderFilmPrice">0</span></p>
+                    <p>Количество выбранных билетов: <span id="orderFilmCountTicket"></span></p>
+                    <p>Общая стоимость: <span id="orderFilmTotalPrice">0</span></p>
+                </div>
+               
+                <div class="input-wrap"></div>
+                <div class = "cinema-tickets"></div>
+                <div class="tickets-error error">
+                    <p class="popup-eror-message"></p>
+                </div>
+                <div class = "" style="margin:10px">
+                    <label for="nameInput" hidden>Укажите имя</label>
+                    <input type="text" placeholder="Введите ваше имя *" name="name" id="nameOrder" required>
+                    <div class="popup-eror-message"></div>
+                </div>
+                <div class = "" style="margin:10px">
+                    <label for="telInput" hidden>Укажите номер телефона</label>
+                    <input type="tel" placeholder="Введите ваш телефон *" name="phone" id="telOrder" required>
+                    <div class="popup-eror-message"></div>
+                </div>
+                <div class = "" style="margin:10px">
+                    <label for="telInput" hidden>Укажите адрес электронной почты</label>
+                    <input type="email" placeholder="Введите адрес электронной почты *" name="mail" id="mailOrder" required>
+                    <div class="popup-eror-message"></div>
+                </div>
+                
+                <label for="filePromo" class = "btn_file_opload" id = "fileField">Прикрепить файл</label>
+                <input type = "file" name = "filePromo" id = "filePromo">
+                <div id = 'fileList'><p>Файл не выбран</p></div>
+                <div style="margin:10px; position: relative;">
+                    <input  type="submit" value="Заказать" id = 'sendOrder' class="present__button">
+                    <div id="fountainG" style="display: none;">
+                        <div id="fountainG_1" class="fountainG"></div>
+                        <div id="fountainG_2" class="fountainG"></div>
+                        <div id="fountainG_3" class="fountainG"></div>
+                        <div id="fountainG_4" class="fountainG"></div>
+                        <div id="fountainG_5" class="fountainG"></div>
+                        <div id="fountainG_6" class="fountainG"></div>
+                        <div id="fountainG_7" class="fountainG"></div>
+                        <div id="fountainG_8" class="fountainG"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div id = "popup-success" class="popup hidden">
+        <div class="order-form">
+            <div id = "closeOrderFromSuccess" class="close"></div>
+            <form>
+               <div>
+                   <h3 id = 'nameBuyerOrder'>Поздравляем!!!</h3>
+                   <p id = 'nameBuyerOrderBody'>Вы успешно приобрели билет (билеты) в кино</p>
+               </div>
+            </form>
+        </div>
+    </div>
+
+<!--  -->
+    <form action="php/server.php">
+        <h1>Метод GET</h1>
+        <div>
+            <input type="text" name = nameOrder value = "<?php echo $_GET['nameOrder'] ?? '';?>">
+        </div>
+        <div>
+            <input type="text" name = nameOrder value = "<?php echo $_GET['telOrder'] ?? '';?>">
+        </div>
+        <div>
+            <button type="submit">Отправить</button>
+        </div>
+    </form>
+
+    <form action="php/serverPost.php" method = "POST">
+        <h1>Метод POST</h1>
+        <div>
+            <input type="text" name = nameOrder value = "<?php echo $_POST['nameOrder'] ?? '';?>">
+        </div>
+        <div>
+            <input type="number" name = nameOrder value = "<?php echo $_POST['telOrder'] ?? '';?>">
+        </div>
+        <div>
+            <button type="submit">Отправить</button>
+        </div>
+    </form>
+
+<!--  -->
+
+
+
+    <?php
+        include __DIR__ . '/php/tz25.php';
+    ?>
+
     </body>
     
+    <script src = "js/plagins/jquery.fancybox-1.3.4/jquery-1.4.3.min.js"></script>
+    <script src = "js/plagins/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.js"></script>
     
     <script src="js/jq.js"></script>
     <script src="js/plagins/owlcarusel/js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
-    <!-- <script src="/films.js"></script> -->
+    <script src="js/films.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/fileUpload.js"></script>
+    
+
 </html>
