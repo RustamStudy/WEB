@@ -91,21 +91,21 @@
                 <section class="ordered-section">
                     <article class="ordered-section-article">
                         <div class="ordered-secttion-img">
-                            <img class = "ordered-section__img" src="img/b2_icon_1.jpg" alt="b2_icon_1"/>
+                            <img class = "ordered-section__img" src="resource/img/b2_icon_1.jpg" alt="b2_icon_1"/>
                         </div>
                         <h4 class = "ordered-section__header">Большие экраны</h4>
                         <p class = "ordered-section__header-about">Meet the Community you’ve always talked with, in real life! This meetup will be all about authors engaging each other with interesting coversation and topics. We will have loads of fun.<p>
                     </article>
                     <article class="ordered-section-article">
                         <div class="ordered-secttion-img">
-                            <img class = "ordered-section__img" src="img/b2_icon_2.jpg" alt="b2_icon_2"/>
+                            <img class = "ordered-section__img" src="resource/img/b2_icon_2.jpg" alt="b2_icon_2"/>
                         </div>
                         <h4 class = "ordered-section__header">Объемный звук</h4>
                         <p class = "ordered-section__header-about">In this meetup you will get to know the marketplaces better, because that’s why were all here for right? Learn a few tips and tricks from experienced authors from all over the country.</p>
                     </article>
                     <article class="ordered-section-article">
                         <div class="ordered-secttion-img">
-                            <img class = "ordered-section__img" src="img/b2_icon_3.jpg" alt="b2_icon_3"/>
+                            <img class = "ordered-section__img" src="resource/img/b2_icon_3.jpg" alt="b2_icon_3"/>
                         </div>
                         <h4 class = "ordered-section__header">Удобные кресла</h4>
                         <p class = "ordered-section__header-about">
@@ -461,11 +461,11 @@
         <div class="map"></div>
         <footer>
             <section>
-                <a href=""><img src="img/facebook.svg" alt="facebook"/></a>
-                <a href=""><img src="img/twitter.svg" alt="twitter"/></a>
-                <a href=""><img src="img/linkedin.svg" alt="linkedin"/></a>
-                <a href=""><img src="img/googlePlus.svg" alt="googlePlus"/></a>
-                <a href=""><img src="img/tumblr.svg" alt="tumblr"/></a>
+                <a href=""><img src="resource/img/facebook.svg" alt="facebook"/></a>
+                <a href=""><img src="resource/img/twitter.svg" alt="twitter"/></a>
+                <a href=""><img src="resource/img/linkedin.svg" alt="linkedin"/></a>
+                <a href=""><img src="resource/img/googlePlus.svg" alt="googlePlus"/></a>
+                <a href=""><img src="resource/img/tumblr.svg" alt="tumblr"/></a>
             </section>
             <p>
                 Hope we see you at the event!
