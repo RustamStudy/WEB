@@ -75,8 +75,8 @@ for (var i = 0; i < keys.length; i++) {
                 }
                 else
                     input.innerHTML += btnVal;
-                console.log(inputVal.length)
-                console.log(ind2+1)
+                // console.log(inputVal.length)
+                // console.log(ind2+1)
                 
         }
         e.preventDefault();

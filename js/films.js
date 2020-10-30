@@ -13,7 +13,7 @@ const mock = [
         fb: "https://fb.com",
         twitter: "https://twitter.com",
         behance: "https://www.behance.net",
-        price: 200 
+        price: 200
     },
     {
         name: "Собачья жизнь 2",
@@ -110,15 +110,15 @@ for (let i = 0; i < mock.length; i++) {
 
 //объект-обертка для универсализации работы с данными
 const film = {
-    getName: function() {
+    getName: function () {
         return this.name;
     },
 
-    getStart: function() {
+    getStart: function () {
         return this.start;
     },
 
-    getGanre: function() {
+    getGanre: function () {
         //хранит текущие идентификаторы жанров. Здесь тоже используется this!
         const ganarsIds = this.genre;
 
@@ -135,7 +135,7 @@ const film = {
             //@see https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/find
             let genreText = genres.find(
                 //el содержит текущий элемент перебираемого массива genres
-                function(el) {
+                function (el) {
                     //если условие выполняется, то возвращается проверяемый элемент
                     return el.id == currentId;
                 }
@@ -159,10 +159,10 @@ const film = {
         let filmName = this.name,
             filmStart = this.start,
             filmGanars = film.getGanre.apply(this),
-            filmPrice = this.price;            
+            filmPrice = this.price;
 
-            
-            filmHTML = `
+
+        filmHTML = `
             <td>
                 <input type="checkbox" class="block03__checkbox" id="block03__checkbox1">
                 <label for="block03__checkbox1">
@@ -229,9 +229,9 @@ let tableDOM = document.querySelector("#filmsHire tbody");
 //         // 1. Находим элемент с формой заказ
 //         // 2. Изменить состояние из display: none -> display: block;
 //         // 3. Отобразить данные по бронированию фильма
-    
+
 //         orderForm.style.display = 'block';
-    
+
 //         let orderFilmName = document.getElementById('orderFilmName'),
 //             orderFilmStart = document.getElementById('orderFilmStart'),
 //             orderFilmGanar = document.getElementById('orderFilmGanar'),
@@ -241,12 +241,12 @@ let tableDOM = document.querySelector("#filmsHire tbody");
 //         orderFilmStart.innerHTML = filmStart;
 //         orderFilmGanar.innerHTML = filmGanars;
 //         orderFilmPrice.innerHTML = filmPrice;
-    
+
 //         let orderFilmCountTicket = document.getElementById('orderFilmCountTicket'),
 //             orderFilmTotalPrice = document.getElementById('orderFilmTotalPrice');
-    
+
 //         orderFilmTotalPrice.innerHTML = filmPrice * orderFilmCountTicket.value;
-    
+
 //         orderFilmCountTicket.onchange = function () {
 //           orderFilmTotalPrice.innerHTML = filmPrice * orderFilmCountTicket.value;
 //         }
@@ -261,7 +261,7 @@ let orderForm = document.getElementById('orderForm');
 let closeOrderForm = document.getElementById('closeOrderFrom');
 
 closeOrderForm.onclick = function () {
-  orderForm.style.display = 'none';
+    orderForm.style.display = 'none';
 }
 let closeOrderFromSuccess = document.getElementById('closeOrderFromSuccess');
 
@@ -286,17 +286,17 @@ const rooms = [
     {
         id: 0,
         name: 'X',
-        count: 10 
+        count: 10
     },
     {
         id: 1,
         name: 'L',
-        count: 20 
+        count: 20
     },
     {
         id: 2,
         name: 'XL',
-        count: 30 
+        count: 30
     }
 ];
 
@@ -305,32 +305,32 @@ sendOrder.onclick = function(){
 
 }
 */
-function checkCorrectPhoneNumber (number) {
+function checkCorrectPhoneNumber(number) {
     //  const reg = new RegExp('^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$');
     //  return reg.test(number)
     return true;
 }
 orderForm.addEventListener('submit', event => {
-    const setError = ($el, error)=> {
+    const setError = ($el, error) => {
         $el.parentNode.classList.add('error');
         $el.parentNode.getElementsByClassName('popup-eror-message')[0].innerHTML = error
     }
 
     event.preventDefault();
-    
-    const  fields = orderForm.getElementsByTagName('input');
+
+    const fields = orderForm.getElementsByTagName('input');
 
     let error = false;
 
-    const data ={
+    const data = {
         name: '',
         phone: '',
         places: []
     }
-    for (i=0; i<fields.length-1; i++){
-        switch(fields[i].getAttribute('name')){
+    for (i = 0; i < fields.length - 1; i++) {
+        switch (fields[i].getAttribute('name')) {
             case 'nameOrder':
-                if(!checkInput(fields[i].value)){    
+                if (!checkInput(fields[i].value)) {
                     setError(fields[i], 'Заполните поле Имя');
                     error = true;
                     break;
@@ -338,12 +338,12 @@ orderForm.addEventListener('submit', event => {
                 data.name = fields[i].value;
                 break;
             case 'telOrder':
-                if(!checkInput(fields[i].value)){    
+                if (!checkInput(fields[i].value)) {
                     setError(fields[i], 'Заполните поле телефон');
                     error = true;
                     break
                 } else {
-                    if(!checkCorrectPhoneNumber(fields[i].value)){    
+                    if (!checkCorrectPhoneNumber(fields[i].value)) {
                         setError(fields[i], 'Введите коррекный номер телефона');
                         error = true;
                         break
@@ -351,37 +351,36 @@ orderForm.addEventListener('submit', event => {
                     data.phone = fields[i].value;
                     break;
                 }
-                break;    
                 break;
-            dafault:
+                break;
+                dafault:
                 console.log('Поле не опознано')
         }
 
     }
     let places = [];
-    if(orderForm.getElementsByClassName('placeActive').length < 1){
+    if (orderForm.getElementsByClassName('placeActive').length < 1) {
         orderForm.getElementsByClassName('tickets-error')[0].getElementsByTagName('p')[0].innerHTML = 'Выберите место'
-    }else{
-        
-        for (let i = 0; i< orderForm.getElementsByClassName('placeActive').length; i++)
-        {
+    } else {
+
+        for (let i = 0; i < orderForm.getElementsByClassName('placeActive').length; i++) {
             places.push(orderForm.getElementsByClassName('placeActive')[i].getAttribute('data-place'))
         }
         data.places = places;
     }
 
-    if(error){
+    if (error) {
         return;
     }
-    console.log(data)
-    sendOrder.setAttribute('disabled','true')
+    // console.log(data)
+    sendOrder.setAttribute('disabled', 'true')
     document.getElementById('fountainG').style.display = 'block';
     let formData = new FormData(orderTicket);
-        formData.append('places', places);
-        formData.append('fname', orderFilmName.innerText);
-        formData.append('ftime', orderFilmStart.innerText);
-        formData.append('fzal', ordeZal.innerText);
-        formData.append('method', 'post');
+    formData.append('places', places);
+    formData.append('fname', orderFilmName.innerText);
+    formData.append('ftime', orderFilmStart.innerText);
+    formData.append('fzal', ordeZal.innerText);
+    formData.append('method', 'post');
     let xhr = new XMLHttpRequest();
     /*let body = 'name=' + nameOrder.value +
                 '&phone=' + telOrder.value + 
@@ -396,48 +395,46 @@ orderForm.addEventListener('submit', event => {
     //
     //
     xhr.open("POST", '/php2/index.php', true);
-    
+
 
     //xhr.setRequestHeader('Content-Type', 'multipart/form-data');
 
-    
-    console.log(xhr);
-    
-    xhr.onreadystatechange = function() {
-        if(xhr.readyState == 4)
-        switch(xhr.status)
-        {
-            case ('200'): case(200):
-                {
-                    console.log(xhr);
-                    let user = JSON.parse(xhr.response);
-                    console.log(user.user.statusEmail);
-                    if(xhr.statusText != 'OK'){
-                        alert('Указаны не все поля');
-                    }
-                    else
+
+    // console.log(xhr);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4)
+            switch (xhr.status) {
+                case ('200'): case (200):
                     {
-                        nameBuyerOrder.innerHTML = `Поздравляем, ${user.user['name']}!!!`;
-                        nameBuyerOrderBody.innerHTML = `Вы успешно приобрели билет (билеты) в кино</br>Ваш номер заявки: ${user.user['id']}</br>
+                        // console.log(xhr);
+                        let user = JSON.parse(xhr.response);
+                        // console.log(user.user.statusEmail);
+                        if (xhr.statusText != 'OK') {
+                            alert('Указаны не все поля');
+                        }
+                        else {
+                            nameBuyerOrder.innerHTML = `Поздравляем, ${user.user['name']}!!!`;
+                            nameBuyerOrderBody.innerHTML = `Вы успешно приобрели билет (билеты) в кино</br>Ваш номер заявки: ${user.user['id']}</br>
                         ${user.user.statusEmail['statusMail'] == 'OK' ? 'Письмо об успешной заявке отправлено на почту' : 'Нам не удалось отправить письмо на почту, рекомендуем связаться с менеджером'}
                         `
-                                               
-                        sendOrder.removeAttribute('disabled')
-                        document.getElementById('fountainG').style.display = 'none';
-                        orderForm.style.display = 'none';
-                        document.getElementById('popup-success').classList.remove('hidden');
+
+                            sendOrder.removeAttribute('disabled')
+                            document.getElementById('fountainG').style.display = 'none';
+                            orderForm.style.display = 'none';
+                            document.getElementById('popup-success').classList.remove('hidden');
+                        }
                     }
-                }
-                break;
-            case ('500'): case(500):
-                alert('Произошла ошибка при обработке данных')
-                break;
-        }
+                    break;
+                case ('500'): case (500):
+                    alert('Произошла ошибка при обработке данных')
+                    break;
+            }
     };
     xhr.send(formData);
     //xhr.send(body);
 
-    
+
 })
 // jQuery(function ($){
 //     $('#orderForm form').on('submit', function(e){

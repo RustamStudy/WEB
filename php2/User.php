@@ -13,12 +13,14 @@ class User
     {
         $_SESSION['user'] = json_encode($this);
         setcookie('user', json_encode($this), time() + 86400, '.');
-        
+
         //$database = new Database();
-        /*$user->id =*/Database::createRecord($this);
-        /*$user->id =*/Database::createPlaces($this);
         /*$user->id =*/
-        
+        Database::createRecord($this);
+        /*$user->id =*/
+        Database::createPlaces($this);
+        /*$user->id =*/
+
         /*
         $file = new File($this);
         $this->files = $file->checkFile($this);
@@ -27,8 +29,6 @@ class User
 
         $mail = new Mail($this);
         $mail->sendMail($this);
-
-        
     }
     public function load()
     {
@@ -47,12 +47,10 @@ class User
 
     public function  getSession()
     {
-
     }
 
     public function getCookie()
     {
-
     }
 
     public static function checkSession()
@@ -70,5 +68,4 @@ class User
 
         return false;
     }
-    
 }

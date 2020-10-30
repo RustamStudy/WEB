@@ -1,157 +1,155 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Киношка</title>
-        <link rel="stylesheet" href="fonts/Roboto/stylesheet.css">
-        <link rel="stylesheet" href="css/reset.css?v=08.08.2020">
-        <link rel="stylesheet" href="css/main.css?v=08.08.2020">
-        <link rel="stylesheet" href="js/plagins/owlcarusel/css/owl.carousel.min.css">
-        <link rel="stylesheet" href="js/plagins/owlcarusel/css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="js/plagins/owlcarusel/css/style.css">
-        <link rel="stylesheet" href="calculator/style.css">
-        <link rel="stylesheet" href="css/media.css?v=08.08.2020">
-        <link rel="stylesheet" href="css/loader.css">
 
-        <!-- <link rel="stylesheet" href="js/plagins/jquery.fancybox-1.3.4/style.css">
-        <link rel="stylesheet" href="js/plagins/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css"> -->
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Киношка</title>
+    <link rel="stylesheet" href="fonts/Roboto/stylesheet.css">
+    <link rel="stylesheet" href="css/reset.css?v=08.08.2020">
+    <link rel="stylesheet" href="css/main.css?v=08.08.2020">
+    <link rel="stylesheet" href="js/plagins/owlcarusel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="js/plagins/owlcarusel/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="js/plagins/owlcarusel/css/style.css">
+    <link rel="stylesheet" href="calculator/style.css">
+    <link rel="stylesheet" href="css/media.css?v=08.08.2020">
+    <link rel="stylesheet" href="css/loader.css">
+</head>
 
-    <body>
-      
-        <div class="title">
-            <div class="container">
-                <header>
-                    <div class="title-logo">
-                        <a class="title-logo__img" target = "_blank" href="http://university.innopolis.ru"></a>                       
-                    </div>
-                    <div class="menu__wrap">
-                        <div class="menu__burger">
-                            <span>
+<body>
 
-                            </span>
-                        </div>
-                    </div>
-                    <ul class="title__nav">
-                        <li>
-                            <a href="#">event details</a> 
-                        </li>
-                        <li>
-                            <a href="#">speakers</a> 
-                        </li>
-                        <li>
-                            <a href="#">sponsors</a> 
-                        </li>
-                        <li>
-                            <a href="#">past events</a> 
-                        </li>
-                        <li>
-                            <a href="#">contact</a> 
-                        </li>
-                    </ul>                 
-                    <div class="title__city">
-                        <p>Ваш город: <span id="city_name">-не определено-</span></p> 
-                        <div class="title__city-change city_name-hidden">
-                            <h3 id = 'cityView'>Ваш город: <span>-не определено-</span></h3>
-                            <div id = "cityNew" class="city_name-hidden">
-                                <h3 id = 'cityViewNew'>Введите Ваш город:</h3>
-                                <input id = 'cityListView' type="text" placeholder="Начните вводить название Вашего города"/>
-                                <div class = "cityListViewFind"></div>
-                            </div>
-                            <div class="title__city-change_button">
-                                <button class="present__button" id="cityChangeAccess">Верно</button>
-                                <button class="present__button city_name-hidden" id="cityChangeAccept">Выбрать</button>
-                                <button class="present__button" id="cityChangeNew">Не верно</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </header>
-
-                <div  class="title__main">
-                    <h1 class="title__main_header">Закажите билет в кино</h1>
-                    <h2 class="title__main_text">Всем покупателям подарок!</h2>
+    <div class="title">
+        <div class="container">
+            <header>
+                <div class="title-logo">
+                    <a class="title-logo__img" target="_blank" href="http://university.innopolis.ru"></a>
                 </div>
-                
+                <div class="menu__wrap">
+                    <div class="menu__burger">
+                        <span>
+
+                        </span>
+                    </div>
+                </div>
+                <ul class="title__nav">
+                    <li>
+                        <a href="#">event details</a>
+                    </li>
+                    <li>
+                        <a href="#">speakers</a>
+                    </li>
+                    <li>
+                        <a href="#">sponsors</a>
+                    </li>
+                    <li>
+                        <a href="#">past events</a>
+                    </li>
+                    <li>
+                        <a href="#">contact</a>
+                    </li>
+                </ul>
+                <div class="title__city">
+                    <p>Ваш город: <span id="city_name">-не определено-</span></p>
+                    <div class="title__city-change city_name-hidden">
+                        <h3 id='cityView'>Ваш город: <span>-не определено-</span></h3>
+                        <div id="cityNew" class="city_name-hidden">
+                            <h3 id='cityViewNew'>Введите Ваш город:</h3>
+                            <input id='cityListView' type="text" placeholder="Начните вводить название Вашего города" />
+                            <div class="cityListViewFind"></div>
+                        </div>
+                        <div class="title__city-change_button">
+                            <button class="present__button" id="cityChangeAccess">Верно</button>
+                            <button class="present__button city_name-hidden" id="cityChangeAccept">Выбрать</button>
+                            <button class="present__button" id="cityChangeNew">Не верно</button>
+
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="title__main">
+                <h1 class="title__main_header">Закажите билет в кино</h1>
+                <h2 class="title__main_text">Всем покупателям подарок!</h2>
             </div>
+
         </div>
-        <div class = "ordered">
-            <div class = "container">
-                <div class = "ordered-welcome">
-                    <h3 class = "ordered-welcome__header">Добро пожаловать!</h3>
-                    <p class = "ordered-welcome__text">Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.</p>
-                    <p class = "ordered-welcome__text">
-                        Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.
+    </div>
+    <div class="ordered">
+        <div class="container">
+            <div class="ordered-welcome">
+                <h3 class="ordered-welcome__header">Добро пожаловать!</h3>
+                <p class="ordered-welcome__text">Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.</p>
+                <p class="ordered-welcome__text">
+                    Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.
+                </p>
+            </div>
+            <div class="ordered-header">
+                <h3 class="ordered-header__title">Почему мы?</h3>
+            </div>
+            <section class="ordered-section">
+                <article class="ordered-section-article">
+                    <div class="ordered-secttion-img">
+                        <img class="ordered-section__img" src="img/b2_icon_1.jpg" alt="b2_icon_1" />
+                    </div>
+                    <h4 class="ordered-section__header">Большие экраны</h4>
+                    <p class="ordered-section__header-about">Meet the Community you’ve always talked with, in real life! This meetup will be all about authors engaging each other with interesting coversation and topics. We will have loads of fun.<p>
+                </article>
+                <article class="ordered-section-article">
+                    <div class="ordered-secttion-img">
+                        <img class="ordered-section__img" src="img/b2_icon_2.jpg" alt="b2_icon_2" />
+                    </div>
+                    <h4 class="ordered-section__header">Объемный звук</h4>
+                    <p class="ordered-section__header-about">In this meetup you will get to know the marketplaces better, because that’s why were all here for right? Learn a few tips and tricks from experienced authors from all over the country.</p>
+                </article>
+                <article class="ordered-section-article">
+                    <div class="ordered-secttion-img" title="Нажмите, чтобы увидеть интерьер" id="intererView">
+                        <img class="ordered-section__img" src="img/b2_icon_3.jpg" alt="b2_icon_3" />
+                    </div>
+                    <h4 class="ordered-section__header">Удобные кресла</h4>
+                    <p class="ordered-section__header-about">
+                        Gather round fellow authors!
+                        <br />
+                        Hear the stories of success from your favorite authors and learn how they we able to tackle their problems and become successful.
                     </p>
-                </div>
-                <div class="ordered-header">
-                    <h3 class = "ordered-header__title">Почему мы?</h3>
-                </div>       
-                <section class="ordered-section">
-                    <article class="ordered-section-article">
-                        <div class="ordered-secttion-img">
-                            <img class = "ordered-section__img" src="img/b2_icon_1.jpg" alt="b2_icon_1"/>
-                        </div>
-                        <h4 class = "ordered-section__header">Большие экраны</h4>
-                        <p class = "ordered-section__header-about">Meet the Community you’ve always talked with, in real life! This meetup will be all about authors engaging each other with interesting coversation and topics. We will have loads of fun.<p>
-                    </article>
-                    <article class="ordered-section-article">
-                        <div class="ordered-secttion-img">
-                            <img class = "ordered-section__img" src="img/b2_icon_2.jpg" alt="b2_icon_2"/>
-                        </div>
-                        <h4 class = "ordered-section__header">Объемный звук</h4>
-                        <p class = "ordered-section__header-about">In this meetup you will get to know the marketplaces better, because that’s why were all here for right? Learn a few tips and tricks from experienced authors from all over the country.</p>
-                    </article>
-                    <article class="ordered-section-article">
-                        <div class="ordered-secttion-img" title = "Нажмите, чтобы увидеть интерьер" id = "intererView">
-                            <img class = "ordered-section__img" src="img/b2_icon_3.jpg" alt="b2_icon_3"/>
-                        </div>
-                        <h4 class = "ordered-section__header">Удобные кресла</h4>
-                        <p class = "ordered-section__header-about">
-                            Gather round fellow authors!
-                            <br/>
-                            Hear the stories of success from your favorite authors and learn how they we able to tackle their problems and become successful.
-                        </p>
-                    </article>
-                </section>
-            </div>
+                </article>
+            </section>
         </div>
-        <div class = "movie">
-            <div class = "container">
-                <div>
-                    <h3 class="movie-list__header">Выберите фильм</h3>
-                </div>
-                <div class="movie-list-table">
-                    <table class="movie-list__table" id = 'filmsHire'>             
-                        <thead>
-                            <tr>
-                                <th> 
-                                    <span>Time</span>
-                                    <!-- <img src="img/triangle.svg" alt=""> -->
-                                    <div class="poiner"></div>
-                                </th>
-                                <th>
-                                    <span>Stuff that will happen</span>
-                                    <!-- <img src="img/triangle.svg" alt=""> -->
-                                    <div class="poiner"></div>
-                                </th>
-                                <th>
-                                    <span>Genre</span>
-                                    <!-- <div class="poiner"></div> -->
-                                </th>
-                                <th>
-                                    <span>Price</span>
-                                    <!-- <div class="poiner"></div> -->
-                                </th>
-                                <th>
-                                    <span>Room</span>
-                                    <!-- <div class="poiner"></div> -->
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- <tr>
+    </div>
+    <div class="movie">
+        <div class="container">
+            <div>
+                <h3 class="movie-list__header">Выберите фильм</h3>
+            </div>
+            <div class="movie-list-table">
+                <table class="movie-list__table" id='filmsHire'>
+                    <thead>
+                        <tr>
+                            <th>
+                                <span>Time</span>
+                                <!-- <img src="img/triangle.svg" alt=""> -->
+                                <div class="poiner"></div>
+                            </th>
+                            <th>
+                                <span>Stuff that will happen</span>
+                                <!-- <img src="img/triangle.svg" alt=""> -->
+                                <div class="poiner"></div>
+                            </th>
+                            <th>
+                                <span>Genre</span>
+                                <!-- <div class="poiner"></div> -->
+                            </th>
+                            <th>
+                                <span>Price</span>
+                                <!-- <div class="poiner"></div> -->
+                            </th>
+                            <th>
+                                <span>Room</span>
+                                <!-- <div class="poiner"></div> -->
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
                                 <td id = 'idFilmsStart1'></td>
                                 <td>
                                     <a id = 'idFilmsName1' target = "_blank" href="https://www.kinopoisk.ru/film/706655/?from_block=main_recommend">
@@ -200,44 +198,44 @@
                                     <img src="img/plus.png" alt="plus"/>
                                 </td>
                             </tr> -->
-                        </tbody>            
-                    </table>
-                </div>
-                <div class = "movie-list-about">
-                    <p class = "movie-list-about__text">Please keep in mind that the timings may differ according to the flow of the event. The even is actually day long and we do plan to finish it within our set time but it doesn’t have to be, if we all agree to hangour for some time more, what harm could it do? :)</p>
-                </div>
+                    </tbody>
+                </table>
             </div>
-        </div> 
-        <div class = "present">
-            <div class = "container">
-                <div class = "present__img"></div>
-                <section class = "present-block">
-                    <h3 class = "present-block__header">Подарок каждому</h3>
-                    <p class = "present-block__text">
-                        Are you an Elite author in the Envato Marketplaces? If so we are proud of you! We want to give our thanks in achieving great success in the marketplace and we want to make known to the people of our country that you are amazing! Our Elite gifting program includes giving you special merchandize from our community and also promote your works in our community.
-                    </p>
-                    <p class = "present-block__text">
-                        All you have to do is contact us by clicking the button here and then its just going to the event, saying something motivational and taking that swag while looking amazing infront of thousands of other community members.
-                    </p>
-                    <p class = "present-block__text">
-                        *Be advised, we will only give you Elite thank you swag for each level of elite you cross. That means if you do not cross to the next elite level before the next event, you cannot claim your prizes.
-                    </p>
-                    <button id = "popup_open" class = "present__button">
-                        Получить подарок
-                    </button>
-                </section>
+            <div class="movie-list-about">
+                <p class="movie-list-about__text">Please keep in mind that the timings may differ according to the flow of the event. The even is actually day long and we do plan to finish it within our set time but it doesn’t have to be, if we all agree to hangour for some time more, what harm could it do? :)</p>
             </div>
         </div>
-        <div class = "movie-poster">
-            <div class="container">
-                <div>
-                    <h3 class ="movie-poster__header">Фильмы</h3>
-                    <p class ="movie-poster__text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius ipsum, laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae, suscipit!
-                    </p>
-                </div>
-                <section id = "filmsSection" class="movie-poster-section owl-carousel">   
-<!--                   
+    </div>
+    <div class="present">
+        <div class="container">
+            <div class="present__img"></div>
+            <section class="present-block">
+                <h3 class="present-block__header">Подарок каждому</h3>
+                <p class="present-block__text">
+                    Are you an Elite author in the Envato Marketplaces? If so we are proud of you! We want to give our thanks in achieving great success in the marketplace and we want to make known to the people of our country that you are amazing! Our Elite gifting program includes giving you special merchandize from our community and also promote your works in our community.
+                </p>
+                <p class="present-block__text">
+                    All you have to do is contact us by clicking the button here and then its just going to the event, saying something motivational and taking that swag while looking amazing infront of thousands of other community members.
+                </p>
+                <p class="present-block__text">
+                    *Be advised, we will only give you Elite thank you swag for each level of elite you cross. That means if you do not cross to the next elite level before the next event, you cannot claim your prizes.
+                </p>
+                <button id="popup_open" class="present__button">
+                    Получить подарок
+                </button>
+            </section>
+        </div>
+    </div>
+    <div class="movie-poster">
+        <div class="container">
+            <div>
+                <h3 class="movie-poster__header">Фильмы</h3>
+                <p class="movie-poster__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius ipsum, laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae, suscipit!
+                </p>
+            </div>
+            <section id="filmsSection" class="movie-poster-section owl-carousel">
+                <!--                   
                                 <div class="movie-poster__div movie-poster__div11">
                                     <a class="movie-poster__div-link" target = "_blank" href="https://www.kinopoisk.ru/series/464963/">
                                       <img class="movie-poster__div-link-img" title="Игра пристолов" src="cinimaImg/11.webp" alt="img11"/>  
@@ -454,33 +452,33 @@
                                         </div>
                                     </div>
                                 </div> -->
-                            
-                </section>
-            </div>
-        </div>
-        <div class="map"></div>
-        <footer>
-            <section>
-                <a href=""><img src="img/facebook.svg" alt="facebook"/></a>
-                <a href=""><img src="img/twitter.svg" alt="twitter"/></a>
-                <a href=""><img src="img/linkedin.svg" alt="linkedin"/></a>
-                <a href=""><img src="img/googlePlus.svg" alt="googlePlus"/></a>
-                <a href=""><img src="img/tumblr.svg" alt="tumblr"/></a>
-            </section>
-            <p>
-                Hope we see you at the event!
-                <br/>
-                All Rights Reserved. Envato Bangladesh © 2015
-            </p>
-        </footer>
 
-       
+            </section>
+        </div>
     </div>
-    <div id = "popup" class="popup hidden">
+    <div class="map"></div>
+    <footer>
+        <section>
+            <a href=""><img src="img/facebook.svg" alt="facebook" /></a>
+            <a href=""><img src="img/twitter.svg" alt="twitter" /></a>
+            <a href=""><img src="img/linkedin.svg" alt="linkedin" /></a>
+            <a href=""><img src="img/googlePlus.svg" alt="googlePlus" /></a>
+            <a href=""><img src="img/tumblr.svg" alt="tumblr" /></a>
+        </section>
+        <p>
+            Hope we see you at the event!
+            <br />
+            All Rights Reserved. Envato Bangladesh © 2015
+        </p>
+    </footer>
+
+
+    </div>
+    <div id="popup" class="popup hidden">
         <div class="order-form">
-            <div id = "popup_close" class="close"></div>
-            <form action="order.php" id = "form" onsubmit="formSubmit(); return false;">
-                <div class = "" style="margin:10px">
+            <div id="popup_close" class="close"></div>
+            <form action="order.php" id="form" onsubmit="formSubmit(); return false;">
+                <div class="" style="margin:10px">
                     <label for="idInput" hidden>Укажите имя</label>
                     <input type="text" placeholder="Введите ваше имя *" name="nameInput" id="nameInput">
                     <div class="popup-eror-message"></div>
@@ -515,7 +513,7 @@
                     </select>
                     <div class="popup-eror-message"></div>
                 </div>
-               <!--  <div style="margin:10px">
+                <!--  <div style="margin:10px">
                     <input type="radio" name="place" id = "r1"> 
                     <label for="r1">Детский билет</label>
                 </div>
@@ -535,20 +533,20 @@
                     <label for="inpFile"  hidden>Загрузите файл (при необходимости)</label>
                     <input type="file" id = "inpFile" name="inpFile" >
                 </div> -->
-                
+
                 <div style="margin:10px">
-                    <input id = 'submit' type="submit" value="Заказать" id = 'bs'>
+                    <input id='submit' type="submit" value="Заказать" id='bs'>
                 </div>
             </form>
         </div>
     </div>
-    
-    <div id = "orderForm" class="popup hidden">
+
+    <div id="orderForm" class="popup hidden">
         <div class="order-form">
-            <div id = "closeOrderFrom" class="close"></div>
-            <form id = 'orderTicket' enctype = "multipart/form-data">
-               
-                <div class = 'filmTicetInfo'>
+            <div id="closeOrderFrom" class="close"></div>
+            <form id='orderTicket' enctype="multipart/form-data">
+
+                <div class='filmTicetInfo'>
                     <p>Название фильма: <span id="orderFilmName"></span></p>
                     <p>Жанр: <span id="orderFilmGanar"></span></p>
                     <p>Время начала: <span id="orderFilmStart"></span></p>
@@ -557,33 +555,35 @@
                     <p>Количество выбранных билетов: <span id="orderFilmCountTicket"></span></p>
                     <p>Общая стоимость: <span id="orderFilmTotalPrice">0</span></p>
                 </div>
-               
+
                 <div class="input-wrap"></div>
-                <div class = "cinema-tickets"></div>
+                <div class="cinema-tickets"></div>
                 <div class="tickets-error error">
                     <p class="popup-eror-message"></p>
                 </div>
-                <div class = "" style="margin:10px">
+                <div class="" style="margin:10px">
                     <label for="nameInput" hidden>Укажите имя</label>
                     <input type="text" placeholder="Введите ваше имя *" name="name" id="nameOrder" required>
                     <div class="popup-eror-message"></div>
                 </div>
-                <div class = "" style="margin:10px">
+                <div class="" style="margin:10px">
                     <label for="telInput" hidden>Укажите номер телефона</label>
                     <input type="tel" placeholder="Введите ваш телефон *" name="phone" id="telOrder" required>
                     <div class="popup-eror-message"></div>
                 </div>
-                <div class = "" style="margin:10px">
+                <div class="" style="margin:10px">
                     <label for="telInput" hidden>Укажите адрес электронной почты</label>
                     <input type="email" placeholder="Введите адрес электронной почты *" name="mail" id="mailOrder" required>
                     <div class="popup-eror-message"></div>
                 </div>
-                
-                <label for="filePromo" class = "btn_file_opload" id = "fileField">Прикрепить файл</label>
-                <input type = "file" name = "filePromo" id = "filePromo">
-                <div id = 'fileList'><p>Файл не выбран</p></div>
+
+                <label for="filePromo" class="btn_file_opload" id="fileField">Прикрепить файл</label>
+                <input type="file" name="filePromo" id="filePromo">
+                <div id='fileList'>
+                    <p>Файл не выбран</p>
+                </div>
                 <div style="margin:10px; position: relative;">
-                    <input  type="submit" value="Заказать" id = 'sendOrder' class="present__button">
+                    <input type="submit" value="Заказать" id='sendOrder' class="present__button">
                     <div id="fountainG" style="display: none;">
                         <div id="fountainG_1" class="fountainG"></div>
                         <div id="fountainG_2" class="fountainG"></div>
@@ -600,22 +600,22 @@
     </div>
 
 
-    <div id = "popup-success" class="popup hidden">
+    <div id="popup-success" class="popup hidden">
         <div class="order-form">
-            <div id = "closeOrderFromSuccess" class="close"></div>
+            <div id="closeOrderFromSuccess" class="close"></div>
             <form>
-               <div>
-                   <h3 id = 'nameBuyerOrder'>Поздравляем!!!</h3>
-                   <p id = 'nameBuyerOrderBody'>Вы успешно приобрели билет (билеты) в кино</p>
-               </div>
+                <div>
+                    <h3 id='nameBuyerOrder'>Поздравляем!!!</h3>
+                    <p id='nameBuyerOrderBody'>Вы успешно приобрели билет (билеты) в кино</p>
+                </div>
             </form>
         </div>
     </div>
 
-    <div id = "popup-success-room" class="popup hidden">
+    <div id="popup-success-room" class="popup hidden">
         <div class="order-form-room">
-            <div id = "closeOrderFromSuccessRoom" class="close"></div>
-            <div class="order-form-room__images"> 
+            <div id="closeOrderFromSuccessRoom" class="close"></div>
+            <div class="order-form-room__images">
                 <img src="img/rooms/1.jpg" alt="">
                 <img src="img/rooms/2.jpg" alt="">
                 <img src="img/rooms/3.jpg" alt="">
@@ -625,15 +625,15 @@
     </div>
 
 
-    
-     
+
+
     <script src="js/jq.js"></script>
     <script src="js/plagins/owlcarusel/js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/films.js"></script>
     <script src="js/ajax.js"></script>
     <script src="js/fileUpload.js"></script>
-    
-    </body>
+
+</body>
 
 </html>

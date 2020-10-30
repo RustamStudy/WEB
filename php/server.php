@@ -1,5 +1,5 @@
 <?php
-    $name = $_GET['nameOrder'] ?? '';
-    $phone = $_GET['telOrder'] ?? '';
+$name = $_GET['nameOrder'] ?? '';
+$phone = $_GET['telOrder'] ?? '';
 
-    header('location: /php/thanks.php?name='.$name);
+header('location: /php/thanks.php?name=' . $name);

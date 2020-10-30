@@ -1,6 +1,6 @@
 //const initOwl 
 
- //;
+//;
 
 const genre_1 = 'мультфильм';
 const genre_2 = 'фэнтези';
@@ -16,26 +16,26 @@ const genre_10 = 'семейный';
 let countEnterFilm = 0
 
 const films = [
-  {
-    start: '10am - 12pm',
-    name:	'How to Train Your Dragon: The Hidden World	plus',
-    genre: `${genre_1}, ${genre_2}, ${genre_6}, ${genre_9}, ${genre_10}`
-  },
-  {
-    start: '12pm - 02pm',
-    name:	'	A Dogs Journey	plus',
-    genre: `${genre_2}, ${genre_3}, ${genre_5}, ${genre_9}, ${genre_10}`
-  } ,
-  {
-    start: '02pm - 03pm',
-    name:	'Intouchables	plus',
-    genre: `${genre_3}, ${genre_5}, ${genre_7}`
-  },
-  {
-    start: '03pm - 05pm',
-    name:	'Joker',
-    genre: `${genre_4}, ${genre_3}, ${genre_8}`
-  }
+    {
+        start: '10am - 12pm',
+        name: 'How to Train Your Dragon: The Hidden World	plus',
+        genre: `${genre_1}, ${genre_2}, ${genre_6}, ${genre_9}, ${genre_10}`
+    },
+    {
+        start: '12pm - 02pm',
+        name: '	A Dogs Journey	plus',
+        genre: `${genre_2}, ${genre_3}, ${genre_5}, ${genre_9}, ${genre_10}`
+    },
+    {
+        start: '02pm - 03pm',
+        name: 'Intouchables	plus',
+        genre: `${genre_3}, ${genre_5}, ${genre_7}`
+    },
+    {
+        start: '03pm - 05pm',
+        name: 'Joker',
+        genre: `${genre_4}, ${genre_3}, ${genre_8}`
+    }
 ]
 
 /*
@@ -86,7 +86,7 @@ const form = document.getElementById('form')
 //     const select = document.getElementById('nameSelect');
 //     const radio = document.getElementById('r1');
 //     const area = document.getElementById('nameArea');
-    
+
 // }
 
 //2var
@@ -106,76 +106,76 @@ const sendForm = document.getElementById('submit');
 
 const popup = document.getElementById('popup');
 
-closePopup.onclick = function(event){
+closePopup.onclick = function (event) {
     event.preventDefault();
     popup.classList.add('hidden');
 }
-closeOpen.onclick = function(event){
-  event.preventDefault();
-  popup.classList.remove('hidden');
+closeOpen.onclick = function (event) {
+    event.preventDefault();
+    popup.classList.remove('hidden');
 }
 
-sendForm.onclick = function(event){
-  event.preventDefault();
+sendForm.onclick = function (event) {
+    event.preventDefault();
 
 
-  let name = document.getElementById('nameInput');
-  let select = document.getElementById('nameSelect');
-  let agree = document.getElementById('persAccess');
-  let telOrder = document.getElementById('telOrder');
+    let name = document.getElementById('nameInput');
+    let select = document.getElementById('nameSelect');
+    let agree = document.getElementById('persAccess');
+    let telOrder = document.getElementById('telOrder');
 
 
-  let nameParent = name.parentNode;
-  let selectParent = select.parentNode;
-  let agreeParent = agree.parentNode;
+    let nameParent = name.parentNode;
+    let selectParent = select.parentNode;
+    let agreeParent = agree.parentNode;
 
-  nameParent.classList.remove('error');
-  telOrder.classList.remove('error');
+    nameParent.classList.remove('error');
+    telOrder.classList.remove('error');
 
 
-  selectParent.classList.remove('error');
-  agreeParent.classList.remove('error');
-  nameParent.getElementsByClassName('popup-eror-message')[0].innerHTML = '';
-  telOrder.getElementsByClassName('popup-eror-message')[0].innerHTML = '';
+    selectParent.classList.remove('error');
+    agreeParent.classList.remove('error');
+    nameParent.getElementsByClassName('popup-eror-message')[0].innerHTML = '';
+    telOrder.getElementsByClassName('popup-eror-message')[0].innerHTML = '';
 
-  selectParent.getElementsByClassName('popup-eror-message')[0].innerHTML  = '';
-  agreeParent.getElementsByClassName('popup-eror-message')[0].innerHTML  = '';
+    selectParent.getElementsByClassName('popup-eror-message')[0].innerHTML = '';
+    agreeParent.getElementsByClassName('popup-eror-message')[0].innerHTML = '';
 
- 
-  if(!checkInput(name.value)){    
-    nameParent.classList.add('error');
-    nameParent.getElementsByClassName('popup-eror-message')[0].innerHTML = "заполните поле 'Имя'"
-  }
 
-  if(!checkInput(telOrder.value)){    
-    nameParent.classList.add('error');
-    nameParent.getElementsByClassName('popup-eror-message')[0].innerHTML = "заполните поле 'Телефон'"
-  }
+    if (!checkInput(name.value)) {
+        nameParent.classList.add('error');
+        nameParent.getElementsByClassName('popup-eror-message')[0].innerHTML = "заполните поле 'Имя'"
+    }
 
-  if(select.value == 0){    
-    selectParent.classList.add('error');
-    selectParent.getElementsByClassName('popup-eror-message')[0].innerHTML = "заполните поле выберите ряд"
-  }
-  if(!agree.checked){    
-    agreeParent.classList.add('error');
-    agreeParent.getElementsByClassName('popup-eror-message')[0].innerHTML = "Подтвердите согласие"
-  }
+    if (!checkInput(telOrder.value)) {
+        nameParent.classList.add('error');
+        nameParent.getElementsByClassName('popup-eror-message')[0].innerHTML = "заполните поле 'Телефон'"
+    }
+
+    if (select.value == 0) {
+        selectParent.classList.add('error');
+        selectParent.getElementsByClassName('popup-eror-message')[0].innerHTML = "заполните поле выберите ряд"
+    }
+    if (!agree.checked) {
+        agreeParent.classList.add('error');
+        agreeParent.getElementsByClassName('popup-eror-message')[0].innerHTML = "Подтвердите согласие"
+    }
 }
 
-function checkInput(value){
-  if (value)
-    return true;
-  else 
-    return false;
+function checkInput(value) {
+    if (value)
+        return true;
+    else
+        return false;
 }
 
 
 const url = 'https://kinopoiskapiunofficial.tech/api/v2.1/';
 
 let xhr = new XMLHttpRequest();
-    body = "name:getFilmList";
-    xhr.open("POST", '/php2/index.php', true);
-    xhr.send(body);
+body = "name:getFilmList";
+xhr.open("POST", '/php2/index.php', true);
+xhr.send(body);
 
 const filmsArr = [
     464963,
@@ -189,18 +189,18 @@ const filmsArr = [
     1379016
 ]
 
-const getAllFilm = function(){
-  return new Promise(function(resolve, reject){
-      filmsGenerate();
+const getAllFilm = function () {
+    return new Promise(function (resolve, reject) {
+        filmsGenerate();
     })
 }
-const  getFilmById = function(id) {
-    return new Promise(function(resolve, reject){
-    fetch(`${url}/films/${id}`, {
-        headers: {
-            'X-API-KEY':'fc7695c5-aa8e-4a51-b2bb-85d54ed28068'
-        }
-    }).then(response => response.json()).then(resolve)
+const getFilmById = function (id) {
+    return new Promise(function (resolve, reject) {
+        fetch(`${url}/films/${id}`, {
+            headers: {
+                'X-API-KEY': 'fc7695c5-aa8e-4a51-b2bb-85d54ed28068'
+            }
+        }).then(response => response.json()).then(resolve)
     })
 }
 
@@ -212,27 +212,27 @@ const parseFilm = function (data) {
     let countries = '';
     let genres = '';
     //console.log(data)
-    data.genres.forEach(function(item){
+    data.genres.forEach(function (item) {
         genres += `${item.genre} `
     })
-    data.countries.forEach(function(item){
+    data.countries.forEach(function (item) {
         countries += `${item.country} `
     })
-    return{
+    return {
         name: data.nameRu,
         country: countries,
         genre: genres,
-        year:data.year,
-        description:data.description,
-        link:data.posterUrl,
-        img:data.webUrl
+        year: data.year,
+        description: data.description,
+        link: data.posterUrl,
+        img: data.webUrl
     }
 }
 
 
 
 
-const generateFilmItem = function (name, country,genre, year, description, img, link){
+const generateFilmItem = function (name, country, genre, year, description, img, link) {
     return `
             <div class="movie-poster__div movie-poster__div11">
                 <a class="movie-poster__div-link" target = "_blank" href="${link}">
@@ -262,32 +262,32 @@ const generateFilmItem = function (name, country,genre, year, description, img, 
 
 }
 
-function getRandomNumber(min,max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-    return Math.floor(Math.random()*(max - min + 1)) + min;
+function getRandomNumber(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 let idTr = 0;
-const generateFilmTable = function (name, country,genre, year, description, img, link){
-  //const time = getRandomNumber(0, 2) + '' 
+const generateFilmTable = function (name, country, genre, year, description, img, link) {
+    //const time = getRandomNumber(0, 2) + '' 
 
-  let time1, time2, time3, time4, price
-  time1 = getRandomNumber (0,2)
-  time3 = getRandomNumber (0,5)
-  time4 = getRandomNumber (0,9)
-  switch (time1){
-    case 0:
-    case 1:
-      time2 = getRandomNumber (0,9)
-    default:
-      time2 = getRandomNumber (0,3)
+    let time1, time2, time3, time4, price
+    time1 = getRandomNumber(0, 2)
+    time3 = getRandomNumber(0, 5)
+    time4 = getRandomNumber(0, 9)
+    switch (time1) {
+        case 0:
+        case 1:
+            time2 = getRandomNumber(0, 9)
+        default:
+            time2 = getRandomNumber(0, 3)
     }
-  price = getRandomNumber (1,5)*100
-  room = getRandomNumber (0,2)
+    price = getRandomNumber(1, 5) * 100
+    room = getRandomNumber(0, 2)
 
-  const hours = `${time1}${time2}:${time3}${time4}`;
+    const hours = `${time1}${time2}:${time3}${time4}`;
 
-  return `
+    return `
           <tr id = ${room}>
             <td id = 'orderFilmStart_${idTr}'>${hours}</td>
             <td id = 'orderFilmName_${idTr}'>
@@ -299,199 +299,192 @@ const generateFilmTable = function (name, country,genre, year, description, img,
            
           </tr>
         `
-    
+
 }
 let element, table, prepareFilm;
-let filmsGenerate = new  Promise (function(resolve,reject){filmsArr.forEach(function(item){
-  let film = getFilmById(item);
-  film.then(result => {
-        prepareFilm = parseFilm(result);
-         element = generateFilmItem(prepareFilm.name, 
-                     prepareFilm.country,
-                     prepareFilm.genre,
-                     prepareFilm.year,
-                     prepareFilm.description,
-                     prepareFilm.link,
-                     prepareFilm.img  
-             )
-        table = generateFilmTable(prepareFilm.name, 
-          prepareFilm.country,
-          prepareFilm.genre,
-          prepareFilm.year,
-          prepareFilm.description,
-          prepareFilm.link,
-          prepareFilm.img,
-          idTr++
+let filmsGenerate = new Promise(function (resolve, reject) {
+    filmsArr.forEach(function (item) {
+        let film = getFilmById(item);
+        film.then(result => {
+            prepareFilm = parseFilm(result);
+            element = generateFilmItem(prepareFilm.name,
+                prepareFilm.country,
+                prepareFilm.genre,
+                prepareFilm.year,
+                prepareFilm.description,
+                prepareFilm.link,
+                prepareFilm.img
             )
-             document.querySelector('#filmsSection').insertAdjacentHTML('beforeEnd', element);
-             document.querySelector('.movie-list__table tbody').insertAdjacentHTML('beforeEnd', table);
-             countEnterFilm++;
-     })
- }) 
- resolve();
+            table = generateFilmTable(prepareFilm.name,
+                prepareFilm.country,
+                prepareFilm.genre,
+                prepareFilm.year,
+                prepareFilm.description,
+                prepareFilm.link,
+                prepareFilm.img,
+                idTr++
+            )
+            document.querySelector('#filmsSection').insertAdjacentHTML('beforeEnd', element);
+            document.querySelector('.movie-list__table tbody').insertAdjacentHTML('beforeEnd', table);
+            countEnterFilm++;
+        })
+    })
+    resolve();
 })
-
 
 // filmsGenerate.then(
 
 //       )
 
-let checkerFilm = setTimeout(function tick(){
-  if (countEnterFilm == filmsArr.length)
-  {
-    $(".owl-carousel").owlCarousel({
-      nav:true,
-      loop:true,
-      autoplay:true, 
-        smartSpeed:1000, 
-        autoplayTimeout:5000, 
-        responsive:{ 
-            0:{
-                items:1
-            },
-            570:{
-                items:2
-            },
-            850:{
-                items:3
+let checkerFilm = setTimeout(function tick() {
+    if (countEnterFilm == filmsArr.length) {
+        $(".owl-carousel").owlCarousel({
+            nav: true,
+            loop: true,
+            autoplay: true,
+            smartSpeed: 1000,
+            autoplayTimeout: 5000,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                570: {
+                    items: 2
+                },
+                850: {
+                    items: 3
+                }
             }
-        }
-    }),
-    filmClick()
-  }
-  else
-  {
-    checkerFilm = setTimeout(tick,500);
-  }
+        }),
+            filmClick()
+    }
+    else {
+        checkerFilm = setTimeout(tick, 500);
+    }
 }, 500)
 
-function filmClick(){
-  for(i=0;i<document.querySelectorAll("#filmsHire tbody tr").length;i++) {
-    document.querySelectorAll("#filmsHire tbody tr")[i].onclick = function(){
-      orderForm.style.display = 'block';
-      let orderFilmName = document.getElementById('orderFilmName'),
-          orderFilmStart = document.getElementById('orderFilmStart'),
-          orderFilmGanar = document.getElementById('orderFilmGanar'),
-          orderFilmPrice = document.getElementById('orderFilmPrice'),
-          orderFilmRoom = document.getElementById('ordeZal'),
-          orderFilmGetRoom= getRoom(this.getAttribute('id')),
-          orderFilmCountTicket = document.getElementById('orderFilmCountTicket'),
-          orderFilmTotalPrice = document.getElementById('orderFilmTotalPrice');
- 
-      orderFilmName.innerHTML = document.getElementById('orderFilmName_'+i).innerText;
-      orderFilmStart.innerHTML = document.getElementById('orderFilmStart_'+i).innerText;
-      orderFilmGanar.innerHTML = document.getElementById('orderFilmGanar_'+i).innerText;
-      orderFilmPrice.innerHTML = document.getElementById('orderFilmPrice_'+i).innerText;
-      orderFilmRoom.innerHTML = orderFilmGetRoom.name;
-  
-      orderFilmTotalPrice.innerHTML = document.getElementById('orderFilmPrice_'+i).innerText * orderFilmCountTicket.innerText;
-  
-      orderFilmCountTicket.onchange = function () {
-        orderFilmTotalPrice.innerHTML = orderFilmPrice.innerText * orderFilmCountTicket.innerText;
-      }
+function filmClick() {
+    for (i = 0; i < document.querySelectorAll("#filmsHire tbody tr").length; i++) {
+        document.querySelectorAll("#filmsHire tbody tr")[i].onclick = function () {
+            orderForm.style.display = 'block';
+            let orderFilmName = document.getElementById('orderFilmName'),
+                orderFilmStart = document.getElementById('orderFilmStart'),
+                orderFilmGanar = document.getElementById('orderFilmGanar'),
+                orderFilmPrice = document.getElementById('orderFilmPrice'),
+                orderFilmRoom = document.getElementById('ordeZal'),
+                orderFilmGetRoom = getRoom(this.getAttribute('id')),
+                orderFilmCountTicket = document.getElementById('orderFilmCountTicket'),
+                orderFilmTotalPrice = document.getElementById('orderFilmTotalPrice');
 
-      function changeCount() {
-        orderFilmTotalPrice.innerHTML = orderFilmPrice.innerText * orderFilmCountTicket.innerText;
-      }
+            orderFilmName.innerHTML = document.getElementById('orderFilmName_' + i).innerText;
+            orderFilmStart.innerHTML = document.getElementById('orderFilmStart_' + i).innerText;
+            orderFilmGanar.innerHTML = document.getElementById('orderFilmGanar_' + i).innerText;
+            orderFilmPrice.innerHTML = document.getElementById('orderFilmPrice_' + i).innerText;
+            orderFilmRoom.innerHTML = orderFilmGetRoom.name;
 
-      document.getElementsByClassName('cinema-tickets')[0].innerHTML = '';
-      for (let i = 0; i < orderFilmGetRoom.count; ++ i) 
-      {
-        boughtPlace = '';
-        if(getRandomNumber(0,1) == 1)
-        {
-          boughtPlace = 'bought';
+            orderFilmTotalPrice.innerHTML = document.getElementById('orderFilmPrice_' + i).innerText * orderFilmCountTicket.innerText;
+
+            orderFilmCountTicket.onchange = function () {
+                orderFilmTotalPrice.innerHTML = orderFilmPrice.innerText * orderFilmCountTicket.innerText;
+            }
+
+            function changeCount() {
+                orderFilmTotalPrice.innerHTML = orderFilmPrice.innerText * orderFilmCountTicket.innerText;
+            }
+
+            document.getElementsByClassName('cinema-tickets')[0].innerHTML = '';
+            for (let i = 0; i < orderFilmGetRoom.count; ++i) {
+                boughtPlace = '';
+                if (getRandomNumber(0, 1) == 1) {
+                    boughtPlace = 'bought';
+                }
+                document.getElementsByClassName('cinema-tickets')[0].innerHTML += `<div data-place = '${i + 1}' class="squaere ${boughtPlace}">${i + 1}</div>`
+
+            }
+            // console.log(document.getElementsByClassName('squaere').length)
+            orderFilmCountTicket.innerHTML = 0;
+
+            for (i = 0; i < document.getElementsByClassName('squaere').length; i++) {
+                if (!document.getElementsByClassName('squaere')[i].classList.contains('bought')) {
+                    document.getElementsByClassName('squaere')[i].onclick = function () {
+                        orderForm.getElementsByClassName('tickets-error')[0].getElementsByTagName('p')[0].innerHTML = '';
+                        this.classList.toggle('placeActive');
+                        if (this.classList.contains('placeActive'))
+                            orderFilmCountTicket.innerHTML = +document.getElementById('orderFilmCountTicket').innerText + 1;
+                        else
+                            orderFilmCountTicket.innerHTML = +document.getElementById('orderFilmCountTicket').innerText - 1;
+                        changeCount();
+                    }
+                    document.getElementsByClassName('squaere')[i].oncontextmenu = function () {
+                        alert(`Стоимость билета составляет ${document.getElementById('orderFilmPrice').innerText} рублей`);
+                    }
+                }
+                else
+                    document.getElementsByClassName('squaere')[i].onclick = function () { alert('Место забронировано') }
+            }
         }
-        document.getElementsByClassName('cinema-tickets')[0].innerHTML += `<div data-place = '${i+1}' class="squaere ${boughtPlace}">${i+1}</div>`
-        
-      }
-      console.log(document.getElementsByClassName('squaere').length)
-      orderFilmCountTicket.innerHTML = 0;
-
-      for(i = 0; i < document.getElementsByClassName('squaere').length; i++)
-      {
-        if(!document.getElementsByClassName('squaere')[i].classList.contains('bought'))
-        {
-          document.getElementsByClassName('squaere')[i].onclick = function()
-          { 
-            orderForm.getElementsByClassName('tickets-error')[0].getElementsByTagName('p')[0].innerHTML = '';
-            this.classList.toggle('placeActive');
-            if(this.classList.contains('placeActive'))
-              orderFilmCountTicket.innerHTML = +document.getElementById('orderFilmCountTicket').innerText + 1;
-            else
-              orderFilmCountTicket.innerHTML = +document.getElementById('orderFilmCountTicket').innerText - 1;
-              changeCount();
-          }
-          document.getElementsByClassName('squaere')[i].oncontextmenu = function(){
-            alert(`Стоимость билета составляет ${document.getElementById('orderFilmPrice').innerText} рублей`);
-          }
-        }
-        else
-        document.getElementsByClassName('squaere')[i].onclick = function(){alert('Место забронировано')}
-      }
     }
-  }
 }
 
 
 
-function getRoom(num){
-  return rooms.filter(room=>room.id == num)[0]
+function getRoom(num) {
+    return rooms.filter(room => room.id == num)[0]
 }
 
-document.getElementsByClassName('menu__burger')[0].onclick = function(){
-  if(document.getElementsByClassName('title__nav')[0].style.display == 'block')
-    document.getElementsByClassName('title__nav')[0].style.display = 'none';
-  else
-    document.getElementsByClassName('title__nav')[0].style.display = 'block';
+document.getElementsByClassName('menu__burger')[0].onclick = function () {
+    if (document.getElementsByClassName('title__nav')[0].style.display == 'block')
+        document.getElementsByClassName('title__nav')[0].style.display = 'none';
+    else
+        document.getElementsByClassName('title__nav')[0].style.display = 'block';
 }
 
 document.getElementById('city_name').onclick = cityChangeVis;
-document.onclick = function(){
-  // console.log(33)
-  if ( event.target.className == 'title__main' || 
-        event.target.className == 'title__main_header' || 
+document.onclick = function () {
+    // console.log(33)
+    if (event.target.className == 'title__main' ||
+        event.target.className == 'title__main_header' ||
         event.target.className == 'title__main_text') {
-      if(!document.getElementsByClassName('title__city-change')[0].classList.contains('city_name-hidden')){
-        document.getElementsByClassName('title__city-change')[0].classList.add('city_name-hidden');
-      }
-  }
- }
- 
+        if (!document.getElementsByClassName('title__city-change')[0].classList.contains('city_name-hidden')) {
+            document.getElementsByClassName('title__city-change')[0].classList.add('city_name-hidden');
+        }
+    }
+}
 
 
 
 
-  document.getElementById('cityChangeAccess').onclick = function(){
-  cityChangeVis();
-  city_name.innerHTML = document.querySelector('#cityView span').innerText;
+
+document.getElementById('cityChangeAccess').onclick = function () {
+    cityChangeVis();
+    city_name.innerHTML = document.querySelector('#cityView span').innerText;
 }
 document.getElementById('cityChangeNew').onclick = cityChangeNew;
 
 
-function cityChangeVis(){
-  document.getElementsByClassName('title__city-change')[0].classList.toggle('city_name-hidden');
-  if(!document.getElementById('cityNew').classList.contains('city_name-hidden')){
-    document.getElementById('cityNew').classList.add('city_name-hidden');
-  }
-  if(document.getElementById('cityView').classList.contains('city_name-hidden')){
-    document.getElementById('cityView').classList.remove('city_name-hidden');
-  }
-  if(document.getElementById('cityChangeAccess').classList.contains('city_name-hidden')){
-    document.getElementById('cityChangeAccess').classList.remove('city_name-hidden');
-    document.getElementById('cityChangeAccept').classList.add('city_name-hidden');
-  }
+function cityChangeVis() {
+    document.getElementsByClassName('title__city-change')[0].classList.toggle('city_name-hidden');
+    if (!document.getElementById('cityNew').classList.contains('city_name-hidden')) {
+        document.getElementById('cityNew').classList.add('city_name-hidden');
+    }
+    if (document.getElementById('cityView').classList.contains('city_name-hidden')) {
+        document.getElementById('cityView').classList.remove('city_name-hidden');
+    }
+    if (document.getElementById('cityChangeAccess').classList.contains('city_name-hidden')) {
+        document.getElementById('cityChangeAccess').classList.remove('city_name-hidden');
+        document.getElementById('cityChangeAccept').classList.add('city_name-hidden');
+    }
 }
-function cityChangeNew(){
-  document.getElementById('cityView').classList.toggle('city_name-hidden');
-  document.getElementById('cityNew').classList.toggle('city_name-hidden');
-  document.getElementById('cityChangeAccept').classList.toggle('city_name-hidden');
-  document.getElementById('cityChangeAccess').classList.toggle('city_name-hidden');
+function cityChangeNew() {
+    document.getElementById('cityView').classList.toggle('city_name-hidden');
+    document.getElementById('cityNew').classList.toggle('city_name-hidden');
+    document.getElementById('cityChangeAccept').classList.toggle('city_name-hidden');
+    document.getElementById('cityChangeAccess').classList.toggle('city_name-hidden');
 }
 
-document.getElementById('closeOrderFromSuccessRoom').onclick = function(){
-  document.getElementById('popup-success-room').classList.add('hidden');
+document.getElementById('closeOrderFromSuccessRoom').onclick = function () {
+    document.getElementById('popup-success-room').classList.add('hidden');
 }
-document.getElementById('intererView').onclick = function(){
-  document.getElementById('popup-success-room').classList.remove('hidden');
+document.getElementById('intererView').onclick = function () {
+    document.getElementById('popup-success-room').classList.remove('hidden');
 }

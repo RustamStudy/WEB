@@ -15,11 +15,11 @@ require_once 'Mail.php';
 
 
 
-class Controller {
+class Controller
+{
 
     public function __construct()
     {
-
     }
 
     /**
@@ -35,7 +35,7 @@ class Controller {
             'phone' => ['phone']
         ], $post);
 
-        if (count($validate->validate()) > 0 ) {
+        if (count($validate->validate()) > 0) {
             return [
                 'status' => 'ERROR',
                 'error' => $validate->validate()
@@ -54,9 +54,8 @@ class Controller {
             $user->save();
 
             // $id = $database->createRecord($user);
-            
-        }
-        else
+
+        } else
             $user = User::load();
 
         return [
@@ -64,19 +63,15 @@ class Controller {
             'data' => $post,
             'user' => $user
         ];
-        
     }
-    
+
 
     /**
      * @param $post
      * @return mixed
      */
-    public function film ($post)
+    public function film($post)
     {
         return json_decode('');
     }
-   
 }
-
-?>

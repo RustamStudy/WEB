@@ -32,11 +32,11 @@ class Validate
     {
         $errors = [];
 
-        foreach ($this->args as $key => $value){
-            foreach ($value  as $param){
-                switch ($param){
+        foreach ($this->args as $key => $value) {
+            foreach ($value  as $param) {
+                switch ($param) {
                     case 'max':
-                        if ($this->checkMaxValue($this->post[$key])){
+                        if ($this->checkMaxValue($this->post[$key])) {
                             array_push($errors, [
                                 'type' => 'max',
                                 'error' => ErrorMax
@@ -44,7 +44,7 @@ class Validate
                         }
                         break;
                     case 'min':
-                        if ($this->checkMinValue($this->post[$key])){
+                        if ($this->checkMinValue($this->post[$key])) {
                             array_push($errors, [
                                 'type' => 'min',
                                 'error' => ErrorMin
@@ -52,7 +52,7 @@ class Validate
                         }
                         break;
                     case 'phone':
-                        if ($this->checkPhone($this->post[$key])){
+                        if ($this->checkPhone($this->post[$key])) {
                             array_push($errors, [
                                 'type' => 'phone',
                                 'error' => ErrorPhone
@@ -96,5 +96,4 @@ class Validate
         //регулярка возвращаем true or false
         return  false;
     }
-
 }
