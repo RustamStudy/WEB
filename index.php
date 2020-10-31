@@ -124,26 +124,23 @@
                 <table class="movie-list__table" id='filmsHire'>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>
-                                <span>Time</span>
+                                <span>Время</br>сеанса</span>
                                 <!-- <img src="img/triangle.svg" alt=""> -->
                                 <div class="poiner"></div>
                             </th>
                             <th>
-                                <span>Stuff that will happen</span>
+                                <span>Наименование</span>
                                 <!-- <img src="img/triangle.svg" alt=""> -->
-                                <div class="poiner"></div>
+                                <div class="poiner asc"></div>
                             </th>
                             <th>
-                                <span>Genre</span>
+                                <span>Год выпуска</span>
                                 <!-- <div class="poiner"></div> -->
                             </th>
                             <th>
-                                <span>Price</span>
-                                <!-- <div class="poiner"></div> -->
-                            </th>
-                            <th>
-                                <span>Room</span>
+                                <span>Жанр</span>
                                 <!-- <div class="poiner"></div> -->
                             </th>
                         </tr>
@@ -456,7 +453,7 @@
             </section>
         </div>
     </div>
-    <div class="map"></div>
+    <div class = "map"><script charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9a3437b906617db441f49a9ce96da5468965ca00d27a0951448b3fe9ba42e1a5&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script></div>
     <footer>
         <section>
             <a href=""><img src="img/facebook.svg" alt="facebook" /></a>
@@ -633,7 +630,7 @@
     <script src="js/films.js"></script>
     <script src="js/ajax.js"></script>
     <script src="js/fileUpload.js"></script>
-
+    
 </body>
 
 </html>

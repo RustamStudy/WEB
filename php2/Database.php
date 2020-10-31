@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 class Database
 {
 
@@ -135,5 +137,53 @@ class Database
         $request = self::$pdo->prepare($sql);
         $request->execute();
         return $request;
+    }
+    public static function orderShow()
+    {
+        self::connect();
+        $sql = "SELECT orders.id, name, phone, mail, filmName, filmZal, filmTime, place_num, orders.date, placesBody.id as idPlaces
+                FROM 
+                            placesHead inner join 
+                            placesBody on placesHead.id = placesBody.id_PH inner JOIN
+                            orders on orders.id = placesHead.user_id
+                order by    placesHead.id desc, placesBody.place_num";
+        $request = self::$pdo->prepare($sql);
+        $request->execute();
+        return $request;
+    }
+    public static function getPlase($name)
+    {
+        self::connect();
+        $sql = "SELECT      placesBody.place_num
+                FROM        placesHead 
+                                inner join placesBody on placesBody.id_PH = placesHead.id
+                WHERE       placesHead.filmName = '".$name."'
+                group by    place_num";
+        $request = self::$pdo->prepare($sql);
+        $request->execute();
+
+        $arr = [];
+        foreach($request as $row) {
+            array_push($arr, $row['place_num']);
+        }
+//print_r($arr);
+        return $arr;
+    }
+    public static function editPlaces($id1, $id2)
+    {
+        self::connect();
+        $sql = "update placesBody
+                set place_num = '".$id1."' ".
+                "where id = ".$id2;
+        $request = self::$pdo->prepare($sql);
+        $request->execute();
+    }
+    public static function deletePlaces($id1)
+    {
+        self::connect();
+        $sql = "delete from placesBody".
+                " where id = ".$id1;
+        $request = self::$pdo->prepare($sql);
+        $request->execute();
     }
 };

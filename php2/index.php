@@ -10,12 +10,28 @@ if (isset($_POST['method'])) {
     switch ($_POST['method']) {
         case 'film':
             $response = $controller->film($_POST);
+            echo json_encode($response);
             break;
         case 'post':
             $response = $controller->post($_POST);
+            echo json_encode($response);
+            break;
+        case 'edit':
+            Database::editPlaces($_POST['id1'],$_POST['id2']);
+            echo json_encode($_POST, true);
+            break;
+        case 'delete':
+            Database::deletePlaces($_POST['id1']);
+            echo json_encode($_POST, true);
+           // header('location: /php2/adminview.php');
+            break;
+        case 'places':
+            $response1 = Database::getPlase($_POST['id1']);
+            echo json_encode($response1);
+            //print_r($_POST['id1']);
             break;
     }
-    echo json_encode($response);
+    
     sleep(2);
     return 0;
 }

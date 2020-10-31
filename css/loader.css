@@ -1,18 +1,22 @@
 #fountainG {
     position: absolute;
     width: 22rem;
-    height: 22px;
+    height: 5.5rem;
     /* margin: auto; */
     bottom: 2rem;
-    left: 4rem;
+    left: calc(11rem - 9rem);
+    top: 50%;
+    /* margin-top: 1.1rem; */
+    text-align: center;
+    margin-top: 1.3rem;
 }
 
 .fountainG {
     position: absolute;
     top: 0;
     background-color: rgba(255,255,255,0.53);
-    width: 22px;
-    height: 22px;
+    width: 2.2rem;
+    height: 2.2rem;
     animation-name: bounce_fountainG;
     -o-animation-name: bounce_fountainG;
     -ms-animation-name: bounce_fountainG;
@@ -39,10 +43,10 @@
     -webkit-transform: scale(.3);
     -moz-transform: scale(.3);
     border-radius: 14px;
-    -o-border-radius: 14px;
-    -ms-border-radius: 14px;
-    -webkit-border-radius: 14px;
-    -moz-border-radius: 14px;
+    -o-border-radius: 1.4rem;
+    -ms-border-radius: 1.4rem;
+    -webkit-border-radius: 1.4rem;
+    -moz-border-radius: 1.4rem;
 }
 
 #fountainG_1 {
@@ -55,7 +59,7 @@
 }
 
 #fountainG_2 {
-    left: 22px;
+    left: 2.2rem;
     animation-delay: 0.4525s;
     -o-animation-delay: 0.4525s;
     -ms-animation-delay: 0.4525s;
@@ -64,7 +68,7 @@
 }
 
 #fountainG_3 {
-    left: 45px;
+    left: 4.5rem;
     animation-delay: 0.549s;
     -o-animation-delay: 0.549s;
     -ms-animation-delay: 0.549s;
@@ -73,7 +77,7 @@
 }
 
 #fountainG_4 {
-    left: 67px;
+    left: 6.7rem;
     animation-delay: 0.6355s;
     -o-animation-delay: 0.6355s;
     -ms-animation-delay: 0.6355s;
@@ -82,7 +86,7 @@
 }
 
 #fountainG_5 {
-    left: 90px;
+    left: 9.0rem;
     animation-delay: 0.732s;
     -o-animation-delay: 0.732s;
     -ms-animation-delay: 0.732s;
@@ -91,7 +95,7 @@
 }
 
 #fountainG_6 {
-    left: 112px;
+    left: 11.2rem;
     animation-delay: 0.8185s;
     -o-animation-delay: 0.8185s;
     -ms-animation-delay: 0.8185s;
@@ -100,7 +104,7 @@
 }
 
 #fountainG_7 {
-    left: 135px;
+    left: 13.5rem;
     animation-delay: 0.905s;
     -o-animation-delay: 0.905s;
     -ms-animation-delay: 0.905s;
@@ -109,7 +113,7 @@
 }
 
 #fountainG_8 {
-    left: 157px;
+    left: 15.7rem;
     animation-delay: 1.0015s;
     -o-animation-delay: 1.0015s;
     -ms-animation-delay: 1.0015s;

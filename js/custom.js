@@ -177,17 +177,67 @@ body = "name:getFilmList";
 xhr.open("POST", '/php2/index.php', true);
 xhr.send(body);
 
-const filmsArr = [
-    464963,
-    1048334,
-    535341,
-    775276,
-    706655,
-    1122114,
-    1005878,
-    1080513,
-    1379016
+const filmArr = [
+    {
+        "filmId": 464963,
+        "time": "11:00",
+        "room": 0,
+        "price": 300
+    },
+    {
+        "filmId": 1048334,
+        "time": "12:00",
+        "room": 1,
+        "price": 800
+    },
+    {
+        "filmId": 535341,
+        "time": "18:00",
+        "room": 1,
+        "price": 500
+    },
+    {
+        "filmId": 775276,
+        "time": "16:00",
+        "room": 2,
+        "price": 300
+    },
+    {
+        "filmId": 706655,
+        "time": "13:00",
+        "room": 1,
+        "price": 800
+    },
+    {
+        "filmId": 1122114,
+        "time": "15:00",
+        "room": 1,
+        "price": 500
+    },
+    {
+        "filmId": 1005878,
+        "time": "17:00",
+        "room": 0,
+        "price": 300
+    },
+    {
+        "filmId": 1080513,
+        "time": "14:00",
+        "room": 2,
+        "price": 800
+    },
+    {
+        "filmId": 1379016,
+        "time": "17:00",
+        "room": 1,
+        "price": 500
+    }
 ]
+
+let filmsArr = [];
+for (let i = 0; i < filmArr.length; i++) {
+    filmsArr.push(filmArr[i].filmId);
+}
 
 const getAllFilm = function () {
     return new Promise(function (resolve, reject) {
@@ -204,14 +254,11 @@ const getFilmById = function (id) {
     })
 }
 
-
-
-
 const parseFilm = function (data) {
     data = data.data;
     let countries = '';
     let genres = '';
-    //console.log(data)
+    //sconsole.log(data)
     data.genres.forEach(function (item) {
         genres += `${item.genre} `
     })
@@ -225,12 +272,11 @@ const parseFilm = function (data) {
         year: data.year,
         description: data.description,
         link: data.posterUrl,
-        img: data.webUrl
+        img: data.webUrl,
+        smallImg: data.posterUrlPreview,
+        filmId: data.filmId
     }
 }
-
-
-
 
 const generateFilmItem = function (name, country, genre, year, description, img, link) {
     return `
@@ -268,7 +314,9 @@ function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 let idTr = 0;
-const generateFilmTable = function (name, country, genre, year, description, img, link) {
+let filmTable = [];
+let idFilmArr = 0;
+const generateFilmTable = function (name, country, genre, year, description, img, link, smallImg, filmId) {
     //const time = getRandomNumber(0, 2) + '' 
 
     let time1, time2, time3, time4, price
@@ -287,6 +335,21 @@ const generateFilmTable = function (name, country, genre, year, description, img
 
     const hours = `${time1}${time2}:${time3}${time4}`;
 
+    filmTable.push(
+        {
+            "filmStart": filmArr[idFilmArr].time,
+            "filmName": name,
+            "genre": genre,
+            "price": filmArr[idFilmArr].price,
+            "room": filmArr[idFilmArr].room,
+            "year": year,
+            "country": country,
+            "img": img,
+            "description": description,
+            "filmId": filmArr[idFilmArr].filmId
+        }
+    )
+    idFilmArr++;
     return `
           <tr id = ${room}>
             <td id = 'orderFilmStart_${idTr}'>${hours}</td>
@@ -322,21 +385,40 @@ let filmsGenerate = new Promise(function (resolve, reject) {
                 prepareFilm.description,
                 prepareFilm.link,
                 prepareFilm.img,
+                prepareFilm.filmId,
                 idTr++
             )
             document.querySelector('#filmsSection').insertAdjacentHTML('beforeEnd', element);
-            document.querySelector('.movie-list__table tbody').insertAdjacentHTML('beforeEnd', table);
+            // document.querySelector('.movie-list__table tbody').insertAdjacentHTML('beforeEnd', table);
+
             countEnterFilm++;
         })
     })
     resolve();
 })
+let filmTableNew
+function tableReload(field, typeSort) {
+    filmTableNew = filmTableOrderFunction(field, typeSort)
+    let tableBody = document.getElementById('filmsHire').getElementsByTagName('tbody')[0];
+    tableBody.innerHTML = '';
+    elem = '';
+    for (let i = 0; i < filmTableNew.length; i++) {
+        elem += `<tr idFilm = '${filmTableNew[i].filmId}'>`;
+        elem += `<td><img src = 'img/check.png' class = 'movie-list__table_ch_box'></td>`;
+        elem += `<td>${filmTableNew[i].filmStart}</td>`;
+        elem += `<td><img class = 'movie-list__table_img' src = '${filmTableNew[i].img}'><span>${filmTableNew[i].filmName}</span></td>`;
+        elem += `<td>${filmTableNew[i].year}</td>`;
+        elem += `<td>${filmTableNew[i].genre}</td>`;
+        elem += '</tr>';
+    }
+    tableBody.insertAdjacentHTML('beforeEnd', elem)
+}
 
 // filmsGenerate.then(
 
 //       )
 
-let checkerFilm = setTimeout(function tick() {
+let s = setTimeout(function tick() {
     if (countEnterFilm == filmsArr.length) {
         $(".owl-carousel").owlCarousel({
             nav: true,
@@ -356,33 +438,43 @@ let checkerFilm = setTimeout(function tick() {
                 }
             }
         }),
-            filmClick()
+            tableReload('filmName', 'asc');
+        sortedTable();
+        filmClick()
+        //console.log(filmTable);
     }
     else {
-        checkerFilm = setTimeout(tick, 500);
+        checkerFilm = setTimeout(tick, 1000);
     }
-}, 500)
 
+}, 1000)
+let arr
 function filmClick() {
     for (i = 0; i < document.querySelectorAll("#filmsHire tbody tr").length; i++) {
         document.querySelectorAll("#filmsHire tbody tr")[i].onclick = function () {
+
+            let idInd = 0;
+            for (let j = 0; j < filmTable.length; j++) {
+                if (filmTable[j].filmId == this.getAttribute('idFilm')) idInd = j;
+
+            }
+            //console.log(filmTable[idInd]);
             orderForm.style.display = 'block';
             let orderFilmName = document.getElementById('orderFilmName'),
                 orderFilmStart = document.getElementById('orderFilmStart'),
                 orderFilmGanar = document.getElementById('orderFilmGanar'),
                 orderFilmPrice = document.getElementById('orderFilmPrice'),
                 orderFilmRoom = document.getElementById('ordeZal'),
-                orderFilmGetRoom = getRoom(this.getAttribute('id')),
                 orderFilmCountTicket = document.getElementById('orderFilmCountTicket'),
                 orderFilmTotalPrice = document.getElementById('orderFilmTotalPrice');
 
-            orderFilmName.innerHTML = document.getElementById('orderFilmName_' + i).innerText;
-            orderFilmStart.innerHTML = document.getElementById('orderFilmStart_' + i).innerText;
-            orderFilmGanar.innerHTML = document.getElementById('orderFilmGanar_' + i).innerText;
-            orderFilmPrice.innerHTML = document.getElementById('orderFilmPrice_' + i).innerText;
-            orderFilmRoom.innerHTML = orderFilmGetRoom.name;
-
-            orderFilmTotalPrice.innerHTML = document.getElementById('orderFilmPrice_' + i).innerText * orderFilmCountTicket.innerText;
+            orderFilmName.innerHTML = filmTable[idInd].filmName;
+            orderFilmStart.innerHTML = filmTable[idInd].filmStart;
+            orderFilmGanar.innerHTML = filmTable[idInd].genre;
+            orderFilmPrice.innerHTML = filmTable[idInd].price;
+            orderFilmRoom.innerHTML = getRoom(filmTable[idInd].room).name;
+            document.getElementsByClassName('cinema-tickets')[0].innerHTML = '<p>Пожалуйста подождите, загружаются места в зале</p>';
+            orderFilmTotalPrice.innerHTML = filmTable[idInd].price * orderFilmCountTicket.innerText;
 
             orderFilmCountTicket.onchange = function () {
                 orderFilmTotalPrice.innerHTML = orderFilmPrice.innerText * orderFilmCountTicket.innerText;
@@ -392,36 +484,54 @@ function filmClick() {
                 orderFilmTotalPrice.innerHTML = orderFilmPrice.innerText * orderFilmCountTicket.innerText;
             }
 
-            document.getElementsByClassName('cinema-tickets')[0].innerHTML = '';
-            for (let i = 0; i < orderFilmGetRoom.count; ++i) {
-                boughtPlace = '';
-                if (getRandomNumber(0, 1) == 1) {
-                    boughtPlace = 'bought';
-                }
-                document.getElementsByClassName('cinema-tickets')[0].innerHTML += `<div data-place = '${i + 1}' class="squaere ${boughtPlace}">${i + 1}</div>`
 
-            }
-            // console.log(document.getElementsByClassName('squaere').length)
-            orderFilmCountTicket.innerHTML = 0;
+            $.post(
+                "./php2/index.php",
+                {
+                    method: "places",
+                    id1: filmTable[idInd].filmName
+                },
+                function (data) {
+                    arr = eval('(' + data + ')');
+                    document.getElementsByClassName('cinema-tickets')[0].innerHTML = ''
+                    for (let i = 0; i < getRoom(filmTable[idInd].room).count; i++) {
+                        boughtPlace = '';
+                        for (let j = 0; j < arr.length; j++) {
+                            if (i == (arr[j] - 1)) {
+                                boughtPlace = 'bought';
+                                // console.log(j);
+                            }
+                        }
+                        document.getElementsByClassName('cinema-tickets')[0].innerHTML += `<div data-place = '${i + 1}' class="squaere ${boughtPlace}">${i + 1}</div>`
+                    }
+                    // console.log(arr);
+                    orderFilmCountTicket.innerHTML = 0;
 
-            for (i = 0; i < document.getElementsByClassName('squaere').length; i++) {
-                if (!document.getElementsByClassName('squaere')[i].classList.contains('bought')) {
-                    document.getElementsByClassName('squaere')[i].onclick = function () {
-                        orderForm.getElementsByClassName('tickets-error')[0].getElementsByTagName('p')[0].innerHTML = '';
-                        this.classList.toggle('placeActive');
-                        if (this.classList.contains('placeActive'))
-                            orderFilmCountTicket.innerHTML = +document.getElementById('orderFilmCountTicket').innerText + 1;
+                    for (i = 0; i < document.getElementsByClassName('squaere').length; i++) {
+                        if (!document.getElementsByClassName('squaere')[i].classList.contains('bought')) {
+                            document.getElementsByClassName('squaere')[i].onclick = function () {
+                                orderForm.getElementsByClassName('tickets-error')[0].getElementsByTagName('p')[0].innerHTML = '';
+                                this.classList.toggle('placeActive');
+                                if (this.classList.contains('placeActive'))
+                                    orderFilmCountTicket.innerHTML = +document.getElementById('orderFilmCountTicket').innerText + 1;
+                                else
+                                    orderFilmCountTicket.innerHTML = +document.getElementById('orderFilmCountTicket').innerText - 1;
+                                changeCount();
+                            }
+                            document.getElementsByClassName('squaere')[i].oncontextmenu = function () {
+                                alert(`Стоимость билета составляет ${document.getElementById('orderFilmPrice').innerText} рублей`);
+                            }
+                        }
                         else
-                            orderFilmCountTicket.innerHTML = +document.getElementById('orderFilmCountTicket').innerText - 1;
-                        changeCount();
-                    }
-                    document.getElementsByClassName('squaere')[i].oncontextmenu = function () {
-                        alert(`Стоимость билета составляет ${document.getElementById('orderFilmPrice').innerText} рублей`);
+                            document.getElementsByClassName('squaere')[i].onclick = function () { alert('Место забронировано') }
                     }
                 }
-                else
-                    document.getElementsByClassName('squaere')[i].onclick = function () { alert('Место забронировано') }
-            }
+            )
+
+
+
+            // console.log(document.getElementsByClassName('squaere').length)
+
         }
     }
 }
@@ -488,3 +598,62 @@ document.getElementById('closeOrderFromSuccessRoom').onclick = function () {
 document.getElementById('intererView').onclick = function () {
     document.getElementById('popup-success-room').classList.remove('hidden');
 }
+
+let filmTableOrder = [];
+function filmTableOrderFunction(field, typeSort) {
+    switch (field) {
+        case 'filmStart': {
+            switch (typeSort) {
+                case 'asc': {
+                    filmTableOrder = filmTable.sort((a, b) => a.filmStart > b.filmStart ? 1 : -1);
+                    break;
+                }
+                case 'desc': {
+                    filmTableOrder = filmTable.sort((a, b) => a.filmStart > b.filmStart ? -1 : 1);
+                    break;
+                }
+            }
+            break;
+        }
+        case 'filmName': {
+            switch (typeSort) {
+                case 'asc': {
+                    filmTableOrder = filmTable.sort((a, b) => a.filmName > b.filmName ? 1 : -1);
+                    break;
+                }
+                case 'desc': {
+                    filmTableOrder = filmTable.sort((a, b) => a.filmName > b.filmName ? -1 : 1);
+                    break;
+                }
+            }
+            break;
+        }
+    }
+    return filmTableOrder;
+}
+let arrField = ['filmStart', 'filmName'];
+function sortedTable() {
+    let th = document.getElementsByClassName('poiner')
+    for (let i = 0; i < th.length; i++) {
+
+        th[i].parentElement.onclick = () => {
+            let cl = 'desc'
+            if (!th[i].classList.contains('asc')) {
+                tableReload(arrField[i], 'asc');
+                cl = 'asc';
+            }
+            else {
+                tableReload(arrField[i], 'desc');
+            }
+
+            for (let j = 0; j < th.length; j++) {
+                th[j].parentElement.getElementsByTagName('div')[0].classList.remove('asc');
+                th[j].parentElement.getElementsByTagName('div')[0].classList.remove('desc');
+            }
+
+            th[i].classList.add(cl);
+
+        }
+    }
+}
+//tableReload('filmName', 'asc');

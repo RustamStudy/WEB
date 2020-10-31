@@ -1,0 +1,109 @@
+* {
+    font-family: "Roboto";
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    outline: none
+}
+
+.head {
+    font-size: 24px;
+}
+
+.table * {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.table {
+    font-size: 14px;
+    border-collapse: collapse;
+}
+
+    .table tr td:nth-child(1),
+    .table tr td:nth-child(2),
+    .table tr td:nth-child(4),
+    .table tr td:nth-child(7),
+    .table tr td:nth-child(8),
+    .table tr td:nth-child(9) {
+        text-align: center;
+    }
+
+.table-tr__order {
+    background-color: rgb(200,200,200);
+}
+
+.close {
+    color: red;
+    display: block;
+    position: absolute;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: url(../img/close.svg) no-repeat center center / cover;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.order-form {
+    background: rgb(255,255,255);
+    border-radius: 14px;
+    box-shadow: 1px 0px 5px rgb(125,125,125);
+    box-sizing: border-box;
+    /* height: 700px; */
+    width: 500px;
+    padding: 20px;
+    margin: 100px auto;
+    position: relative;
+}
+
+.filmTicetInfo {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+    .filmTicetInfo label {
+        font-size: 12px;
+        display: block;
+        width: 50%;
+    }
+
+.hidden {
+    display: none;
+}
+
+.editPlaces,
+.deletePlaces,
+.numPlaces {
+    width: 25%;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#label {
+    width: 10%;
+    text-align: center;
+}
+
+.editPlaces {
+    background-color: #007bff;
+    color: white;
+}
+
+.deletePlaces {
+    background-color: #dc3545;
+    color: white;
+}

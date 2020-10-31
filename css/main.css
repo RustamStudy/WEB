@@ -92,24 +92,48 @@ body {
     }
 
     .movie-list__table tbody tr td:nth-child(1) {
-        width: calc(23rem - 3.5rem);
-        padding-left: 4.5rem;
+        width: 2rem;
+        padding-left: 1rem;
     }
 
     .movie-list__table tr td:nth-child(2),
     .movie-list__table tr th:nth-child(2) {
-        padding-left: 10.5rem;
+        padding-left: 2rem;
+        text-align: center;
     }
+
+    .movie-list__table tr th:nth-child(2),
+    .movie-list__table tr th:nth-child(3) {
+        padding-right: 5rem;
+    }
+
 
     .movie-list__table tbody tr td:nth-child(3) {
-        width: calc(40rem - 1.5rem);
-        padding: 0 5rem;
+        /* width: calc(40rem - 1.5rem); */
+        padding: 2rem 5rem;
+        display: flex;
+        align-items: center;
     }
 
+    .movie-list__table thead tr th:nth-child(4),
     .movie-list__table tbody tr td:nth-child(4) {
-        width: calc(10rem - 1.5rem);
-        padding-left: 0rem;
+        /* width: calc(10rem - 1.5rem); */
+        padding: 0 2rem;
+        width: 10rem;
+        text-align: center;
     }
+
+    .movie-list__table thead tr th:nth-child(5),
+    .movie-list__table tbody tr td:nth-child(5) {
+        /* width: calc(10rem - 1.5rem); */
+        padding: 0 2rem;
+        width: 25rem;
+    }
+
+    .movie-list__table thead span {
+        display: block;
+    }
+
 
 .movie-list-about {
     width: 100%;
@@ -542,7 +566,7 @@ footer {
 }
 
 .map {
-    background: url(../img/map.png) no-repeat center center / cover;
+    /* background: url(../img/map.png) no-repeat center center / cover; */
     min-height: 45rem;
     width: 100%;
     margin-top: 9.8rem;
@@ -665,15 +689,38 @@ footer {
 
 
 .poiner {
-    border-left: 10px transparent solid;
-    border-right: 10px transparent solid;
-    border-bottom: 15px rgb(255,255,255) solid;
-    width: 20px;
+    border-left: 5px transparent solid;
+    border-right: 5px transparent solid;
+    border-bottom: 7.5px rgb(255,255,255) solid;
+    width: 1rem;
     position: absolute;
     right: 4px;
     top: 50%;
-    margin-top: -10px;
+    margin-top: -5px;
 }
+
+    .poiner.asc {
+        border-left: 10px transparent solid;
+        border-right: 10px transparent solid;
+        border-bottom: 15px rgb(255,255,255) solid;
+        width: 2rem;
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        margin-top: -7.5px;
+    }
+
+    .poiner.desc {
+        border-left: 10px transparent solid;
+        border-right: 10px transparent solid;
+        border-top: 15px rgb(255,255,255) solid;
+        border-bottom: none;
+        width: 2rem;
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        margin-top: -7.5px;
+    }
 
 .popup {
     position: fixed;
@@ -935,3 +982,21 @@ form div {
         width: 40vw;
         border-radius: 15px;
     }
+
+.movie-list__table_img {
+    height: 5rem;
+    width: 5rem;
+    margin: 0 2rem;
+    padding: 0;
+}
+
+.movie-list__table_ch_box {
+    height: 3rem;
+    width: 3rem;
+    background-size: cover;
+    opacity: 0.3;
+}
+
+.movie-list__table tr:hover > td > .movie-list__table_ch_box {
+    opacity: 1;
+}

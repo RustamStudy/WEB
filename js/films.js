@@ -372,68 +372,70 @@ orderForm.addEventListener('submit', event => {
     if (error) {
         return;
     }
-    // console.log(data)
-    sendOrder.setAttribute('disabled', 'true')
-    document.getElementById('fountainG').style.display = 'block';
-    let formData = new FormData(orderTicket);
-    formData.append('places', places);
-    formData.append('fname', orderFilmName.innerText);
-    formData.append('ftime', orderFilmStart.innerText);
-    formData.append('fzal', ordeZal.innerText);
-    formData.append('method', 'post');
-    let xhr = new XMLHttpRequest();
-    /*let body = 'name=' + nameOrder.value +
-                '&phone=' + telOrder.value + 
-                '&places=' + places+
-                '&file=' + FileList+
-                '&file3=' + formData;*/
-    //
-    //
-    //
-    //let file = document.getElementById
-    //
-    //
-    //
-    xhr.open("POST", '/php2/index.php', true);
+    if (places.length > 0) {
+        // console.log(data)
+        sendOrder.setAttribute('disabled', 'true')
+        document.getElementById('fountainG').style.display = 'block';
+        let formData = new FormData(orderTicket);
+        formData.append('places', places);
+        formData.append('fname', orderFilmName.innerText);
+        formData.append('ftime', orderFilmStart.innerText);
+        formData.append('fzal', ordeZal.innerText);
+        formData.append('method', 'post');
+        let xhr = new XMLHttpRequest();
+        /*let body = 'name=' + nameOrder.value +
+                    '&phone=' + telOrder.value + 
+                    '&places=' + places+
+                    '&file=' + FileList+
+                    '&file3=' + formData;*/
+        //
+        //
+        //
+        //let file = document.getElementById
+        //
+        //
+        //
+
+        xhr.open("POST", '/php2/index.php', true);
 
 
-    //xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+        //xhr.setRequestHeader('Content-Type', 'multipart/form-data');
 
 
-    // console.log(xhr);
+        // console.log(xhr);
 
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4)
-            switch (xhr.status) {
-                case ('200'): case (200):
-                    {
-                        // console.log(xhr);
-                        let user = JSON.parse(xhr.response);
-                        // console.log(user.user.statusEmail);
-                        if (xhr.statusText != 'OK') {
-                            alert('Указаны не все поля');
-                        }
-                        else {
-                            nameBuyerOrder.innerHTML = `Поздравляем, ${user.user['name']}!!!`;
-                            nameBuyerOrderBody.innerHTML = `Вы успешно приобрели билет (билеты) в кино</br>Ваш номер заявки: ${user.user['id']}</br>
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4)
+                switch (xhr.status) {
+                    case ('200'): case (200):
+                        {
+                            // console.log(xhr);
+                            let user = JSON.parse(xhr.response);
+                            // console.log(user.user.statusEmail);
+                            if (xhr.statusText != 'OK') {
+                                alert('Указаны не все поля');
+                            }
+                            else {
+                                nameBuyerOrder.innerHTML = `Поздравляем, ${user.user['name']}!!!`;
+                                nameBuyerOrderBody.innerHTML = `Вы успешно приобрели билет (билеты) в кино</br>Ваш номер заявки: ${user.user['id']}</br>
                         ${user.user.statusEmail['statusMail'] == 'OK' ? 'Письмо об успешной заявке отправлено на почту' : 'Нам не удалось отправить письмо на почту, рекомендуем связаться с менеджером'}
                         `
 
-                            sendOrder.removeAttribute('disabled')
-                            document.getElementById('fountainG').style.display = 'none';
-                            orderForm.style.display = 'none';
-                            document.getElementById('popup-success').classList.remove('hidden');
+                                sendOrder.removeAttribute('disabled')
+                                document.getElementById('fountainG').style.display = 'none';
+                                orderForm.style.display = 'none';
+                                document.getElementById('popup-success').classList.remove('hidden');
+                            }
                         }
-                    }
-                    break;
-                case ('500'): case (500):
-                    alert('Произошла ошибка при обработке данных')
-                    break;
-            }
-    };
-    xhr.send(formData);
-    //xhr.send(body);
-
+                        break;
+                    case ('500'): case (500):
+                        alert('Произошла ошибка при обработке данных')
+                        break;
+                }
+        };
+        xhr.send(formData);
+        //xhr.send(body);
+    }
 
 })
 // jQuery(function ($){
