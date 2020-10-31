@@ -1,7 +1,3 @@
-//const initOwl 
-
-//;
-
 const genre_1 = 'мультфильм';
 const genre_2 = 'фэнтези';
 const genre_3 = 'драма';
@@ -38,68 +34,7 @@ const films = [
     }
 ]
 
-/*
-const idFilmsStart1 = document.getElementById('idFilmsStart1');
-idFilmsStart1.innerHTML = films[0].start;
-const idFilmsName1 = document.getElementById('idFilmsName1');
-idFilmsName1.innerHTML = films[0].name;
-const idjenre1 = document.getElementById('idjenre1');
-idjenre1.innerHTML = films[0].genre;
-
-const idFilmsStart2 = document.getElementById('idFilmsStart2');
-idFilmsStart2.innerHTML = films[1].start;
-const idFilmsName2 = document.getElementById('idFilmsName2');
-idFilmsName2.innerHTML = films[1].name;
-const idjenre2 = document.getElementById('idjenre2');
-idjenre2.innerHTML = films[1].genre;
-
-const idFilmsStart3 = document.getElementById('idFilmsStart3');
-idFilmsStart3.innerHTML = films[2].start;
-const idFilmsName3 = document.getElementById('idFilmsName3');
-idFilmsName3.innerHTML = films[2].name;
-const idjenre3 = document.getElementById('idjenre3');
-idjenre3.innerHTML = films[2].genre;
-
-const idFilmsStart4 = document.getElementById('idFilmsStart4');
-idFilmsStart4.innerHTML = films[3].start;
-const idFilmsName4 = document.getElementById('idFilmsName4');
-idFilmsName4.innerHTML = films[3].name;
-const idjenre4 = document.getElementById('idjenre4');
-idjenre4.innerHTML = films[3].genre;*/
-// if(document.getElementsByClassName('movie-list__table')[0])
-// for (var i = 0; i<4; i++)
-// {
-//   document.getElementById('idFilmsStart'+(i+1)).innerHTML = films[i].start;
-//   document.getElementById('idFilmsName'+(i+1)).innerHTML = films[i].name;
-//   document.getElementById('idjenre'+(i+1)).innerHTML = films[i].genre;
-// }
-
-
 const form = document.getElementById('form')
-//1var
-// form.onsubmit = function(event){
-//     event.preventDefault()
-//     const name = document.getElementById('nameInput');
-//     const pasw = document.getElementById('namePasw');
-//     const mail = document.getElementById('nameMail');
-//     const check = document.getElementById('nameCheck');
-//     const select = document.getElementById('nameSelect');
-//     const radio = document.getElementById('r1');
-//     const area = document.getElementById('nameArea');
-
-// }
-
-//2var
-// function formSubmit(){
-//   console.log('dfasf')
-// }
-//3var
-// const form = $('#form');
-// form.on('onsubmit',function(event){
-//   event.preventDefault();
-//   console.log('work')
-// })
-
 const closePopup = document.getElementById('popup_close');
 const closeOpen = document.getElementById('popup_open');
 const sendForm = document.getElementById('submit');
@@ -317,8 +252,6 @@ let idTr = 0;
 let filmTable = [];
 let idFilmArr = 0;
 const generateFilmTable = function (name, country, genre, year, description, img, link, smallImg, filmId) {
-    //const time = getRandomNumber(0, 2) + '' 
-
     let time1, time2, time3, time4, price
     time1 = getRandomNumber(0, 2)
     time3 = getRandomNumber(0, 5)
@@ -389,8 +322,6 @@ let filmsGenerate = new Promise(function (resolve, reject) {
                 idTr++
             )
             document.querySelector('#filmsSection').insertAdjacentHTML('beforeEnd', element);
-            // document.querySelector('.movie-list__table tbody').insertAdjacentHTML('beforeEnd', table);
-
             countEnterFilm++;
         })
     })
@@ -413,11 +344,6 @@ function tableReload(field, typeSort) {
     }
     tableBody.insertAdjacentHTML('beforeEnd', elem)
 }
-
-// filmsGenerate.then(
-
-//       )
-
 let s = setTimeout(function tick() {
     if (countEnterFilm == filmsArr.length) {
         $(".owl-carousel").owlCarousel({
@@ -527,11 +453,6 @@ function filmClick() {
                     }
                 }
             )
-
-
-
-            // console.log(document.getElementsByClassName('squaere').length)
-
         }
     }
 }
@@ -656,4 +577,3 @@ function sortedTable() {
         }
     }
 }
-//tableReload('filmName', 'asc');

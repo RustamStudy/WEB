@@ -27,7 +27,6 @@ for (let i = 0; i < tr.length; i++) {
         adminTime.textContent = trOrder[orderArrayId].getElementsByTagName('td')[7].innerText;
         places = '';
         places = [];
-        // console.log(places)
         for (let j = 0; j < document.getElementsByClassName('table-tr__place').length; j++) {
             if (document.getElementsByClassName('table-tr__place')[j].getAttribute('idord') == tr[i].getAttribute('idord')) {
                 places.push({
@@ -38,12 +37,8 @@ for (let i = 0; i < tr.length; i++) {
 
             }
         }
-        // console.log(places)
-        // console.log(i)
         let element = '';
         placeArr.innerHTML = '';
-        // console.log(placeArr);
-        // console.log(places);
         for (let j = 0; j < places.length; j++) {
 
             element += "<div class='filmTicetInfo'>";
@@ -55,8 +50,6 @@ for (let i = 0; i < tr.length; i++) {
 
         }
         placeArr.insertAdjacentHTML('beforeEnd', element);
-        //places = document.querySelectorAll('[idord=materalcalendar_w]')
-        // console.log(places)
         clicki()
     }
 
@@ -79,7 +72,6 @@ function clicki() {
                     location.reload();
                 }
             )
-            //setTimeout(location.reload(),2000);
         }
     }
     let deleteButon = document.getElementsByClassName('deletePlaces');
@@ -99,7 +91,6 @@ function clicki() {
                     location.reload();
                 }
             )
-            // setTimeout(location.reload(),2000);
         }
     }
 

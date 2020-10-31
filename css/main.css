@@ -105,6 +105,7 @@ body {
     .movie-list__table tr th:nth-child(2),
     .movie-list__table tr th:nth-child(3) {
         padding-right: 5rem;
+        cursor: pointer;
     }
 
 
@@ -692,7 +693,7 @@ footer {
     border-left: 5px transparent solid;
     border-right: 5px transparent solid;
     border-bottom: 7.5px rgb(255,255,255) solid;
-    width: 1rem;
+    width: 10px;
     position: absolute;
     right: 4px;
     top: 50%;
@@ -703,7 +704,7 @@ footer {
         border-left: 10px transparent solid;
         border-right: 10px transparent solid;
         border-bottom: 15px rgb(255,255,255) solid;
-        width: 2rem;
+        width: 20px;
         position: absolute;
         right: 4px;
         top: 50%;
@@ -715,7 +716,7 @@ footer {
         border-right: 10px transparent solid;
         border-top: 15px rgb(255,255,255) solid;
         border-bottom: none;
-        width: 2rem;
+        width: 20px;
         position: absolute;
         right: 4px;
         top: 50%;

@@ -623,9 +623,10 @@
 
 
 
-
+   
     <script src="js/jq.js"></script>
     <script src="js/plagins/owlcarusel/js/owl.carousel.min.js"></script>
+    <!-- <script src="dist/bundle.js"></script> -->
     <script src="js/custom.js"></script>
     <script src="js/films.js"></script>
     <script src="js/ajax.js"></script>
