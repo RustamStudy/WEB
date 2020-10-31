@@ -68,32 +68,32 @@ sendForm.onclick = function (event) {
     telOrder.classList.remove('error');
 
 
-    selectParent.classList.remove('error');
-    agreeParent.classList.remove('error');
-    nameParent.getElementsByClassName('popup-eror-message')[0].innerHTML = '';
-    telOrder.getElementsByClassName('popup-eror-message')[0].innerHTML = '';
+    selectParent1.classList.remove('error');
+    agreeParent1.classList.remove('error');
+    nameParent1.getElementsByClassName('popup-eror-message')[0].innerHTML = '';
+    telOrder1.getElementsByClassName('popup-eror-message')[0].innerHTML = '';
 
-    selectParent.getElementsByClassName('popup-eror-message')[0].innerHTML = '';
-    agreeParent.getElementsByClassName('popup-eror-message')[0].innerHTML = '';
+    selectParent1.getElementsByClassName('popup-eror-message')[0].innerHTML = '';
+    agreeParent1.getElementsByClassName('popup-eror-message')[0].innerHTML = '';
 
 
     if (!checkInput(name.value)) {
-        nameParent.classList.add('error');
-        nameParent.getElementsByClassName('popup-eror-message')[0].innerHTML = "заполните поле 'Имя'"
+        nameParent1.classList.add('error');
+        nameParent1.getElementsByClassName('popup-eror-message')[0].innerHTML = "заполните поле 'Имя'"
     }
 
     if (!checkInput(telOrder.value)) {
-        nameParent.classList.add('error');
-        nameParent.getElementsByClassName('popup-eror-message')[0].innerHTML = "заполните поле 'Телефон'"
+        nameParent1.classList.add('error');
+        nameParent1.getElementsByClassName('popup-eror-message')[0].innerHTML = "заполните поле 'Телефон'"
     }
 
     if (select.value == 0) {
-        selectParent.classList.add('error');
-        selectParent.getElementsByClassName('popup-eror-message')[0].innerHTML = "заполните поле выберите ряд"
+        selectParent1.classList.add('error');
+        selectParent1.getElementsByClassName('popup-eror-message')[0].innerHTML = "сделайте свой выбор"
     }
     if (!agree.checked) {
-        agreeParent.classList.add('error');
-        agreeParent.getElementsByClassName('popup-eror-message')[0].innerHTML = "Подтвердите согласие"
+        agreeParent1.classList.add('error');
+        agreeParent1.getElementsByClassName('popup-eror-message')[0].innerHTML = "Подтвердите согласие"
     }
 }
 

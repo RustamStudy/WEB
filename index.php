@@ -475,28 +475,25 @@
         <div class="order-form">
             <div id="popup_close" class="close"></div>
             <form action="order.php" id="form" onsubmit="formSubmit(); return false;">
-                <div class="" style="margin:10px">
+                <div class="" style="margin:10px" id="nameParent1">
                     <label for="idInput" hidden>Укажите имя</label>
                     <input type="text" placeholder="Введите ваше имя *" name="nameInput" id="nameInput">
                     <div class="popup-eror-message"></div>
                 </div>
-                <!-- <div  style="margin:10px">
-                    <label for="namePasw" hidden>Введите пароль</label>
-                    <input type="password" placeholder="Введите пароль" name="namePasw" id="namePasw">
+                <div class="" style="margin:10px" id="telOrder1">
+                    <label for="idInput" hidden>Укажите номер телефона</label>
+                    <input type="text" placeholder="Укажите номер телефона *" name="nameInput" id="nameInput">
+                    <div class="popup-eror-message"></div>
                 </div>
-                <div  style="margin:10px">
-                    <label for="nameMail" hidden>Укажите почту</label>
-                    <input type="email" placeholder="Введите почту" name="nameMail" id="namePasw">
-                </div> -->
-                <div style="margin:10px">
+                <div style="margin:10px"  id="agreeParent1">
                     <input type="checkbox" name="nameCheck" id="persAccess" required>
                     <label for="persAccess">Согласен на обработку персональных данных</label>
                     <div class="popup-eror-message"></div>
                 </div>
-                <div style="margin:10px">
-                    <label for="nameSelect">Выберите ряд</label>
+                <div style="margin:10px"  id="selectParent1">
+                    <label for="nameSelect">Сделайте выбор</label>
                     <select name="nameSelect" id="nameSelect">
-                        <option value="0">Выберите место</option>
+                        <option value="0">Сделайте выбор</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -510,27 +507,6 @@
                     </select>
                     <div class="popup-eror-message"></div>
                 </div>
-                <!--  <div style="margin:10px">
-                    <input type="radio" name="place" id = "r1"> 
-                    <label for="r1">Детский билет</label>
-                </div>
-                <div style="margin:10px">
-                    <input type="radio" name="place" id = "r2">
-                    <label for="r2">Студенческий билет</label>
-                </div>
-                <div style="margin:10px">
-                    <input checked type="radio" name="place" id = "r3">
-                    <label for="r3">Взрослый билет</label>
-                </div>
-                <div style="margin:10px">
-                    <label for="nameArea" hidden>Введите коментарий (при необходимости)</label>
-                    <textarea name="nameArea" id = "nameArea" placeholder="Укажите комментарий"></textarea>
-                </div>
-                <div style="margin:10px">
-                    <label for="inpFile"  hidden>Загрузите файл (при необходимости)</label>
-                    <input type="file" id = "inpFile" name="inpFile" >
-                </div> -->
-
                 <div style="margin:10px">
                     <input id='submit' type="submit" value="Заказать" id='bs'>
                 </div>
