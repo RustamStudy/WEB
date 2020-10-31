@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Киношка</title>
-    <link rel="stylesheet" href="fonts/Roboto/stylesheet.css">
-    <link rel="stylesheet" href="css/reset.css?v=08.08.2020">
-    <link rel="stylesheet" href="css/main.css?v=08.08.2020">
-    <link rel="stylesheet" href="js/plagins/owlcarusel/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="js/plagins/owlcarusel/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="js/plagins/owlcarusel/css/style.css">
-    <link rel="stylesheet" href="calculator/style.css">
-    <link rel="stylesheet" href="css/media.css?v=08.08.2020">
-    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="fonts/Roboto/stylesheet.css?v=31.10.2020">
+    <link rel="stylesheet" href="css/reset.css?v=31.10.2020">
+    <link rel="stylesheet" href="css/main.css?v=31.10.2020">
+    <link rel="stylesheet" href="js/plagins/owlcarusel/css/owl.carousel.min.css?v=31.10.2020">
+    <link rel="stylesheet" href="js/plagins/owlcarusel/css/owl.theme.default.min.css?v=31.10.2020">
+    <link rel="stylesheet" href="js/plagins/owlcarusel/css/style.css?v=31.10.2020">
+    <link rel="stylesheet" href="calculator/style.css?v=31.10.2020">
+    <link rel="stylesheet" href="css/media.css?v=31.10.2020">
+    <link rel="stylesheet" href="css/loader.css?v=31.10.2020">
 </head>
 
 <body>
@@ -600,13 +600,13 @@
 
 
    
-    <script src="js/jq.js"></script>
-    <script src="js/plagins/owlcarusel/js/owl.carousel.min.js"></script>
+    <script src="js/jq.js?v=31.10.2020"></script>
+    <script src="js/plagins/owlcarusel/js/owl.carousel.min.js?v=31.10.2020"></script>
     <!-- <script src="dist/bundle.js"></script> -->
-    <script src="js/custom.js"></script>
-    <script src="js/films.js"></script>
-    <script src="js/ajax.js"></script>
-    <script src="js/fileUpload.js"></script>
+    <script src="js/custom.js?v=31.10.2020"></script>
+    <script src="js/films.js?v=31.10.2020"></script>
+    <script src="js/ajax.js?v=31.10.2020"></script>
+    <script src="js/fileUpload.js?v=31.10.2020"></script>
     
 </body>
 
