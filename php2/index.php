@@ -31,8 +31,6 @@ if (isset($_POST['method'])) {
             //print_r($_POST['id1']);
             break;
     }
-    
-    sleep(2);
     return 0;
 }
 if (isset($_POST['name'])) {
